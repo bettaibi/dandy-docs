@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+@import 'dandy-ui/base.css';
+@import 'dandy-ui/theme.css';
+
+@source '../node_modules/dandy-ui';
+
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+
+
