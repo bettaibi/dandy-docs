@@ -1,0 +1,302 @@
+---
+title: Input
+description: Versatile text input component with variants, sizes, slots, and validation states
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Input } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Input
+
+A flexible text input component with support for multiple variants, sizes, validation states, and icon slots. Provides consistent styling across light and dark themes with mobile-first design.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Input } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input placeholder="Enter your email" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input placeholder="Enter your email" />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input variant="default" placeholder="Default variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input variant="default" placeholder="Default variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input variant="success" placeholder="Success variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input variant="success" placeholder="Success variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input variant="error" placeholder="Error variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input variant="error" placeholder="Error variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input variant="warning" placeholder="Warning variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input variant="warning" placeholder="Warning variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input variant="info" placeholder="Info variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input variant="info" placeholder="Info variant" />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input size="sm" placeholder="Small (32px)" />
+      <Input size="md" placeholder="Medium (40px)" />
+      <Input size="lg" placeholder="Large (48px)" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input size="sm" placeholder="Small (32px)" />
+    <Input size="md" placeholder="Medium (40px)" />
+    <Input size="lg" placeholder="Large (48px)" />
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input rounded="none" placeholder="No radius" />
+      <Input rounded="sm" placeholder="Small radius" />
+      <Input rounded="md" placeholder="Medium radius" />
+      <Input rounded="lg" placeholder="Large radius" />
+      <Input rounded="xl" placeholder="Extra large radius" />
+      <Input rounded="full" placeholder="Full radius" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input rounded="none" placeholder="No radius" />
+    <Input rounded="sm" placeholder="Small radius" />
+    <Input rounded="md" placeholder="Medium radius" />
+    <Input rounded="lg" placeholder="Large radius" />
+    <Input rounded="xl" placeholder="Extra large radius" />
+    <Input rounded="full" placeholder="Full radius" />
+    ```
+  </Tab>
+</Tabs>
+
+## Error Message
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input
+        placeholder="Enter valid email"
+        errorMessage="Please enter a valid email address"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input
+      placeholder="Enter valid email"
+      errorMessage="Please enter a valid email address"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## With Left Slot
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input placeholder="Search..." leftSlot={<span>🔍</span>} />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input placeholder="Search..." leftSlot={<span>🔍</span>} />
+    ```
+  </Tab>
+</Tabs>
+
+## With Right Slot
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input
+        placeholder="Enter password"
+        type="password"
+        rightSlot={<span>👁️</span>}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input
+      placeholder="Enter password"
+      type="password"
+      rightSlot={<span>👁️</span>}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input placeholder="Disabled input" disabled />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input placeholder="Disabled input" disabled />
+    ```
+  </Tab>
+</Tabs>
+
+## Read-Only State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input value="Read-only value" readOnly />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input value="Read-only value" readOnly />
+    ```
+  </Tab>
+</Tabs>
+
+## Input Types
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Input type="email" placeholder="Email" />
+      <Input type="password" placeholder="Password" />
+      <Input type="number" placeholder="Number" />
+      <Input type="tel" placeholder="Phone" />
+      <Input type="url" placeholder="URL" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Input type="email" placeholder="Email" />
+    <Input type="password" placeholder="Password" />
+    <Input type="number" placeholder="Number" />
+    <Input type="tel" placeholder="Phone" />
+    <Input type="url" placeholder="URL" />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop         | Type                                             | Default   | Description                                  |
+| ------------ | ------------------------------------------------ | --------- | -------------------------------------------- |
+| variant      | `default \| success \| error \| warning \| info` | `default` | Visual style variant with semantic colors    |
+| size         | `sm \| md \| lg`                                 | `md`      | Input height (sm: 32px, md: 40px, lg: 48px)  |
+| rounded      | `sm \| md \| lg \| xl \| full \| none`           | -         | Border radius size                           |
+| errorMessage | `string`                                         | -         | Error message shown in tooltip on hover      |
+| leftSlot     | `React.ReactNode`                                | -         | Content rendered on the left (icons, badges) |
+| rightSlot    | `React.ReactNode`                                | -         | Content rendered on the right (icons, etc.)  |
+| disabled     | `boolean`                                        | `false`   | Disables the input                           |
+| readOnly     | `boolean`                                        | `false`   | Makes the input read-only                    |
+| className    | `string`                                         | -         | Additional CSS classes                       |
+
+Inherits all standard HTML input attributes (`onChange`, `onFocus`, `onBlur`, `value`, `defaultValue`, `placeholder`, `type`, etc.).
+
+## Accessibility
+
+- Keyboard navigable with Tab key
+- Focus visible with semantic color ring indicators
+- WCAG 2.1 Level AA compliant color contrast
+- Minimum 32px height on small size for mobile touch targets
+- Error messages accessible via InfoTip tooltip on hover/focus
+- Supports all native input types and HTML attributes
+- Disabled and read-only states properly communicated
+
+## Component API
+
+| Export     | Type                              | Description                        |
+| ---------- | --------------------------------- | ---------------------------------- |
+| Input      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| InputProps | `interface`                       | Component props interface          |

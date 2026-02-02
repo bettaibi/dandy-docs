@@ -1,0 +1,239 @@
+---
+title: Switch
+description: Toggle control for binary on/off states with smooth animations
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Switch } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Switch
+
+A mobile-first toggle switch component for binary on/off states. Features smooth animations, multiple color variants, and full keyboard and screen reader support.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Switch } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Switch />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch variant="default" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Switch variant="default" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch variant="success" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Switch variant="success" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch variant="warning" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Switch variant="warning" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch variant="error" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Switch variant="error" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch variant="info" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Switch variant="info" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch size="sm" defaultChecked />
+      <Switch size="md" defaultChecked />
+      <Switch size="lg" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Switch size="sm" defaultChecked />
+    <Switch size="md" defaultChecked />
+    <Switch size="lg" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## States
+
+### Checked State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch />
+      <Switch defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Switch />
+    <Switch defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch disabled />
+      <Switch disabled defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Switch disabled />
+    <Switch disabled defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## Controlled Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Switch onCheckedChange={(checked) => console.log('Checked:', checked)} />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [checked, setChecked] = useState(false);
+
+    <Switch
+      checked={checked}
+      onCheckedChange={setChecked}
+    />
+    ```
+
+  </Tab>
+</Tabs>
+
+## With Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+        <Switch id="notifications" />
+        <label htmlFor="notifications">Enable notifications</label>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+      <Switch id="notifications" />
+      <label htmlFor="notifications">Enable notifications</label>
+    </div>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop            | Type                                             | Default   | Description                              |
+| --------------- | ------------------------------------------------ | --------- | ---------------------------------------- |
+| size            | `sm \| md \| lg`                                 | `md`      | Visual size of the switch                |
+| variant         | `default \| success \| warning \| error \| info` | `default` | Color variant when checked               |
+| disabled        | `boolean`                                        | `false`   | Disables the switch                      |
+| onCheckedChange | `(checked: boolean) => void`                     | -         | Callback fired when toggle state changes |
+| className       | `string`                                         | -         | Additional CSS classes                   |
+
+Inherits all standard HTML input[type="checkbox"] attributes (`checked`, `defaultChecked`, `onChange`, `aria-label`, etc.).
+
+## Accessibility
+
+- Keyboard navigable with Tab and Space/Enter keys
+- Focus visible with ring indicator
+- Uses native checkbox input for proper form submission
+- Supports `aria-label` or `aria-labelledby` for screen readers when used without visible label
+- WCAG 2.1 Level AA compliant
+- Touch-friendly targets (minimum 36px height on small, 44px on medium/large)
+- RTL (right-to-left) language support
+
+## Component API
+
+| Export      | Type                              | Description                        |
+| ----------- | --------------------------------- | ---------------------------------- |
+| Switch      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| SwitchProps | `interface`                       | Component props interface          |

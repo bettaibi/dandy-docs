@@ -1,0 +1,285 @@
+---
+title: Rating
+description: Display and interact with star ratings with support for half-stars and multiple variants
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Rating } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Rating
+
+A flexible rating component for displaying and collecting user ratings. Supports both read-only displays and interactive rating selection with optional half-star precision.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Rating } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={3.5} />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={3.5} />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Accent
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={4} variant="accent" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={4} variant="accent" />
+    ```
+  </Tab>
+</Tabs>
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={4} variant="primary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={4} variant="primary" />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={4} variant="warning" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={4} variant="warning" />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={4} variant="success" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={4} variant="success" />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={4} variant="error" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={4} variant="error" />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={4} variant="info" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={4} variant="info" />
+    ```
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={4} variant="secondary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={4} variant="secondary" />
+    ```
+  </Tab>
+</Tabs>
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={4} variant="default" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={4} variant="default" />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={4} size="sm" />
+      <Rating value={4} size="md" />
+      <Rating value={4} size="lg" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={4} size="sm" />
+    <Rating value={4} size="md" />
+    <Rating value={4} size="lg" />
+    ```
+  </Tab>
+</Tabs>
+
+## With Value Display
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={3.5} showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={3.5} showValue />
+    ```
+  </Tab>
+</Tabs>
+
+## Half-Star Ratings
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={2.5} allowHalf />
+      <Rating value={3.5} allowHalf />
+      <Rating value={4.5} allowHalf />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={2.5} allowHalf />
+    <Rating value={3.5} allowHalf />
+    <Rating value={4.5} allowHalf />
+    ```
+  </Tab>
+</Tabs>
+
+## Custom Max Stars
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating value={3} max={3} />
+      <Rating value={7} max={10} />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating value={3} max={3} />
+    <Rating value={7} max={10} />
+    ```
+  </Tab>
+</Tabs>
+
+## Interactive Rating
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Rating
+        value={3}
+        interactive
+        onValueChange={(value) => console.log("New rating:", value)}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Rating
+      value={3}
+      interactive
+      onValueChange={(value) => console.log("New rating:", value)}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop          | Type                                                                               | Default  | Description                                              |
+| ------------- | ---------------------------------------------------------------------------------- | -------- | -------------------------------------------------------- |
+| value         | `number`                                                                           | `0`      | Current rating value (0 to max). Supports decimal values |
+| max           | `number`                                                                           | `5`      | Maximum number of stars to display                       |
+| size          | `sm \| md \| lg`                                                                   | `md`     | Star size (16px / 20px / 24px)                           |
+| interactive   | `boolean`                                                                          | `false`  | Enable interactive rating selection                      |
+| onValueChange | `(value: number) => void`                                                          | -        | Callback when rating changes (interactive mode only)     |
+| showValue     | `boolean`                                                                          | `false`  | Display numeric rating value                             |
+| variant       | `default \| accent \| warning \| primary \| secondary \| success \| error \| info` | `accent` | Color variant for filled stars                           |
+| allowHalf     | `boolean`                                                                          | `false`  | Enable half-star ratings                                 |
+| ariaLabel     | `string`                                                                           | -        | Accessible label for screen readers                      |
+| className     | `string`                                                                           | -        | Additional CSS classes                                   |
+
+Inherits all standard HTML `div` attributes.
+
+## Accessibility
+
+- Keyboard navigable with Tab key (interactive mode)
+- Enter/Space keys to select rating (interactive mode)
+- Focus visible with ring indicator
+- Screen reader announces current rating
+- Interactive stars have role="button" with descriptive labels
+- Non-interactive ratings use role="img" with aria-label
+- WCAG 2.1 Level AA compliant
+
+## Component API
+
+| Export      | Type                              | Description                        |
+| ----------- | --------------------------------- | ---------------------------------- |
+| Rating      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| RatingProps | `interface`                       | Component props interface          |

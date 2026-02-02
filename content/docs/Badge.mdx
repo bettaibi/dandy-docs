@@ -1,0 +1,369 @@
+---
+title: Badge
+description: A compact label for status indicators, notifications, and categorical information
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Badge } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Badge
+
+A versatile badge component for displaying status indicators, notification counts, categorical labels, and other compact information. Supports multiple visual styles and theme-based coloring.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Badge } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge>Default Badge</Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge>Default Badge</Badge>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge variant="default">Default</Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge variant="default">Default</Badge>
+    ```
+  </Tab>
+</Tabs>
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge variant="primary">Primary</Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge variant="primary">Primary</Badge>
+    ```
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge variant="secondary">Secondary</Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge variant="secondary">Secondary</Badge>
+    ```
+  </Tab>
+</Tabs>
+
+### Accent
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge variant="accent">Accent</Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge variant="accent">Accent</Badge>
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge variant="success">Success</Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge variant="success">Success</Badge>
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge variant="warning">Warning</Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge variant="warning">Warning</Badge>
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge variant="error">Error</Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge variant="error">Error</Badge>
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge variant="info">Info</Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge variant="info">Info</Badge>
+    ```
+  </Tab>
+</Tabs>
+
+## Appearance
+
+### Solid
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge appearance="solid" variant="primary">
+        Solid
+      </Badge>
+      <Badge appearance="solid" variant="success">
+        Success
+      </Badge>
+      <Badge appearance="solid" variant="error">
+        Error
+      </Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge appearance="solid" variant="primary">
+      Solid
+    </Badge>
+    <Badge appearance="solid" variant="success">
+      Success
+    </Badge>
+    <Badge appearance="solid" variant="error">
+      Error
+    </Badge>
+    ```
+  </Tab>
+</Tabs>
+
+### Outline
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge appearance="outline" variant="primary">
+        Outline
+      </Badge>
+      <Badge appearance="outline" variant="success">
+        Success
+      </Badge>
+      <Badge appearance="outline" variant="error">
+        Error
+      </Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge appearance="outline" variant="primary">
+      Outline
+    </Badge>
+    <Badge appearance="outline" variant="success">
+      Success
+    </Badge>
+    <Badge appearance="outline" variant="error">
+      Error
+    </Badge>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge size="sm" variant="primary">
+        Small
+      </Badge>
+      <Badge size="md" variant="primary">
+        Medium
+      </Badge>
+      <Badge size="lg" variant="primary">
+        Large
+      </Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge size="sm" variant="primary">
+      Small
+    </Badge>
+    <Badge size="md" variant="primary">
+      Medium
+    </Badge>
+    <Badge size="lg" variant="primary">
+      Large
+    </Badge>
+    ```
+  </Tab>
+</Tabs>
+
+## Shape
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge shape="default" variant="primary">
+        Default Shape
+      </Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge shape="default" variant="primary">
+      Default Shape
+    </Badge>
+    ```
+  </Tab>
+</Tabs>
+
+### Pill
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge shape="pill" variant="primary">
+        Pill Shape
+      </Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge shape="pill" variant="primary">
+      Pill Shape
+    </Badge>
+    ```
+  </Tab>
+</Tabs>
+
+## Label Prop
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge label="Using Label Prop" variant="success" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge label="Using Label Prop" variant="success" />
+    ```
+  </Tab>
+</Tabs>
+
+## Combined Styles
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Badge size="sm" shape="pill" variant="success" appearance="outline">
+        New
+      </Badge>
+      <Badge size="md" shape="pill" variant="error" appearance="solid">
+        5
+      </Badge>
+      <Badge size="lg" shape="default" variant="warning" appearance="outline">
+        Beta
+      </Badge>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Badge size="sm" shape="pill" variant="success" appearance="outline">
+      New
+    </Badge>
+    <Badge size="md" shape="pill" variant="error" appearance="solid">
+      5
+    </Badge>
+    <Badge size="lg" shape="default" variant="warning" appearance="outline">
+      Beta
+    </Badge>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop       | Type                                                                               | Default   | Description                                            |
+| ---------- | ---------------------------------------------------------------------------------- | --------- | ------------------------------------------------------ |
+| variant    | `default \| primary \| secondary \| accent \| success \| warning \| error \| info` | `default` | Badge color theme                                      |
+| size       | `sm \| md \| lg`                                                                   | `md`      | Badge size (mobile-first)                              |
+| appearance | `solid \| outline`                                                                 | `solid`   | Visual style (filled or bordered)                      |
+| shape      | `default \| pill`                                                                  | `default` | Shape style (rounded corners or fully rounded)         |
+| children   | `React.ReactNode`                                                                  | -         | Badge content (required if label not provided)         |
+| label      | `string`                                                                           | -         | Badge text content (required if children not provided) |
+| className  | `string`                                                                           | -         | Additional CSS classes                                 |
+
+Inherits all standard HTML `span` attributes (`onClick`, `role`, `aria-*`, etc.).
+
+## Accessibility
+
+- Uses semantic `span` element for static content
+- Color is not the sole indicator of meaning; text content provides context
+- If used as a live status indicator, add `role="status"` or `aria-live` attributes
+- Focus visible with ring indicator for interactive badges
+- Selectable text disabled by default (`select-none`)
+- Screen reader compatible with proper semantic structure
+
+## Component API
+
+| Export     | Type                              | Description                        |
+| ---------- | --------------------------------- | ---------------------------------- |
+| Badge      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| BadgeProps | `interface`                       | Component props interface          |

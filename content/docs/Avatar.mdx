@@ -1,0 +1,465 @@
+---
+title: Avatar
+description: Display user profile images with placeholders, status indicators, and flexible sizing
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Avatar } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Avatar
+
+A versatile avatar component for displaying user profile images with fallback placeholders, status indicators, and multiple shape options.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Avatar } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar src="https://i.pravatar.cc/150?img=1" alt="User avatar" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar src="https://i.pravatar.cc/150?img=1" alt="User avatar" />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        size="xs"
+        src="https://i.pravatar.cc/150?img=2"
+        alt="Extra small"
+      />
+      <Avatar size="sm" src="https://i.pravatar.cc/150?img=3" alt="Small" />
+      <Avatar size="md" src="https://i.pravatar.cc/150?img=4" alt="Medium" />
+      <Avatar size="lg" src="https://i.pravatar.cc/150?img=5" alt="Large" />
+      <Avatar
+        size="xl"
+        src="https://i.pravatar.cc/150?img=6"
+        alt="Extra large"
+      />
+      <Avatar size="2xl" src="https://i.pravatar.cc/150?img=7" alt="2X large" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar size="xs" src="https://i.pravatar.cc/150?img=2" alt="Extra small" />
+    <Avatar size="sm" src="https://i.pravatar.cc/150?img=3" alt="Small" />
+    <Avatar size="md" src="https://i.pravatar.cc/150?img=4" alt="Medium" />
+    <Avatar size="lg" src="https://i.pravatar.cc/150?img=5" alt="Large" />
+    <Avatar size="xl" src="https://i.pravatar.cc/150?img=6" alt="Extra large" />
+    <Avatar size="2xl" src="https://i.pravatar.cc/150?img=7" alt="2X large" />
+    ```
+  </Tab>
+</Tabs>
+
+## Shapes
+
+### Circle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        shape="circle"
+        src="https://i.pravatar.cc/150?img=8"
+        alt="Circle avatar"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      shape="circle"
+      src="https://i.pravatar.cc/150?img=8"
+      alt="Circle avatar"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Rounded
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        shape="rounded"
+        src="https://i.pravatar.cc/150?img=9"
+        alt="Rounded avatar"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      shape="rounded"
+      src="https://i.pravatar.cc/150?img=9"
+      alt="Rounded avatar"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Square
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        shape="square"
+        src="https://i.pravatar.cc/150?img=10"
+        alt="Square avatar"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      shape="square"
+      src="https://i.pravatar.cc/150?img=10"
+      alt="Square avatar"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Outlined
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        outlined
+        src="https://i.pravatar.cc/150?img=11"
+        alt="Outlined avatar"
+      />
+      <Avatar
+        outlined
+        shape="rounded"
+        src="https://i.pravatar.cc/150?img=12"
+        alt="Outlined rounded avatar"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      outlined
+      src="https://i.pravatar.cc/150?img=11"
+      alt="Outlined avatar"
+    />
+    <Avatar
+      outlined
+      shape="rounded"
+      src="https://i.pravatar.cc/150?img=12"
+      alt="Outlined rounded avatar"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Placeholders
+
+### Icon Placeholder
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar placeholder="icon" alt="User" />
+      <Avatar placeholder="icon" shape="rounded" alt="User" />
+      <Avatar placeholder="icon" shape="square" alt="User" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar placeholder="icon" alt="User" />
+    <Avatar placeholder="icon" shape="rounded" alt="User" />
+    <Avatar placeholder="icon" shape="square" alt="User" />
+    ```
+  </Tab>
+</Tabs>
+
+### Initials Placeholder
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar placeholder="JD" alt="John Doe" />
+      <Avatar placeholder="AB" shape="rounded" alt="Alice Brown" />
+      <Avatar placeholder="MK" shape="square" alt="Mike Kane" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar placeholder="JD" alt="John Doe" />
+    <Avatar placeholder="AB" shape="rounded" alt="Alice Brown" />
+    <Avatar placeholder="MK" shape="square" alt="Mike Kane" />
+    ```
+  </Tab>
+</Tabs>
+
+### Fallback on Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        src="https://invalid-url.example.com/image.jpg"
+        placeholder="JD"
+        alt="John Doe"
+        onError={() => console.log("Image failed to load")}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      src="https://invalid-url.example.com/image.jpg"
+      placeholder="JD"
+      alt="John Doe"
+      onError={() => console.log("Image failed to load")}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Status Indicators
+
+### Online
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        src="https://i.pravatar.cc/150?img=13"
+        status="online"
+        alt="User online"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      src="https://i.pravatar.cc/150?img=13"
+      status="online"
+      alt="User online"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Offline
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        src="https://i.pravatar.cc/150?img=14"
+        status="offline"
+        alt="User offline"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      src="https://i.pravatar.cc/150?img=14"
+      status="offline"
+      alt="User offline"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Away
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        src="https://i.pravatar.cc/150?img=15"
+        status="away"
+        alt="User away"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      src="https://i.pravatar.cc/150?img=15"
+      status="away"
+      alt="User away"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Status Positions
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        src="https://i.pravatar.cc/150?img=16"
+        status="online"
+        statusPosition="top-left"
+        alt="Top left"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/150?img=17"
+        status="online"
+        statusPosition="top-right"
+        alt="Top right"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/150?img=18"
+        status="online"
+        statusPosition="bottom-left"
+        alt="Bottom left"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/150?img=19"
+        status="online"
+        statusPosition="bottom-right"
+        alt="Bottom right"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      src="https://i.pravatar.cc/150?img=16"
+      status="online"
+      statusPosition="top-left"
+      alt="Top left"
+    />
+    <Avatar
+      src="https://i.pravatar.cc/150?img=17"
+      status="online"
+      statusPosition="top-right"
+      alt="Top right"
+    />
+    <Avatar
+      src="https://i.pravatar.cc/150?img=18"
+      status="online"
+      statusPosition="bottom-left"
+      alt="Bottom left"
+    />
+    <Avatar
+      src="https://i.pravatar.cc/150?img=19"
+      status="online"
+      statusPosition="bottom-right"
+      alt="Bottom right"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Combined Examples
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Avatar
+        size="lg"
+        outlined
+        shape="rounded"
+        status="online"
+        src="https://i.pravatar.cc/150?img=20"
+        alt="User profile"
+      />
+      <Avatar
+        size="xl"
+        outlined
+        status="away"
+        placeholder="AB"
+        alt="Alice Brown"
+      />
+      <Avatar
+        size="lg"
+        shape="square"
+        status="offline"
+        statusPosition="top-right"
+        src="https://i.pravatar.cc/150?img=21"
+        alt="User profile"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Avatar
+      size="lg"
+      outlined
+      shape="rounded"
+      status="online"
+      src="https://i.pravatar.cc/150?img=20"
+      alt="User profile"
+    />
+    <Avatar
+      size="xl"
+      outlined
+      status="away"
+      placeholder="AB"
+      alt="Alice Brown"
+    />
+    <Avatar
+      size="lg"
+      shape="square"
+      status="offline"
+      statusPosition="top-right"
+      src="https://i.pravatar.cc/150?img=21"
+      alt="User profile"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop           | Type                                                   | Default        | Description                            |
+| -------------- | ------------------------------------------------------ | -------------- | -------------------------------------- |
+| src            | `string`                                               | -              | Image source URL                       |
+| alt            | `string`                                               | `""`           | Alt text for accessibility             |
+| size           | `xs \| sm \| md \| lg \| xl \| 2xl`                    | `md`           | Avatar size                            |
+| shape          | `circle \| rounded \| square`                          | `circle`       | Avatar shape                           |
+| outlined       | `boolean`                                              | `false`        | Show border around avatar              |
+| placeholder    | `icon \| string`                                       | -              | Placeholder content (icon or initials) |
+| status         | `online \| offline \| away`                            | -              | Status indicator                       |
+| statusPosition | `top-left \| top-right \| bottom-left \| bottom-right` | `bottom-right` | Position of status indicator           |
+| onError        | `() => void`                                           | -              | Callback when image fails to load      |
+| className      | `string`                                               | -              | Additional CSS classes                 |
+
+Inherits all standard HTML `div` attributes.
+
+## Accessibility
+
+- Always provide descriptive `alt` text for screen readers
+- Status indicators include `aria-label` with current status
+- Status indicators use `role="status"` for live region announcements
+- Icon placeholders marked with `aria-hidden="true"`
+- Initials placeholders include descriptive `aria-label`
+- Focus visible with ring indicator
+- WCAG 2.1 Level AA compliant
+
+## Component API
+
+| Export      | Type                              | Description                        |
+| ----------- | --------------------------------- | ---------------------------------- |
+| Avatar      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| AvatarProps | `interface`                       | Component props interface          |

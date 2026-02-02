@@ -1,0 +1,240 @@
+---
+title: AspectRatio
+description: Container that maintains a consistent aspect ratio for responsive media and content
+category: layout
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { AspectRatio } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# AspectRatio
+
+A container component that maintains a consistent width-to-height ratio, perfect for responsive images, videos, and embedded content.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { AspectRatio } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AspectRatio
+        ratio={16 / 9}
+        className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
+      >
+        <div className="flex items-center justify-center h-full text-gray-500">
+          16:9 Aspect Ratio
+        </div>
+      </AspectRatio>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AspectRatio
+      ratio={16 / 9}
+      className="bg-gray-100 rounded-lg overflow-hidden"
+    >
+      <div className="flex items-center justify-center h-full">
+        16:9 Aspect Ratio
+      </div>
+    </AspectRatio>
+    ```
+  </Tab>
+</Tabs>
+
+## Common Ratios
+
+### 16:9 (Widescreen)
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AspectRatio
+        ratio={16 / 9}
+        className="bg-blue-100 dark:bg-blue-900/30 rounded-lg overflow-hidden"
+      >
+        <div className="flex items-center justify-center h-full text-blue-700 dark:text-blue-300">
+          16:9 - Video, YouTube
+        </div>
+      </AspectRatio>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AspectRatio ratio={16 / 9}>
+      <div className="flex items-center justify-center h-full">
+        16:9 - Video, YouTube
+      </div>
+    </AspectRatio>
+    ```
+  </Tab>
+</Tabs>
+
+### 4:3 (Standard)
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AspectRatio
+        ratio={4 / 3}
+        className="bg-green-100 dark:bg-green-900/30 rounded-lg overflow-hidden"
+      >
+        <div className="flex items-center justify-center h-full text-green-700 dark:text-green-300">
+          4:3 - Classic TV, iPad
+        </div>
+      </AspectRatio>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AspectRatio ratio={4 / 3}>
+      <div className="flex items-center justify-center h-full">
+        4:3 - Classic TV, iPad
+      </div>
+    </AspectRatio>
+    ```
+  </Tab>
+</Tabs>
+
+### 1:1 (Square)
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AspectRatio
+        ratio={1}
+        className="bg-purple-100 dark:bg-purple-900/30 rounded-lg overflow-hidden"
+      >
+        <div className="flex items-center justify-center h-full text-purple-700 dark:text-purple-300">
+          1:1 - Instagram, Profile
+        </div>
+      </AspectRatio>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AspectRatio ratio={1}>
+      <div className="flex items-center justify-center h-full">
+        1:1 - Instagram, Profile
+      </div>
+    </AspectRatio>
+    ```
+  </Tab>
+</Tabs>
+
+### 21:9 (Ultrawide)
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AspectRatio
+        ratio={21 / 9}
+        className="bg-orange-100 dark:bg-orange-900/30 rounded-lg overflow-hidden"
+      >
+        <div className="flex items-center justify-center h-full text-orange-700 dark:text-orange-300">
+          21:9 - Cinema, Ultrawide
+        </div>
+      </AspectRatio>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AspectRatio ratio={21 / 9}>
+      <div className="flex items-center justify-center h-full">
+        21:9 - Cinema, Ultrawide
+      </div>
+    </AspectRatio>
+    ```
+  </Tab>
+</Tabs>
+
+## With Images
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AspectRatio
+        ratio={16 / 9}
+        className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4"
+          alt="Mountain landscape"
+          className="object-cover w-full h-full"
+        />
+      </AspectRatio>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AspectRatio ratio={16 / 9} className="rounded-lg overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4"
+        alt="Mountain landscape"
+        className="object-cover w-full h-full"
+      />
+    </AspectRatio>
+    ```
+  </Tab>
+</Tabs>
+
+## With Video Embed
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AspectRatio ratio={16 / 9} className="rounded-lg overflow-hidden">
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="YouTube video"
+          className="w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        />
+      </AspectRatio>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AspectRatio ratio={16 / 9} className="rounded-lg overflow-hidden">
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="YouTube video"
+        className="w-full h-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      />
+    </AspectRatio>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop      | Type     | Default | Description                                             |
+| --------- | -------- | ------- | ------------------------------------------------------- |
+| ratio     | `number` | `1`     | Desired aspect ratio (e.g., 16/9, 4/3, 1)               |
+| className | `string` | -       | Additional CSS classes                                  |
+| style     | `object` | -       | Inline styles (merged with internal aspect ratio style) |
+
+Inherits all standard HTML `div` attributes (`onClick`, `id`, etc.).
+
+## Accessibility
+
+- Uses semantic HTML structure with proper nesting
+- Maintains aspect ratio across all screen sizes and zoom levels
+- Works seamlessly with screen readers
+- Supports keyboard navigation for interactive content
+- Ensures proper focus management for embedded content
+
+## Component API
+
+| Export           | Type                              | Description                        |
+| ---------------- | --------------------------------- | ---------------------------------- |
+| AspectRatio      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| AspectRatioProps | `interface`                       | Component props interface          |

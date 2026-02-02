@@ -1,0 +1,309 @@
+---
+title: TextArea
+description: Multi-line text input with variant states, resize controls, and validation support
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { TextArea } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# TextArea
+
+Multi-line text input component for collecting longer text content. Features semantic color variants that appear on focus, flexible sizing, resize controls, and built-in error validation with tooltips.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { TextArea } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea placeholder="Enter your message..." />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea placeholder="Enter your message..." />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea variant="default" placeholder="Default variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea variant="default" placeholder="Default variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea variant="success" placeholder="Success variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea variant="success" placeholder="Success variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea variant="error" placeholder="Error variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea variant="error" placeholder="Error variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea variant="warning" placeholder="Warning variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea variant="warning" placeholder="Warning variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea variant="info" placeholder="Info variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea variant="info" placeholder="Info variant" />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea size="sm" placeholder="Small (min-height: 80px)" />
+      <TextArea size="md" placeholder="Medium (min-height: 96px)" />
+      <TextArea size="lg" placeholder="Large (min-height: 128px)" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea size="sm" placeholder="Small (min-height: 80px)" />
+    <TextArea size="md" placeholder="Medium (min-height: 96px)" />
+    <TextArea size="lg" placeholder="Large (min-height: 128px)" />
+    ```
+  </Tab>
+</Tabs>
+
+## Resize Behavior
+
+### Vertical Resize
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea
+        resize="vertical"
+        placeholder="Resizable vertically (default)"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea resize="vertical" placeholder="Resizable vertically (default)" />
+    ```
+  </Tab>
+</Tabs>
+
+### Horizontal Resize
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea resize="horizontal" placeholder="Resizable horizontally" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea resize="horizontal" placeholder="Resizable horizontally" />
+    ```
+  </Tab>
+</Tabs>
+
+### Both Directions
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea resize="both" placeholder="Resizable in both directions" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea resize="both" placeholder="Resizable in both directions" />
+    ```
+  </Tab>
+</Tabs>
+
+### No Resize
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea resize="none" placeholder="Fixed size, not resizable" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea resize="none" placeholder="Fixed size, not resizable" />
+    ```
+  </Tab>
+</Tabs>
+
+## Error Validation
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea
+        errorMessage="This field is required"
+        placeholder="Field with error"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea
+      errorMessage="This field is required"
+      placeholder="Field with error"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded Corners
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea rounded="none" placeholder="No rounded corners" />
+      <TextArea rounded="sm" placeholder="Small rounded" />
+      <TextArea rounded="md" placeholder="Medium rounded" />
+      <TextArea rounded="lg" placeholder="Large rounded" />
+      <TextArea rounded="xl" placeholder="Extra large rounded" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea rounded="none" placeholder="No rounded corners" />
+    <TextArea rounded="sm" placeholder="Small rounded" />
+    <TextArea rounded="md" placeholder="Medium rounded" />
+    <TextArea rounded="lg" placeholder="Large rounded" />
+    <TextArea rounded="xl" placeholder="Extra large rounded" />
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea disabled placeholder="Disabled textarea" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea disabled placeholder="Disabled textarea" />
+    ```
+  </Tab>
+</Tabs>
+
+## Read-Only State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <TextArea
+        readOnly
+        defaultValue="This content is read-only"
+        placeholder="Read-only textarea"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <TextArea
+      readOnly
+      defaultValue="This content is read-only"
+      placeholder="Read-only textarea"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop         | Type                                             | Default    | Description                    |
+| ------------ | ------------------------------------------------ | ---------- | ------------------------------ |
+| variant      | `default \| success \| error \| warning \| info` | `default`  | Visual style variant           |
+| size         | `sm \| md \| lg`                                 | `md`       | Component size                 |
+| resize       | `none \| vertical \| horizontal \| both`         | `vertical` | Resize behavior                |
+| errorMessage | `string`                                         | `""`       | Error message shown in tooltip |
+| rounded      | `sm \| md \| lg \| xl \| full \| none`           | -          | Border radius size             |
+| className    | `string`                                         | -          | Additional CSS classes         |
+
+Inherits all standard HTML textarea attributes (`rows`, `cols`, `maxLength`, `onChange`, etc.).
+
+## Accessibility
+
+- Focus visible with colored ring indicator matching variant
+- Error states announced via tooltip (InfoTip component)
+- Supports all standard textarea ARIA attributes
+- Keyboard navigable with Tab key
+- WCAG 2.1 Level AA compliant
+- Respects user's motion preferences with reduced animations
+- Proper disabled and read-only state handling
+
+## Component API
+
+| Export        | Type                              | Description                        |
+| ------------- | --------------------------------- | ---------------------------------- |
+| TextArea      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| TextAreaProps | `interface`                       | Component props interface          |

@@ -1,0 +1,564 @@
+---
+title: Accordion
+description: Collapsible content panels for organizing information in a space-efficient way
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Accordion
+
+A vertically stacked set of collapsible sections that allow users to show and hide content. Supports single or multiple open panels.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "dandy-ui";
+import "dandy-ui/theme.css";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Accordion type="single" collapsible defaultValue="item-1">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>What is Dandy UI?</AccordionTrigger>
+          <AccordionContent>
+            Dandy UI is a production-grade, mobile-first UI component library
+            built with React and TailwindCSS v4.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Is it accessible?</AccordionTrigger>
+          <AccordionContent>
+            Yes, all components follow WCAG 2.1 Level AA guidelines and support
+            keyboard navigation.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Can I customize it?</AccordionTrigger>
+          <AccordionContent>
+            Absolutely! The library is built with TailwindCSS, making
+            customization straightforward.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Accordion type="single" collapsible defaultValue="item-1">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>What is Dandy UI?</AccordionTrigger>
+        <AccordionContent>
+          Dandy UI is a production-grade, mobile-first UI component library
+          built with React and TailwindCSS v4.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionContent>
+          Yes, all components follow WCAG 2.1 Level AA guidelines and support
+          keyboard navigation.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Can I customize it?</AccordionTrigger>
+        <AccordionContent>
+          Absolutely! The library is built with TailwindCSS, making
+          customization straightforward.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+  </Tab>
+</Tabs>
+
+## Single Type
+
+Only one accordion item can be open at a time. Use `collapsible` to allow closing the active item.
+
+### Non-Collapsible
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Accordion type="single" defaultValue="item-1">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Section 1</AccordionTrigger>
+          <AccordionContent>
+            This accordion requires at least one section to be open at all
+            times.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Section 2</AccordionTrigger>
+          <AccordionContent>
+            Click another section to close the current one.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Section 3</AccordionTrigger>
+          <AccordionContent>
+            Perfect for FAQ sections where you want one answer visible.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Accordion type="single" defaultValue="item-1">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Section 1</AccordionTrigger>
+        <AccordionContent>
+          This accordion requires at least one section to be open at all times.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Section 2</AccordionTrigger>
+        <AccordionContent>
+          Click another section to close the current one.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Section 3</AccordionTrigger>
+        <AccordionContent>
+          Perfect for FAQ sections where you want one answer visible.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+  </Tab>
+</Tabs>
+
+### Collapsible
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Payment Methods</AccordionTrigger>
+          <AccordionContent>
+            We accept all major credit cards, PayPal, and Apple Pay.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Shipping Options</AccordionTrigger>
+          <AccordionContent>
+            Standard shipping (5-7 days), Express (2-3 days), and Overnight
+            delivery available.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Return Policy</AccordionTrigger>
+          <AccordionContent>
+            30-day money-back guarantee. Items must be unused and in original
+            packaging.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Payment Methods</AccordionTrigger>
+        <AccordionContent>
+          We accept all major credit cards, PayPal, and Apple Pay.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Shipping Options</AccordionTrigger>
+        <AccordionContent>
+          Standard shipping (5-7 days), Express (2-3 days), and Overnight
+          delivery available.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Return Policy</AccordionTrigger>
+        <AccordionContent>
+          30-day money-back guarantee. Items must be unused and in original
+          packaging.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+  </Tab>
+</Tabs>
+
+## Multiple Type
+
+Multiple accordion items can be open simultaneously.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Accordion type="multiple" defaultValue={["item-1", "item-2"]}>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Features</AccordionTrigger>
+          <AccordionContent>
+            Mobile-first design, dark mode support, and full TypeScript
+            coverage.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Components</AccordionTrigger>
+          <AccordionContent>
+            Over 50 components including forms, layouts, overlays, and
+            typography.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Accessibility</AccordionTrigger>
+          <AccordionContent>
+            WCAG 2.1 Level AA compliant with keyboard navigation and screen
+            reader support.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Accordion type="multiple" defaultValue={["item-1", "item-2"]}>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Features</AccordionTrigger>
+        <AccordionContent>
+          Mobile-first design, dark mode support, and full TypeScript coverage.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Components</AccordionTrigger>
+        <AccordionContent>
+          Over 50 components including forms, layouts, overlays, and typography.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Accessibility</AccordionTrigger>
+        <AccordionContent>
+          WCAG 2.1 Level AA compliant with keyboard navigation and screen reader
+          support.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+  </Tab>
+</Tabs>
+
+## Controlled State
+
+Control the accordion state externally using the `value` and `onValueChange` props.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Accordion type="single" value="item-2">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>First Item</AccordionTrigger>
+          <AccordionContent>This item is closed.</AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Second Item (Controlled Open)</AccordionTrigger>
+          <AccordionContent>
+            This item is controlled to be open via the value prop.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Third Item</AccordionTrigger>
+          <AccordionContent>This item is closed.</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [value, setValue] = useState("item-2");
+
+    <Accordion type="single" value={value} onValueChange={setValue}>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>First Item</AccordionTrigger>
+        <AccordionContent>This item is closed.</AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Second Item (Controlled Open)</AccordionTrigger>
+        <AccordionContent>
+          This item is controlled to be open via the value prop.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Third Item</AccordionTrigger>
+        <AccordionContent>This item is closed.</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+
+  </Tab>
+</Tabs>
+
+## Custom Icon
+
+Replace the default chevron icon with a custom icon.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger icon={<span>→</span>}>
+            Custom Icon Trigger
+          </AccordionTrigger>
+          <AccordionContent>
+            This accordion uses a custom icon instead of the default chevron.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger icon={<span>+</span>}>Plus Icon</AccordionTrigger>
+          <AccordionContent>
+            You can use any React node as the icon.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger icon={<span>→</span>}>
+          Custom Icon Trigger
+        </AccordionTrigger>
+        <AccordionContent>
+          This accordion uses a custom icon instead of the default chevron.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger icon={<span>+</span>}>Plus Icon</AccordionTrigger>
+        <AccordionContent>
+          You can use any React node as the icon.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+  </Tab>
+</Tabs>
+
+## No Icon
+
+Hide the icon completely with `hideIcon`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger hideIcon>Minimal Design</AccordionTrigger>
+          <AccordionContent>
+            This accordion has no icon, perfect for minimalist interfaces.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger hideIcon>Text Only</AccordionTrigger>
+          <AccordionContent>
+            Clean and simple accordion without visual indicators.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger hideIcon>Minimal Design</AccordionTrigger>
+        <AccordionContent>
+          This accordion has no icon, perfect for minimalist interfaces.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger hideIcon>Text Only</AccordionTrigger>
+        <AccordionContent>
+          Clean and simple accordion without visual indicators.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+Disable the entire accordion or individual items.
+
+### Disabled Accordion
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Accordion type="single" disabled>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Disabled Accordion</AccordionTrigger>
+          <AccordionContent>
+            All items in this accordion are disabled.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Cannot Interact</AccordionTrigger>
+          <AccordionContent>
+            None of the triggers can be clicked.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Accordion type="single" disabled>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Disabled Accordion</AccordionTrigger>
+        <AccordionContent>
+          All items in this accordion are disabled.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Cannot Interact</AccordionTrigger>
+        <AccordionContent>
+          None of the triggers can be clicked.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+  </Tab>
+</Tabs>
+
+### Disabled Item
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Active Item</AccordionTrigger>
+          <AccordionContent>
+            This item can be interacted with normally.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2" disabled>
+          <AccordionTrigger>Disabled Item</AccordionTrigger>
+          <AccordionContent>This specific item is disabled.</AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Active Item</AccordionTrigger>
+          <AccordionContent>
+            This item is also fully functional.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Active Item</AccordionTrigger>
+        <AccordionContent>
+          This item can be interacted with normally.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2" disabled>
+        <AccordionTrigger>Disabled Item</AccordionTrigger>
+        <AccordionContent>This specific item is disabled.</AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Active Item</AccordionTrigger>
+        <AccordionContent>This item is also fully functional.</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### Accordion
+
+| Prop          | Type                                  | Default  | Description                                              |
+| ------------- | ------------------------------------- | -------- | -------------------------------------------------------- |
+| type          | `single \| multiple`                  | `single` | Whether one or multiple items can be open                |
+| value         | `string \| string[]`                  | -        | Controlled value (string for single, array for multiple) |
+| defaultValue  | `string \| string[]`                  | -        | Default value for uncontrolled usage                     |
+| onValueChange | `(value: string \| string[]) => void` | -        | Callback when value changes                              |
+| disabled      | `boolean`                             | `false`  | Disables all accordion items                             |
+| collapsible   | `boolean`                             | `false`  | Allow closing all items (only for single type)           |
+| className     | `string`                              | -        | Additional CSS classes                                   |
+
+Inherits all standard HTML `div` attributes.
+
+### AccordionItem
+
+| Prop      | Type      | Default | Description                    |
+| --------- | --------- | ------- | ------------------------------ |
+| value     | `string`  | -       | Unique identifier for the item |
+| disabled  | `boolean` | `false` | Disables this specific item    |
+| className | `string`  | -       | Additional CSS classes         |
+
+Inherits all standard HTML `div` attributes.
+
+### AccordionTrigger
+
+| Prop      | Type              | Default | Description              |
+| --------- | ----------------- | ------- | ------------------------ |
+| icon      | `React.ReactNode` | -       | Custom icon to display   |
+| hideIcon  | `boolean`         | `false` | Hide the icon completely |
+| className | `string`          | -       | Additional CSS classes   |
+
+Inherits all standard HTML `button` attributes.
+
+### AccordionContent
+
+| Prop      | Type     | Default | Description            |
+| --------- | -------- | ------- | ---------------------- |
+| className | `string` | -       | Additional CSS classes |
+
+Inherits all standard HTML `div` attributes.
+
+## Accessibility
+
+- Keyboard navigable with Tab, Enter, and Space keys
+- Focus visible with ring indicator
+- WCAG 2.1 Level AA compliant
+- Minimum 44px touch targets for mobile
+- Proper ARIA attributes (`aria-expanded`, `aria-disabled`, `aria-hidden`)
+- Semantic HTML with `h3` elements for triggers
+- Screen reader compatible with contextual announcements
+
+## Component API
+
+| Export                | Type        | Description                          |
+| --------------------- | ----------- | ------------------------------------ |
+| Accordion             | `React.FC`  | Root accordion container component   |
+| AccordionItem         | `React.FC`  | Individual accordion section         |
+| AccordionTrigger      | `React.FC`  | Clickable trigger for accordion item |
+| AccordionContent      | `React.FC`  | Collapsible content area             |
+| AccordionProps        | `interface` | Props for Accordion component        |
+| AccordionItemProps    | `interface` | Props for AccordionItem component    |
+| AccordionTriggerProps | `interface` | Props for AccordionTrigger component |
+| AccordionContentProps | `type`      | Props for AccordionContent component |

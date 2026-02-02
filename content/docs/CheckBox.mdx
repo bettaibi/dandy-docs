@@ -1,0 +1,263 @@
+---
+title: CheckBox
+description: Native checkbox input with custom styling, multiple variants, and error handling
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { CheckBox } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# CheckBox
+
+A customizable checkbox component with native browser functionality, theme-aware styling, and multiple visual variants. Built on the native HTML checkbox input for full keyboard support and accessibility.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { CheckBox } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox variant="default" />
+      <CheckBox variant="default" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox variant="default" />
+    <CheckBox variant="default" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox variant="success" />
+      <CheckBox variant="success" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox variant="success" />
+    <CheckBox variant="success" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox variant="error" />
+      <CheckBox variant="error" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox variant="error" />
+    <CheckBox variant="error" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox variant="warning" />
+      <CheckBox variant="warning" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox variant="warning" />
+    <CheckBox variant="warning" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox variant="info" />
+      <CheckBox variant="info" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox variant="info" />
+    <CheckBox variant="info" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox size="sm" defaultChecked />
+      <CheckBox size="md" defaultChecked />
+      <CheckBox size="lg" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox size="sm" defaultChecked />
+    <CheckBox size="md" defaultChecked />
+    <CheckBox size="lg" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox rounded="none" defaultChecked />
+      <CheckBox rounded="sm" defaultChecked />
+      <CheckBox rounded="md" defaultChecked />
+      <CheckBox rounded="lg" defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox rounded="none" defaultChecked />
+    <CheckBox rounded="sm" defaultChecked />
+    <CheckBox rounded="md" defaultChecked />
+    <CheckBox rounded="lg" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## Error State
+
+The `errorMessage` prop automatically displays an error tooltip and applies error styling.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox errorMessage="This field is required" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox errorMessage="This field is required" />
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CheckBox disabled />
+      <CheckBox disabled defaultChecked />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CheckBox disabled />
+    <CheckBox disabled defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## With Label
+
+Compose with label elements for full control over layout and styling.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <label
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          cursor: "pointer",
+        }}
+      >
+        <CheckBox id="terms" />
+        <span>I agree to the terms and conditions</span>
+      </label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <label
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "0.5rem",
+        cursor: "pointer",
+      }}
+    >
+      <CheckBox id="terms" />
+      <span>I agree to the terms and conditions</span>
+    </label>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop         | Type                                             | Default   | Description                        |
+| ------------ | ------------------------------------------------ | --------- | ---------------------------------- |
+| variant      | `default \| success \| error \| warning \| info` | `default` | Visual style variant               |
+| size         | `sm \| md \| lg`                                 | `md`      | Checkbox dimensions                |
+| rounded      | `sm \| md \| lg \| none`                         | `md`      | Border radius size                 |
+| errorMessage | `string`                                         | -         | Error message displayed in tooltip |
+| className    | `string`                                         | -         | Additional CSS classes             |
+
+Inherits all standard HTML input attributes (`onChange`, `checked`, `defaultChecked`, `disabled`, `name`, `value`, etc.).
+
+## Accessibility
+
+- Native checkbox input for full keyboard support
+- Keyboard navigable with Tab and Space keys
+- Clear focus indicators with colored ring glow
+- WCAG 2.1 Level AA compliant with sufficient color contrast
+- Screen reader compatible with proper semantic elements
+- Respects `prefers-reduced-motion` for smooth transitions
+- Error messages announced via InfoTip tooltip
+
+## Component API
+
+| Export        | Type                              | Description                        |
+| ------------- | --------------------------------- | ---------------------------------- |
+| CheckBox      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| CheckBoxProps | `interface`                       | Component props interface          |

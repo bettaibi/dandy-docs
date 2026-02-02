@@ -1,0 +1,314 @@
+---
+title: CircularProgress
+description: Animated circular countdown timer with visual progress indicator
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { CircularProgress } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# CircularProgress
+
+A mobile-first circular countdown progress indicator that automatically decrements every second. Features animated circular progress bar synchronized with countdown, multiple size and variant options, and theme-aware design with full dark mode support.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { CircularProgress } from "dandy-ui";
+import "dandy-ui/theme.css";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={60} />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={60} />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} variant="default" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} variant="default" />
+    ```
+  </Tab>
+</Tabs>
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} variant="primary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} variant="primary" />
+    ```
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} variant="secondary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} variant="secondary" />
+    ```
+  </Tab>
+</Tabs>
+
+### Accent
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} variant="accent" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} variant="accent" />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} variant="success" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} variant="success" />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} variant="warning" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} variant="warning" />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} variant="error" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} variant="error" />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} variant="info" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} variant="info" />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={30} size="sm" variant="primary" />
+      <CircularProgress value={30} size="md" variant="primary" />
+      <CircularProgress value={30} size="lg" variant="primary" />
+      <CircularProgress value={30} size="xl" variant="primary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={30} size="sm" variant="primary" />
+    <CircularProgress value={30} size="md" variant="primary" />
+    <CircularProgress value={30} size="lg" variant="primary" />
+    <CircularProgress value={30} size="xl" variant="primary" />
+    ```
+  </Tab>
+</Tabs>
+
+## With Custom Suffix
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={100} suffix="%" variant="success" />
+      <CircularProgress value={30} suffix="s" variant="primary" />
+      <CircularProgress value={15} suffix="min" variant="info" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={100} suffix="%" variant="success" />
+    <CircularProgress value={30} suffix="s" variant="primary" />
+    <CircularProgress value={15} suffix="min" variant="info" />
+    ```
+  </Tab>
+</Tabs>
+
+## Without Value Display
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} showValue={false} variant="primary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} showValue={false} variant="primary" />
+    ```
+  </Tab>
+</Tabs>
+
+## Custom Stroke Width
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress
+        value={45}
+        strokeWidth={2}
+        variant="primary"
+        size="lg"
+      />
+      <CircularProgress
+        value={45}
+        strokeWidth={12}
+        variant="success"
+        size="lg"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} strokeWidth={2} variant="primary" size="lg" />
+    <CircularProgress value={45} strokeWidth={12} variant="success" size="lg" />
+    ```
+  </Tab>
+</Tabs>
+
+## Inactive State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress value={45} active={false} variant="primary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress value={45} active={false} variant="primary" />
+    ```
+  </Tab>
+</Tabs>
+
+## With Completion Callback
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <CircularProgress
+        value={10}
+        variant="success"
+        onComplete={() => alert("Countdown complete!")}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <CircularProgress
+      value={10}
+      variant="success"
+      onComplete={() => alert("Countdown complete!")}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop        | Type                                                                                               | Default     | Description                                                       |
+| ----------- | -------------------------------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------- |
+| value       | `number`                                                                                           | `60`        | Initial countdown value                                           |
+| size        | `"sm" \| "md" \| "lg" \| "xl"`                                                                     | `"md"`      | Size of the circular progress                                     |
+| variant     | `"default" \| "primary" \| "secondary" \| "accent" \| "success" \| "warning" \| "error" \| "info"` | `"default"` | Visual style variant                                              |
+| strokeWidth | `number`                                                                                           | -           | Stroke width of progress circle (auto-calculated if not provided) |
+| showValue   | `boolean`                                                                                          | `true`      | Whether to show the countdown number                              |
+| onComplete  | `() => void`                                                                                       | -           | Callback when countdown reaches zero                              |
+| active      | `boolean`                                                                                          | `true`      | Whether the countdown is active/running                           |
+| suffix      | `string`                                                                                           | -           | Custom label suffix (e.g., "s", "%", "min")                       |
+| className   | `string`                                                                                           | -           | Additional CSS classes                                            |
+
+Inherits all standard HTML `div` attributes.
+
+## Accessibility
+
+- Uses `role="timer"` for proper semantics
+- Includes `aria-live="polite"` for screen reader announcements
+- Provides descriptive `aria-label` with current countdown value
+- Includes `aria-valuemin`, `aria-valuemax`, and `aria-valuenow` for progress tracking
+- SVG elements marked with `aria-hidden="true"` to avoid redundant announcements
+- Supports `prefers-reduced-motion` with conditional transitions
+- Tabular numbers for consistent digit spacing
+
+## Component API
+
+| Export                  | Type                              | Description                        |
+| ----------------------- | --------------------------------- | ---------------------------------- |
+| CircularProgress        | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| CircularProgressProps   | `interface`                       | Component props interface          |
+| CircularProgressSize    | `type`                            | Size variant type                  |
+| CircularProgressVariant | `type`                            | Visual variant type                |

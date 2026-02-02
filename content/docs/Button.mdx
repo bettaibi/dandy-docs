@@ -1,0 +1,365 @@
+---
+title: Button
+description: A versatile button component with multiple variants, sizes, and loading states
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Button } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Button
+
+A flexible button component that supports multiple appearances, variants, loading states, and customizable slots for icons and badges.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Button } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button>Click me</Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button>Click me</Button>
+    ```
+  </Tab>
+</Tabs>
+
+## Appearances
+
+The Button component supports two main appearances: filled (default) and outlined.
+
+### Filled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button appearance="filled">Filled Button</Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button appearance="filled">Filled Button</Button>
+    ```
+  </Tab>
+</Tabs>
+
+### Outlined
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button appearance="outlined">Outlined Button</Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button appearance="outlined">Outlined Button</Button>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button variant="primary">Primary</Button>
+      <Button variant="primary" appearance="outlined">
+        Primary Outlined
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button variant="primary">Primary</Button>
+    <Button variant="primary" appearance="outlined">
+      Primary Outlined
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="secondary" appearance="outlined">
+        Secondary Outlined
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="secondary" appearance="outlined">
+      Secondary Outlined
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+### Ghost
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="ghost" appearance="outlined">
+        Ghost Outlined
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button variant="ghost">Ghost</Button>
+    <Button variant="ghost" appearance="outlined">
+      Ghost Outlined
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button variant="success">Success</Button>
+      <Button variant="success" appearance="outlined">
+        Success Outlined
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button variant="success">Success</Button>
+    <Button variant="success" appearance="outlined">
+      Success Outlined
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button variant="warning">Warning</Button>
+      <Button variant="warning" appearance="outlined">
+        Warning Outlined
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button variant="warning">Warning</Button>
+    <Button variant="warning" appearance="outlined">
+      Warning Outlined
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button variant="error">Error</Button>
+      <Button variant="error" appearance="outlined">
+        Error Outlined
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button variant="error">Error</Button>
+    <Button variant="error" appearance="outlined">
+      Error Outlined
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button variant="info">Info</Button>
+      <Button variant="info" appearance="outlined">
+        Info Outlined
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button variant="info">Info</Button>
+    <Button variant="info" appearance="outlined">
+      Info Outlined
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button size="sm">Small</Button>
+      <Button size="md">Medium</Button>
+      <Button size="lg">Large</Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button size="sm">Small</Button>
+    <Button size="md">Medium</Button>
+    <Button size="lg">Large</Button>
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded
+
+Control the border radius with the `rounded` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button rounded="none">None</Button>
+      <Button rounded="sm">Small</Button>
+      <Button rounded="md">Medium</Button>
+      <Button rounded="lg">Large</Button>
+      <Button rounded="full">Full</Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button rounded="none">None</Button>
+    <Button rounded="sm">Small</Button>
+    <Button rounded="md">Medium</Button>
+    <Button rounded="lg">Large</Button>
+    <Button rounded="full">Full</Button>
+    ```
+  </Tab>
+</Tabs>
+
+## Loading State
+
+Show a loading spinner by setting the `loading` prop to `true`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button loading>Loading...</Button>
+      <Button loading variant="secondary">
+        Processing
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button loading>Loading...</Button>
+    <Button loading variant="secondary">
+      Processing
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+## With Slots
+
+Use `leftSlot` and `rightSlot` to add icons, badges, or other content before and after the button text.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button leftSlot={<span>+</span>}>Add Item</Button>
+      <Button rightSlot={<span>→</span>}>Next</Button>
+      <Button leftSlot={<span>↑</span>} rightSlot={<span>3</span>}>
+        Upload Files
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button leftSlot={<span>+</span>}>Add Item</Button>
+    <Button rightSlot={<span>→</span>}>Next</Button>
+    <Button leftSlot={<span>↑</span>} rightSlot={<span>3</span>}>
+      Upload Files
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Button disabled>Disabled</Button>
+      <Button disabled variant="secondary">
+        Disabled Secondary
+      </Button>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Button disabled>Disabled</Button>
+    <Button disabled variant="secondary">
+      Disabled Secondary
+    </Button>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop       | Type                                                                   | Default   | Description                                     |
+| ---------- | ---------------------------------------------------------------------- | --------- | ----------------------------------------------- |
+| appearance | `filled \| outlined`                                                   | `filled`  | Button appearance style                         |
+| variant    | `primary \| secondary \| ghost \| success \| warning \| error \| info` | `primary` | Button color variant                            |
+| size       | `sm \| md \| lg`                                                       | `md`      | Button size                                     |
+| rounded    | `sm \| md \| lg \| full \| none`                                       | -         | Border radius (defaults to theme button radius) |
+| loading    | `boolean`                                                              | `false`   | Shows loading spinner and disables the button   |
+| leftSlot   | `React.ReactNode`                                                      | -         | Content rendered before button text             |
+| rightSlot  | `React.ReactNode`                                                      | -         | Content rendered after button text              |
+| disabled   | `boolean`                                                              | `false`   | Disables the button                             |
+| className  | `string`                                                               | -         | Additional CSS classes                          |
+| children   | `React.ReactNode`                                                      | -         | Button content                                  |
+
+Inherits all standard HTML button attributes (`onClick`, `type`, `form`, etc.).
+
+## Accessibility
+
+- Keyboard navigable with Tab and Enter/Space keys
+- Focus visible with ring indicator
+- WCAG 2.1 Level AA compliant
+- Minimum 44x44px touch targets for mobile (height: 44px on all sizes)
+- Automatically disabled during loading state
+- Screen reader compatible with proper semantic button element
+
+## Component API
+
+| Export      | Type                              | Description                               |
+| ----------- | --------------------------------- | ----------------------------------------- |
+| Button      | `React.ForwardRefExoticComponent` | Main button component with ref forwarding |
+| ButtonProps | `interface`                       | Button component props interface          |

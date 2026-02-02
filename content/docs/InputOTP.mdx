@@ -1,0 +1,540 @@
+---
+title: InputOTP
+description: One-time password input with multi-slot character entry and validation states
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+} from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# InputOTP
+
+Multi-slot input component for one-time passwords, verification codes, and PIN entry with built-in validation states and error handling.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+} from "dandy-ui";
+import "dandy-ui/theme.css";
+```
+
+### Peer Dependencies
+
+This component requires the following peer dependency:
+
+```bash
+npm install input-otp
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={6}>
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+        <InputOTPSeparator />
+        <InputOTPGroup>
+          <InputOTPSlot index={3} />
+          <InputOTPSlot index={4} />
+          <InputOTPSlot index={5} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={6}>
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+      <InputOTPSeparator />
+      <InputOTPGroup>
+        <InputOTPSlot index={3} />
+        <InputOTPSlot index={4} />
+        <InputOTPSlot index={5} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={4} variant="default">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+          <InputOTPSlot index={3} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={4} variant="default">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+        <InputOTPSlot index={3} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={4} variant="success">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+          <InputOTPSlot index={3} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={4} variant="success">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+        <InputOTPSlot index={3} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={4} variant="error">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+          <InputOTPSlot index={3} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={4} variant="error">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+        <InputOTPSlot index={3} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={4} variant="warning">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+          <InputOTPSlot index={3} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={4} variant="warning">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+        <InputOTPSlot index={3} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={4} variant="info">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+          <InputOTPSlot index={3} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={4} variant="info">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+        <InputOTPSlot index={3} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={3} otpSize="sm">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+      </InputOTP>
+      <InputOTP maxLength={3} otpSize="md">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+      </InputOTP>
+      <InputOTP maxLength={3} otpSize="lg">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={3} otpSize="sm">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+    </InputOTP>
+    <InputOTP maxLength={3} otpSize="md">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+    </InputOTP>
+    <InputOTP maxLength={3} otpSize="lg">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={3} rounded="sm">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+      </InputOTP>
+      <InputOTP maxLength={3} rounded="md">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+      </InputOTP>
+      <InputOTP maxLength={3} rounded="lg">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+      </InputOTP>
+      <InputOTP maxLength={3} rounded="xl">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={3} rounded="sm">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+    </InputOTP>
+    <InputOTP maxLength={3} rounded="md">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+    </InputOTP>
+    <InputOTP maxLength={3} rounded="lg">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+    </InputOTP>
+    <InputOTP maxLength={3} rounded="xl">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+## Error Message
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={6} errorMessage="Invalid verification code">
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+        <InputOTPSeparator />
+        <InputOTPGroup>
+          <InputOTPSlot index={3} />
+          <InputOTPSlot index={4} />
+          <InputOTPSlot index={5} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={6} errorMessage="Invalid verification code">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+      <InputOTPSeparator />
+      <InputOTPGroup>
+        <InputOTPSlot index={3} />
+        <InputOTPSlot index={4} />
+        <InputOTPSlot index={5} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={4} disabled>
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+          <InputOTPSlot index={3} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={4} disabled>
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+        <InputOTPSlot index={3} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+## Multiple Groups
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InputOTP maxLength={9}>
+        <InputOTPGroup>
+          <InputOTPSlot index={0} />
+          <InputOTPSlot index={1} />
+          <InputOTPSlot index={2} />
+        </InputOTPGroup>
+        <InputOTPSeparator />
+        <InputOTPGroup>
+          <InputOTPSlot index={3} />
+          <InputOTPSlot index={4} />
+          <InputOTPSlot index={5} />
+        </InputOTPGroup>
+        <InputOTPSeparator />
+        <InputOTPGroup>
+          <InputOTPSlot index={6} />
+          <InputOTPSlot index={7} />
+          <InputOTPSlot index={8} />
+        </InputOTPGroup>
+      </InputOTP>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InputOTP maxLength={9}>
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+      <InputOTPSeparator />
+      <InputOTPGroup>
+        <InputOTPSlot index={3} />
+        <InputOTPSlot index={4} />
+        <InputOTPSlot index={5} />
+      </InputOTPGroup>
+      <InputOTPSeparator />
+      <InputOTPGroup>
+        <InputOTPSlot index={6} />
+        <InputOTPSlot index={7} />
+        <InputOTPSlot index={8} />
+      </InputOTPGroup>
+    </InputOTP>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### InputOTP
+
+| Prop               | Type                                             | Default   | Description                  |
+| ------------------ | ------------------------------------------------ | --------- | ---------------------------- |
+| variant            | `default \| success \| error \| warning \| info` | `default` | Visual style variant         |
+| otpSize            | `sm \| md \| lg`                                 | `md`      | Slot dimensions              |
+| errorMessage       | `string`                                         | `""`      | Error message to display     |
+| containerClassName | `string`                                         | -         | Container wrapper class      |
+| rounded            | `sm \| md \| lg \| xl`                           | -         | Border radius override       |
+| maxLength          | `number`                                         | -         | Maximum number of characters |
+| value              | `string`                                         | -         | Controlled value             |
+| onChange           | `(value: string) => void`                        | -         | Value change handler         |
+| disabled           | `boolean`                                        | `false`   | Disables input               |
+| className          | `string`                                         | -         | Additional CSS classes       |
+
+Inherits all standard `input-otp` OTPInput attributes (`textAlign`, `pattern`, `pushPasswordManagerStrategy`, etc.).
+
+### InputOTPSlot
+
+| Prop      | Type                                             | Default | Description              |
+| --------- | ------------------------------------------------ | ------- | ------------------------ |
+| index     | `number`                                         | -       | Slot position (required) |
+| variant   | `default \| success \| error \| warning \| info` | -       | Override variant         |
+| slotSize  | `sm \| md \| lg`                                 | -       | Override size            |
+| rounded   | `sm \| md \| lg \| xl`                           | -       | Override border radius   |
+| className | `string`                                         | -       | Additional CSS classes   |
+
+Inherits all standard HTML `div` attributes.
+
+### InputOTPGroup
+
+| Prop      | Type     | Default | Description            |
+| --------- | -------- | ------- | ---------------------- |
+| className | `string` | -       | Additional CSS classes |
+
+Inherits all standard HTML `div` attributes.
+
+### InputOTPSeparator
+
+| Prop          | Type             | Default | Description             |
+| ------------- | ---------------- | ------- | ----------------------- |
+| separatorSize | `sm \| md \| lg` | -       | Override separator size |
+| className     | `string`         | -       | Additional CSS classes  |
+
+Inherits all standard HTML `div` attributes.
+
+## Accessibility
+
+- Full keyboard navigation support with native input behavior
+- Focus indicators with ring styling on active slots
+- Screen reader friendly with proper semantic elements
+- Clear visual feedback for active, filled, and error states
+- WCAG 2.1 Level AA compliant with high contrast ratios
+- Minimum 44px touch targets on large size for mobile usability
+- Animated caret indicator for clear input position feedback
+
+## Component API
+
+| Export                 | Type                              | Description                       |
+| ---------------------- | --------------------------------- | --------------------------------- |
+| InputOTP               | `React.ForwardRefExoticComponent` | Main OTP input component with ref |
+| InputOTPProps          | `interface`                       | InputOTP component props          |
+| InputOTPGroup          | `React.ForwardRefExoticComponent` | Group container for OTP slots     |
+| InputOTPGroupProps     | `interface`                       | InputOTPGroup component props     |
+| InputOTPSlot           | `React.ForwardRefExoticComponent` | Individual OTP character slot     |
+| InputOTPSlotProps      | `interface`                       | InputOTPSlot component props      |
+| InputOTPSeparator      | `React.ForwardRefExoticComponent` | Visual separator between groups   |
+| InputOTPSeparatorProps | `interface`                       | InputOTPSeparator component props |

@@ -3,10 +3,9 @@ title: Typography
 description: Guide to using Text and Heading components.
 ---
 
-import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { TypeTable } from 'fumadocs-ui/components/type-table';
-import { Heading } from '../../components/DandyHeadings';
-
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { TypeTable } from "fumadocs-ui/components/type-table";
+import { Heading } from "../../components/dandy";
 
 # Typography
 
@@ -16,7 +15,7 @@ Typography in Dandy UI is designed to be both elegant and readable, providing a 
 
 The `Text` component is the primary way to display text. It offers various props to control the appearance and behavior of the text.
 
-<Tabs items={['Preview', 'Props']}>
+<Tabs items={["Preview", "Props"]}>
   <Tab value="Preview">
     <p>This is a paragraph of text.</p>
   </Tab>
@@ -24,43 +23,43 @@ The `Text` component is the primary way to display text. It offers various props
     <TypeTable
       type={{
         as: {
-          description: 'The HTML element to render the text as.',
-          type: 'enum',
-          entries: ['p', 'span', 'div', 'label'],
-          default: 'p',
+          description: "The HTML element to render the text as.",
+          type: "enum",
+          entries: ["p", "span", "div", "label"],
+          default: "p",
         },
         className: {
-          description: 'Additional CSS classes to apply to the text.',
-          type: 'string',
+          description: "Additional CSS classes to apply to the text.",
+          type: "string",
         },
         size: {
-          description: 'The size of the text.',
-          type: 'enum',
+          description: "The size of the text.",
+          type: "enum",
           entries: [
-            'xs',
-            'sm',
-            'md',
-            'lg',
-            'xl',
-            '2xl',
-            '3xl',
-            '4xl',
-            '5xl',
-            '6xl',
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+            "2xl",
+            "3xl",
+            "4xl",
+            "5xl",
+            "6xl",
           ],
         },
         weight: {
-          description: 'The font weight of the text.',
-          type: 'enum',
-          entries: ['normal', 'medium', 'semibold', 'bold'],
+          description: "The font weight of the text.",
+          type: "enum",
+          entries: ["normal", "medium", "semibold", "bold"],
         },
         italic: {
-          description: 'Whether the text should be italicized.',
-          type: 'boolean',
+          description: "Whether the text should be italicized.",
+          type: "boolean",
         },
         underline: {
-          description: 'Whether the text should be underlined.',
-          type: 'boolean',
+          description: "Whether the text should be underlined.",
+          type: "boolean",
         },
       }}
     />
@@ -71,43 +70,43 @@ The `Text` component is the primary way to display text. It offers various props
 
 The `Heading` component is used for titles and section headers. It supports different heading levels and styles.
 
-<Tabs items={['Preview', 'Props']}>
+<Tabs items={["Preview", "Props"]}>
   <Tab value="Preview">
-   <Heading>This is a heading</Heading>
+    <Heading>This is a heading</Heading>
   </Tab>
   <Tab value="Props">
     <TypeTable
       type={{
         as: {
-          description: 'The HTML element to render the heading as.',
-          type: 'enum',
-          entries: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-          default: 'h2',
+          description: "The HTML element to render the heading as.",
+          type: "enum",
+          entries: ["h1", "h2", "h3", "h4", "h5", "h6"],
+          default: "h2",
         },
         className: {
-          description: 'Additional CSS classes to apply to the heading.',
-          type: 'string',
+          description: "Additional CSS classes to apply to the heading.",
+          type: "string",
         },
         size: {
-          description: 'The size of the heading.',
-          type: 'enum',
+          description: "The size of the heading.",
+          type: "enum",
           entries: [
-            'xs',
-            'sm',
-            'md',
-            'lg',
-            'xl',
-            '2xl',
-            '3xl',
-            '4xl',
-            '5xl',
-            '6xl',
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+            "2xl",
+            "3xl",
+            "4xl",
+            "5xl",
+            "6xl",
           ],
         },
         weight: {
-          description: 'The font weight of the heading.',
-          type: 'enum',
-          entries: ['normal', 'medium', 'semibold', 'bold'],
+          description: "The font weight of the heading.",
+          type: "enum",
+          entries: ["normal", "medium", "semibold", "bold"],
         },
       }}
     />

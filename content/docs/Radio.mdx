@@ -1,0 +1,292 @@
+---
+title: Radio
+description: Native radio button with custom styling, multiple variants, and sizes
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Radio } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Radio
+
+A customizable radio button component built on native HTML input elements with theme-aware styling, multiple variants, and automatic error handling.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Radio } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <Radio name="basic" />
+        <Radio name="basic" defaultChecked />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Radio name="basic" />
+    <Radio name="basic" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <Radio name="default" variant="default" />
+        <Radio name="default" variant="default" defaultChecked />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Radio name="default" variant="default" />
+    <Radio name="default" variant="default" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <Radio name="success" variant="success" />
+        <Radio name="success" variant="success" defaultChecked />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Radio name="success" variant="success" />
+    <Radio name="success" variant="success" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <Radio name="error" variant="error" />
+        <Radio name="error" variant="error" defaultChecked />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Radio name="error" variant="error" />
+    <Radio name="error" variant="error" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <Radio name="warning" variant="warning" />
+        <Radio name="warning" variant="warning" defaultChecked />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Radio name="warning" variant="warning" />
+    <Radio name="warning" variant="warning" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <Radio name="info" variant="info" />
+        <Radio name="info" variant="info" defaultChecked />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Radio name="info" variant="info" />
+    <Radio name="info" variant="info" defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <Radio name="size" size="sm" />
+        <Radio name="size" size="md" />
+        <Radio name="size" size="lg" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Radio name="size" size="sm" />
+    <Radio name="size" size="md" />
+    <Radio name="size" size="lg" />
+    ```
+  </Tab>
+</Tabs>
+
+## Radio Groups
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+        <label
+          style={{
+            display: "flex",
+            gap: "8px",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <Radio name="option" value="1" defaultChecked />
+          <span>Option 1</span>
+        </label>
+        <label
+          style={{
+            display: "flex",
+            gap: "8px",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <Radio name="option" value="2" />
+          <span>Option 2</span>
+        </label>
+        <label
+          style={{
+            display: "flex",
+            gap: "8px",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <Radio name="option" value="3" />
+          <span>Option 3</span>
+        </label>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <label>
+      <Radio name="option" value="1" defaultChecked />
+      <span>Option 1</span>
+    </label>
+    <label>
+      <Radio name="option" value="2" />
+      <span>Option 2</span>
+    </label>
+    <label>
+      <Radio name="option" value="3" />
+      <span>Option 3</span>
+    </label>
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <Radio name="disabled" disabled />
+        <Radio name="disabled" disabled defaultChecked />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Radio name="disabled" disabled />
+    <Radio name="disabled" disabled defaultChecked />
+    ```
+  </Tab>
+</Tabs>
+
+## Error State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <Radio name="error-state" errorMessage="This field is required" />
+        <Radio
+          name="error-state"
+          errorMessage="This field is required"
+          defaultChecked
+        />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Radio name="error-state" errorMessage="This field is required" />
+    <Radio
+      name="error-state"
+      errorMessage="This field is required"
+      defaultChecked
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop         | Type                                             | Default   | Description                               |
+| ------------ | ------------------------------------------------ | --------- | ----------------------------------------- |
+| variant      | `default \| success \| error \| warning \| info` | `default` | Visual style variant with colored borders |
+| size         | `sm \| md \| lg`                                 | `md`      | Radio button size                         |
+| errorMessage | `string`                                         | `""`      | Error message shown in InfoTip on hover   |
+| className    | `string`                                         | -         | Additional CSS classes                    |
+
+Inherits all standard HTML input attributes (`onChange`, `checked`, `name`, `value`, etc.).
+
+## Accessibility
+
+- Native radio input for full keyboard support
+- Focus visible with colored ring indicator matching variant
+- WCAG 2.1 Level AA compliant
+- Screen reader compatible with proper semantic elements
+- Respects `prefers-reduced-motion` for animations
+- Sufficient color contrast in all states
+- Clear focus indicators for keyboard navigation
+
+## Component API
+
+| Export     | Type                              | Description                        |
+| ---------- | --------------------------------- | ---------------------------------- |
+| Radio      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| RadioProps | `interface`                       | Component props interface          |

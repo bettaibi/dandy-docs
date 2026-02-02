@@ -1,0 +1,342 @@
+---
+title: ProgressBar
+description: Visual indicator showing completion progress or status of tasks
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { ProgressBar } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# ProgressBar
+
+Visual indicator component for displaying completion progress, loading states, or task status with support for labels, percentages, and multiple visual variants.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { ProgressBar } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={65} />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={65} />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={45} variant="default" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={45} variant="default" />
+    ```
+  </Tab>
+</Tabs>
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={70} variant="primary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={70} variant="primary" />
+    ```
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={55} variant="secondary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={55} variant="secondary" />
+    ```
+  </Tab>
+</Tabs>
+
+### Accent
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={80} variant="accent" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={80} variant="accent" />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={100} variant="success" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={100} variant="success" />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={30} variant="warning" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={30} variant="warning" />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={15} variant="error" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={15} variant="error" />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={50} variant="info" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={50} variant="info" />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={60} size="sm" />
+      <ProgressBar value={60} size="md" />
+      <ProgressBar value={60} size="lg" />
+      <ProgressBar value={60} size="xl" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={60} size="sm" />
+    <ProgressBar value={60} size="md" />
+    <ProgressBar value={60} size="lg" />
+    <ProgressBar value={60} size="xl" />
+    ```
+  </Tab>
+</Tabs>
+
+## With Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={75} label="Uploading file..." variant="primary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={75} label="Uploading file..." variant="primary" />
+    ```
+  </Tab>
+</Tabs>
+
+## With Percentage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar value={65} showPercentage variant="success" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar value={65} showPercentage variant="success" />
+    ```
+  </Tab>
+</Tabs>
+
+## With Label and Percentage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar
+        value={42}
+        label="Download progress"
+        showPercentage
+        variant="info"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar
+      value={42}
+      label="Download progress"
+      showPercentage
+      variant="info"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Custom Maximum Value
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar
+        value={7}
+        max={10}
+        label="Tasks completed"
+        showPercentage
+        variant="success"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar
+      value={7}
+      max={10}
+      label="Tasks completed"
+      showPercentage
+      variant="success"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Multiple Progress Bars
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ProgressBar
+        value={85}
+        label="CPU Usage"
+        showPercentage
+        variant="warning"
+      />
+      <ProgressBar
+        value={60}
+        label="Memory Usage"
+        showPercentage
+        variant="info"
+      />
+      <ProgressBar
+        value={45}
+        label="Disk Usage"
+        showPercentage
+        variant="success"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ProgressBar
+      value={85}
+      label="CPU Usage"
+      showPercentage
+      variant="warning"
+    />
+    <ProgressBar
+      value={60}
+      label="Memory Usage"
+      showPercentage
+      variant="info"
+    />
+    <ProgressBar
+      value={45}
+      label="Disk Usage"
+      showPercentage
+      variant="success"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop           | Type                                                                               | Default   | Description                            |
+| -------------- | ---------------------------------------------------------------------------------- | --------- | -------------------------------------- |
+| value          | `number`                                                                           | -         | Current progress value (required)      |
+| max            | `number`                                                                           | `100`     | Maximum value                          |
+| variant        | `default \| primary \| secondary \| accent \| success \| warning \| error \| info` | `default` | Visual variant / status indicator      |
+| size           | `sm \| md \| lg \| xl`                                                             | `md`      | Height of the progress bar             |
+| label          | `string`                                                                           | `""`      | Optional label displayed above the bar |
+| showPercentage | `boolean`                                                                          | `false`   | Whether to show percentage text        |
+| aria-label     | `string`                                                                           | -         | Custom aria-label for screen readers   |
+| className      | `string`                                                                           | -         | Additional CSS classes                 |
+
+Inherits all standard HTML div attributes (`onClick`, `style`, etc.).
+
+## Accessibility
+
+- Uses semantic `role="progressbar"` with proper ARIA attributes
+- Includes `aria-valuemin`, `aria-valuemax`, and `aria-valuenow` for screen readers
+- Automatic aria-label based on label prop or defaults to "Progress"
+- Respects `prefers-reduced-motion` for animation preferences
+- Values are automatically clamped to valid range (0 to max)
+- WCAG 2.1 Level AA compliant
+- Screen reader compatible with progress announcements
+
+## Component API
+
+| Export           | Type                              | Description                        |
+| ---------------- | --------------------------------- | ---------------------------------- |
+| ProgressBar      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| ProgressBarProps | `interface`                       | Component props interface          |

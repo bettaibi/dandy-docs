@@ -1,0 +1,414 @@
+---
+title: Slider
+description: Touch-friendly range input component for selecting numeric values with mouse, touch, and keyboard support
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Slider } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Slider
+
+A mobile-first range input component for selecting numeric values within a defined range. Features smooth drag interactions, keyboard navigation, and full accessibility support.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Slider } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider label="Volume" defaultValue={50} />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider label="Volume" defaultValue={50} />
+    ```
+  </Tab>
+</Tabs>
+
+## Controlled vs Uncontrolled
+
+### Controlled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider
+        label="Brightness"
+        value={75}
+        onChange={(value) => console.log(value)}
+        showValue
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx const [value, setValue] = React.useState(75);
+    <Slider label="Brightness" value={value} onChange={setValue} showValue />
+    ```
+  </Tab>
+</Tabs>
+
+### Uncontrolled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider
+        label="Temperature"
+        onChange={(value) => console.log("Changed:", value)}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider
+      label="Temperature"
+      onChange={(value) => console.log("Changed:", value)}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider variant="primary" value={60} label="Primary" showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider variant="primary" value={60} label="Primary" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider variant="secondary" value={60} label="Secondary" showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider variant="secondary" value={60} label="Secondary" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+### Accent
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider variant="accent" value={60} label="Accent" showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider variant="accent" value={60} label="Accent" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider variant="success" value={60} label="Success" showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider variant="success" value={60} label="Success" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider variant="warning" value={60} label="Warning" showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider variant="warning" value={60} label="Warning" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider variant="error" value={60} label="Error" showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider variant="error" value={60} label="Error" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider variant="info" value={60} label="Info" showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider variant="info" value={60} label="Info" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider size="sm" value={40} label="Small" showValue />
+      <Slider size="md" value={60} label="Medium" showValue />
+      <Slider size="lg" value={80} label="Large" showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider size="sm" value={40} label="Small" showValue />
+    <Slider size="md" value={60} label="Medium" showValue />
+    <Slider size="lg" value={80} label="Large" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+## Range Configuration
+
+### Custom Min/Max
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider min={0} max={10} value={5} label="Rate (0-10)" showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider min={0} max={10} value={5} label="Rate (0-10)" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Step
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider
+        min={0}
+        max={100}
+        step={25}
+        value={50}
+        label="Step by 25"
+        showValue
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider
+      min={0}
+      max={100}
+      step={25}
+      value={50}
+      label="Step by 25"
+      showValue
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Decimal Values
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider
+        min={0}
+        max={1}
+        step={0.1}
+        value={0.5}
+        label="Opacity"
+        showValue
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider min={0} max={1} step={0.1} value={0.5} label="Opacity" showValue />
+    ```
+  </Tab>
+</Tabs>
+
+## Value Display
+
+### With Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider label="Volume Control" value={70} />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider label="Volume Control" value={70} />
+    ```
+  </Tab>
+</Tabs>
+
+### With Value Display
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider label="Brightness" value={85} showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider label="Brightness" value={85} showValue />
+    ```
+  </Tab>
+</Tabs>
+
+### Value Display Only
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider value={45} showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider value={45} showValue />
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Slider value={50} label="Disabled Slider" disabled showValue />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Slider value={50} label="Disabled Slider" disabled showValue />
+    ```
+  </Tab>
+</Tabs>
+
+## Form Integration
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          alert("Form submitted!");
+        }}
+      >
+        <Slider
+          name="rating"
+          label="Rating"
+          min={1}
+          max={5}
+          value={3}
+          showValue
+        />
+        <button type="submit" style={{ marginTop: "1rem" }}>
+          Submit
+        </button>
+      </form>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <form onSubmit={handleSubmit}>
+      <Slider
+        name="rating"
+        label="Rating"
+        min={1}
+        max={5}
+        value={3}
+        showValue
+      />
+      <button type="submit">Submit</button>
+    </form>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop       | Type                                                                    | Default   | Description                          |
+| ---------- | ----------------------------------------------------------------------- | --------- | ------------------------------------ |
+| value      | `number`                                                                | `0`       | Current slider value (controlled)    |
+| onChange   | `(value: number) => void`                                               | -         | Callback fired when value changes    |
+| min        | `number`                                                                | `0`       | Minimum value                        |
+| max        | `number`                                                                | `100`     | Maximum value                        |
+| step       | `number`                                                                | `1`       | Step increment                       |
+| variant    | `primary \| secondary \| accent \| success \| warning \| error \| info` | `primary` | Visual style variant                 |
+| size       | `sm \| md \| lg`                                                        | `md`      | Component size                       |
+| label      | `string`                                                                | -         | Label displayed above slider         |
+| showValue  | `boolean`                                                               | `false`   | Whether to show current value        |
+| disabled   | `boolean`                                                               | `false`   | Disables the slider                  |
+| aria-label | `string`                                                                | -         | Custom aria-label for screen readers |
+| name       | `string`                                                                | -         | Name attribute for form integration  |
+| className  | `string`                                                                | -         | Additional CSS classes               |
+
+Inherits all standard HTML `div` attributes (`onClick`, `onMouseEnter`, etc.).
+
+## Accessibility
+
+- Keyboard navigable with Arrow keys (left/right/up/down for step, Page Up/Down for 10× step, Home/End for min/max)
+- Focus visible with ring indicator
+- WCAG 2.1 Level AA compliant
+- Touch-friendly sizing with minimum 44x44px thumb targets
+- Screen reader compatible with proper ARIA attributes (`role="slider"`, `aria-valuemin`, `aria-valuemax`, `aria-valuenow`)
+- Disabled state properly communicated to assistive technologies
+- Mouse, touch, and keyboard interaction support
+
+## Component API
+
+| Export      | Type                              | Description                        |
+| ----------- | --------------------------------- | ---------------------------------- |
+| Slider      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| SliderProps | `interface`                       | Component props interface          |

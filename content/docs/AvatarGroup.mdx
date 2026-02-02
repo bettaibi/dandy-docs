@@ -1,0 +1,441 @@
+---
+title: AvatarGroup
+description: Display a group of avatars with automatic stacking and overflow handling
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { AvatarGroup, Avatar } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# AvatarGroup
+
+A container component that displays multiple avatars in a stacked horizontal layout with automatic overflow handling. When the number of avatars exceeds the maximum limit, it shows a "+N" indicator.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { AvatarGroup, Avatar } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AvatarGroup>
+        <Avatar src="https://i.pravatar.cc/150?img=1" alt="User 1" />
+        <Avatar src="https://i.pravatar.cc/150?img=2" alt="User 2" />
+        <Avatar src="https://i.pravatar.cc/150?img=3" alt="User 3" />
+        <Avatar src="https://i.pravatar.cc/150?img=4" alt="User 4" />
+      </AvatarGroup>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup>
+      <Avatar src="https://i.pravatar.cc/150?img=1" alt="User 1" />
+      <Avatar src="https://i.pravatar.cc/150?img=2" alt="User 2" />
+      <Avatar src="https://i.pravatar.cc/150?img=3" alt="User 3" />
+      <Avatar src="https://i.pravatar.cc/150?img=4" alt="User 4" />
+    </AvatarGroup>
+    ```
+  </Tab>
+</Tabs>
+
+## Maximum Display Limit
+
+### Max with Overflow
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AvatarGroup max={3}>
+        <Avatar src="https://i.pravatar.cc/150?img=5" alt="User 5" />
+        <Avatar src="https://i.pravatar.cc/150?img=6" alt="User 6" />
+        <Avatar src="https://i.pravatar.cc/150?img=7" alt="User 7" />
+        <Avatar src="https://i.pravatar.cc/150?img=8" alt="User 8" />
+        <Avatar src="https://i.pravatar.cc/150?img=9" alt="User 9" />
+      </AvatarGroup>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup max={3}>
+      <Avatar src="https://i.pravatar.cc/150?img=5" alt="User 5" />
+      <Avatar src="https://i.pravatar.cc/150?img=6" alt="User 6" />
+      <Avatar src="https://i.pravatar.cc/150?img=7" alt="User 7" />
+      <Avatar src="https://i.pravatar.cc/150?img=8" alt="User 8" />
+      <Avatar src="https://i.pravatar.cc/150?img=9" alt="User 9" />
+    </AvatarGroup>
+    ```
+  </Tab>
+</Tabs>
+
+### Max with Different Limits
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="flex flex-col gap-4">
+        <AvatarGroup max={2}>
+          <Avatar placeholder="AB" alt="User AB" />
+          <Avatar placeholder="CD" alt="User CD" />
+          <Avatar placeholder="EF" alt="User EF" />
+          <Avatar placeholder="GH" alt="User GH" />
+        </AvatarGroup>
+        <AvatarGroup max={4}>
+          <Avatar placeholder="AB" alt="User AB" />
+          <Avatar placeholder="CD" alt="User CD" />
+          <Avatar placeholder="EF" alt="User EF" />
+          <Avatar placeholder="GH" alt="User GH" />
+          <Avatar placeholder="IJ" alt="User IJ" />
+          <Avatar placeholder="KL" alt="User KL" />
+        </AvatarGroup>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup max={2}>
+      <Avatar placeholder="AB" alt="User AB" />
+      <Avatar placeholder="CD" alt="User CD" />
+      <Avatar placeholder="EF" alt="User EF" />
+      <Avatar placeholder="GH" alt="User GH" />
+    </AvatarGroup>
+
+    <AvatarGroup max={4}>
+      <Avatar placeholder="AB" alt="User AB" />
+      <Avatar placeholder="CD" alt="User CD" />
+      <Avatar placeholder="EF" alt="User EF" />
+      <Avatar placeholder="GH" alt="User GH" />
+      <Avatar placeholder="IJ" alt="User IJ" />
+      <Avatar placeholder="KL" alt="User KL" />
+    </AvatarGroup>
+    ```
+
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="flex flex-col gap-6">
+        <AvatarGroup size="xs" max={3}>
+          <Avatar src="https://i.pravatar.cc/150?img=10" alt="User 10" />
+          <Avatar src="https://i.pravatar.cc/150?img=11" alt="User 11" />
+          <Avatar src="https://i.pravatar.cc/150?img=12" alt="User 12" />
+          <Avatar src="https://i.pravatar.cc/150?img=13" alt="User 13" />
+        </AvatarGroup>
+        <AvatarGroup size="sm" max={3}>
+          <Avatar src="https://i.pravatar.cc/150?img=14" alt="User 14" />
+          <Avatar src="https://i.pravatar.cc/150?img=15" alt="User 15" />
+          <Avatar src="https://i.pravatar.cc/150?img=16" alt="User 16" />
+          <Avatar src="https://i.pravatar.cc/150?img=17" alt="User 17" />
+        </AvatarGroup>
+        <AvatarGroup size="md" max={3}>
+          <Avatar src="https://i.pravatar.cc/150?img=18" alt="User 18" />
+          <Avatar src="https://i.pravatar.cc/150?img=19" alt="User 19" />
+          <Avatar src="https://i.pravatar.cc/150?img=20" alt="User 20" />
+          <Avatar src="https://i.pravatar.cc/150?img=21" alt="User 21" />
+        </AvatarGroup>
+        <AvatarGroup size="lg" max={3}>
+          <Avatar src="https://i.pravatar.cc/150?img=22" alt="User 22" />
+          <Avatar src="https://i.pravatar.cc/150?img=23" alt="User 23" />
+          <Avatar src="https://i.pravatar.cc/150?img=24" alt="User 24" />
+          <Avatar src="https://i.pravatar.cc/150?img=25" alt="User 25" />
+        </AvatarGroup>
+        <AvatarGroup size="xl" max={3}>
+          <Avatar src="https://i.pravatar.cc/150?img=26" alt="User 26" />
+          <Avatar src="https://i.pravatar.cc/150?img=27" alt="User 27" />
+          <Avatar src="https://i.pravatar.cc/150?img=28" alt="User 28" />
+          <Avatar src="https://i.pravatar.cc/150?img=29" alt="User 29" />
+        </AvatarGroup>
+        <AvatarGroup size="2xl" max={3}>
+          <Avatar src="https://i.pravatar.cc/150?img=30" alt="User 30" />
+          <Avatar src="https://i.pravatar.cc/150?img=31" alt="User 31" />
+          <Avatar src="https://i.pravatar.cc/150?img=32" alt="User 32" />
+          <Avatar src="https://i.pravatar.cc/150?img=33" alt="User 33" />
+        </AvatarGroup>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup size="xs" max={3}>
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+    </AvatarGroup>
+
+    <AvatarGroup size="sm" max={3}>
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+    </AvatarGroup>
+
+    <AvatarGroup size="md" max={3}>
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+    </AvatarGroup>
+
+    <AvatarGroup size="lg" max={3}>
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+    </AvatarGroup>
+
+    <AvatarGroup size="xl" max={3}>
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+    </AvatarGroup>
+
+    <AvatarGroup size="2xl" max={3}>
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+      <Avatar src="..." alt="User" />
+    </AvatarGroup>
+    ```
+
+  </Tab>
+</Tabs>
+
+## Spacing
+
+### Small Spacing
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AvatarGroup spacing="sm">
+        <Avatar src="https://i.pravatar.cc/150?img=34" alt="User 34" />
+        <Avatar src="https://i.pravatar.cc/150?img=35" alt="User 35" />
+        <Avatar src="https://i.pravatar.cc/150?img=36" alt="User 36" />
+        <Avatar src="https://i.pravatar.cc/150?img=37" alt="User 37" />
+      </AvatarGroup>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup spacing="sm">
+      <Avatar src="https://i.pravatar.cc/150?img=34" alt="User 34" />
+      <Avatar src="https://i.pravatar.cc/150?img=35" alt="User 35" />
+      <Avatar src="https://i.pravatar.cc/150?img=36" alt="User 36" />
+      <Avatar src="https://i.pravatar.cc/150?img=37" alt="User 37" />
+    </AvatarGroup>
+    ```
+  </Tab>
+</Tabs>
+
+### Medium Spacing (Default)
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AvatarGroup spacing="md">
+        <Avatar src="https://i.pravatar.cc/150?img=38" alt="User 38" />
+        <Avatar src="https://i.pravatar.cc/150?img=39" alt="User 39" />
+        <Avatar src="https://i.pravatar.cc/150?img=40" alt="User 40" />
+        <Avatar src="https://i.pravatar.cc/150?img=41" alt="User 41" />
+      </AvatarGroup>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup spacing="md">
+      <Avatar src="https://i.pravatar.cc/150?img=38" alt="User 38" />
+      <Avatar src="https://i.pravatar.cc/150?img=39" alt="User 39" />
+      <Avatar src="https://i.pravatar.cc/150?img=40" alt="User 40" />
+      <Avatar src="https://i.pravatar.cc/150?img=41" alt="User 41" />
+    </AvatarGroup>
+    ```
+  </Tab>
+</Tabs>
+
+### Large Spacing
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AvatarGroup spacing="lg">
+        <Avatar src="https://i.pravatar.cc/150?img=42" alt="User 42" />
+        <Avatar src="https://i.pravatar.cc/150?img=43" alt="User 43" />
+        <Avatar src="https://i.pravatar.cc/150?img=44" alt="User 44" />
+        <Avatar src="https://i.pravatar.cc/150?img=45" alt="User 45" />
+      </AvatarGroup>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup spacing="lg">
+      <Avatar src="https://i.pravatar.cc/150?img=42" alt="User 42" />
+      <Avatar src="https://i.pravatar.cc/150?img=43" alt="User 43" />
+      <Avatar src="https://i.pravatar.cc/150?img=44" alt="User 44" />
+      <Avatar src="https://i.pravatar.cc/150?img=45" alt="User 45" />
+    </AvatarGroup>
+    ```
+  </Tab>
+</Tabs>
+
+## With Initials
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AvatarGroup max={3}>
+        <Avatar placeholder="JD" alt="John Doe" />
+        <Avatar placeholder="SA" alt="Sarah Anderson" />
+        <Avatar placeholder="MJ" alt="Michael Johnson" />
+        <Avatar placeholder="EW" alt="Emily Wilson" />
+        <Avatar placeholder="DT" alt="David Thompson" />
+      </AvatarGroup>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup max={3}>
+      <Avatar placeholder="JD" alt="John Doe" />
+      <Avatar placeholder="SA" alt="Sarah Anderson" />
+      <Avatar placeholder="MJ" alt="Michael Johnson" />
+      <Avatar placeholder="EW" alt="Emily Wilson" />
+      <Avatar placeholder="DT" alt="David Thompson" />
+    </AvatarGroup>
+    ```
+  </Tab>
+</Tabs>
+
+## With Status Indicators
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AvatarGroup size="lg" max={4}>
+        <Avatar
+          src="https://i.pravatar.cc/150?img=46"
+          alt="User 46"
+          status="online"
+        />
+        <Avatar
+          src="https://i.pravatar.cc/150?img=47"
+          alt="User 47"
+          status="away"
+        />
+        <Avatar
+          src="https://i.pravatar.cc/150?img=48"
+          alt="User 48"
+          status="offline"
+        />
+        <Avatar
+          src="https://i.pravatar.cc/150?img=49"
+          alt="User 49"
+          status="online"
+        />
+        <Avatar
+          src="https://i.pravatar.cc/150?img=50"
+          alt="User 50"
+          status="online"
+        />
+      </AvatarGroup>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup size="lg" max={4}>
+      <Avatar
+        src="https://i.pravatar.cc/150?img=46"
+        alt="User 46"
+        status="online"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/150?img=47"
+        alt="User 47"
+        status="away"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/150?img=48"
+        alt="User 48"
+        status="offline"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/150?img=49"
+        alt="User 49"
+        status="online"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/150?img=50"
+        alt="User 50"
+        status="online"
+      />
+    </AvatarGroup>
+    ```
+  </Tab>
+</Tabs>
+
+## Mixed Content
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <AvatarGroup max={4} size="lg">
+        <Avatar src="https://i.pravatar.cc/150?img=51" alt="User with image" />
+        <Avatar placeholder="AB" alt="User with initials" />
+        <Avatar placeholder="icon" alt="User with icon placeholder" />
+        <Avatar src="https://i.pravatar.cc/150?img=52" alt="Another user" />
+        <Avatar placeholder="CD" alt="More users" />
+        <Avatar placeholder="EF" alt="Even more" />
+      </AvatarGroup>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <AvatarGroup max={4} size="lg">
+      <Avatar src="https://i.pravatar.cc/150?img=51" alt="User with image" />
+      <Avatar placeholder="AB" alt="User with initials" />
+      <Avatar placeholder="icon" alt="User with icon placeholder" />
+      <Avatar src="https://i.pravatar.cc/150?img=52" alt="Another user" />
+      <Avatar placeholder="CD" alt="More users" />
+      <Avatar placeholder="EF" alt="Even more" />
+    </AvatarGroup>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop      | Type                                | Default | Description                                              |
+| --------- | ----------------------------------- | ------- | -------------------------------------------------------- |
+| max       | `number`                            | -       | Maximum avatars to display before showing "+N" indicator |
+| size      | `xs \| sm \| md \| lg \| xl \| 2xl` | `md`    | Size applied to all child avatars                        |
+| spacing   | `sm \| md \| lg`                    | `md`    | Spacing between stacked avatars (negative margin)        |
+| children  | `React.ReactNode`                   | -       | Avatar elements to display                               |
+| className | `string`                            | -       | Additional CSS classes                                   |
+
+Inherits all standard HTML `div` attributes (`onClick`, `role`, etc.).
+
+## Accessibility
+
+- Uses semantic `role="group"` with descriptive `aria-label` indicating total member count
+- Overflow indicator includes `aria-label` for remaining members count
+- All child avatars maintain their individual accessibility features
+- Screen reader compatible with proper member count announcements
+- Keyboard navigable if avatars have interactive elements
+- WCAG 2.1 Level AA compliant
+
+## Component API
+
+| Export           | Type                              | Description                        |
+| ---------------- | --------------------------------- | ---------------------------------- |
+| AvatarGroup      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| AvatarGroupProps | `interface`                       | Component props interface          |

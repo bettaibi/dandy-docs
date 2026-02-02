@@ -1,8 +1,26 @@
-
 {
   "title": "Docs",
   "pages": [
     "index",
-    "typography"
+    "typography",
+    "Button",
+    "Input",
+    "Select",
+    "Checkbox",
+    "Radio",
+    "Switch",
+    "Slider",
+    "DatePicker",
+    "FileInput",
+    "InputOTP",
+    "Avatar",
+    "AvatarGroup",
+    "Badge",
+    "Chips",
+    "Label",
+    "Textarea",
+    "accordion",
+    "AspectRatio",
+    "NumberInput"
   ]
 }

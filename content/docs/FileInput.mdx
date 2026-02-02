@@ -1,0 +1,292 @@
+---
+title: FileInput
+description: Accessible file upload input with preview and validation support
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { FileInput } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# FileInput
+
+A production-ready file input component with built-in validation, file metadata display, and clear functionality. Replaces the browser's default file input with a consistent, accessible interface.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { FileInput } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput placeholder="Choose a file" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput placeholder="Choose a file" />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput variant="default" placeholder="Default variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput variant="default" placeholder="Default variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput variant="success" placeholder="Success variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput variant="success" placeholder="Success variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput
+        variant="error"
+        errorMessage="File size exceeds 5MB limit"
+        placeholder="Error variant"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput
+      variant="error"
+      errorMessage="File size exceeds 5MB limit"
+      placeholder="Error variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput variant="warning" placeholder="Warning variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput variant="warning" placeholder="Warning variant" />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput variant="info" placeholder="Info variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput variant="info" placeholder="Info variant" />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput size="sm" placeholder="Small size" />
+      <FileInput size="md" placeholder="Medium size (default)" />
+      <FileInput size="lg" placeholder="Large size" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput size="sm" placeholder="Small size" />
+    <FileInput size="md" placeholder="Medium size (default)" />
+    <FileInput size="lg" placeholder="Large size" />
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput rounded="none" placeholder="No rounding" />
+      <FileInput rounded="sm" placeholder="Small rounding" />
+      <FileInput rounded="md" placeholder="Medium rounding" />
+      <FileInput rounded="lg" placeholder="Large rounding" />
+      <FileInput rounded="xl" placeholder="Extra large rounding" />
+      <FileInput rounded="full" placeholder="Full rounding" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput rounded="none" placeholder="No rounding" />
+    <FileInput rounded="sm" placeholder="Small rounding" />
+    <FileInput rounded="md" placeholder="Medium rounding" />
+    <FileInput rounded="lg" placeholder="Large rounding" />
+    <FileInput rounded="xl" placeholder="Extra large rounding" />
+    <FileInput rounded="full" placeholder="Full rounding" />
+    ```
+  </Tab>
+</Tabs>
+
+## File Type Restrictions
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput accept="image/*" placeholder="Images only" />
+      <FileInput accept=".pdf,.doc,.docx" placeholder="Documents only" />
+      <FileInput accept="video/*" placeholder="Videos only" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput accept="image/*" placeholder="Images only" />
+    <FileInput accept=".pdf,.doc,.docx" placeholder="Documents only" />
+    <FileInput accept="video/*" placeholder="Videos only" />
+    ```
+  </Tab>
+</Tabs>
+
+## Multiple Files
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput multiple placeholder="Select multiple files" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput multiple placeholder="Select multiple files" />
+    ```
+  </Tab>
+</Tabs>
+
+## File Metadata
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput showMetadata={true} placeholder="Shows file size" />
+      <FileInput showMetadata={false} placeholder="Only shows file name" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput showMetadata={true} placeholder="Shows file size" />
+    <FileInput showMetadata={false} placeholder="Only shows file name" />
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput disabled placeholder="Disabled file input" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput disabled placeholder="Disabled file input" />
+    ```
+  </Tab>
+</Tabs>
+
+## With Callback
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <FileInput
+        onFilesChange={(files) => {
+          console.log("Selected files:", files);
+        }}
+        placeholder="Upload your file"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <FileInput
+      onFilesChange={(files) => {
+        console.log("Selected files:", files);
+      }}
+      placeholder="Upload your file"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop          | Type                                             | Default   | Description                                    |
+| ------------- | ------------------------------------------------ | --------- | ---------------------------------------------- |
+| variant       | `default \| success \| error \| warning \| info` | `default` | Controls border and focus colors               |
+| size          | `sm \| md \| lg`                                 | `md`      | Component size                                 |
+| rounded       | `sm \| md \| lg \| xl \| full \| none`           | -         | Border radius override                         |
+| errorMessage  | `string`                                         | `""`      | Error message displayed in tooltip             |
+| placeholder   | `string`                                         | -         | Placeholder text when no file is selected      |
+| onFilesChange | `(files: File[]) => void`                        | -         | Callback when files are selected or changed    |
+| showMetadata  | `boolean`                                        | `true`    | Show file size and metadata in input           |
+| disabled      | `boolean`                                        | `false`   | Disables the file input                        |
+| multiple      | `boolean`                                        | `false`   | Allow selecting multiple files                 |
+| accept        | `string`                                         | -         | Accepted file types (e.g., "image/\*", ".pdf") |
+| className     | `string`                                         | -         | Additional CSS classes                         |
+
+Inherits all standard HTML input attributes (`id`, `name`, `required`, etc.).
+
+## Accessibility
+
+- Keyboard navigable with Tab and Enter/Space keys
+- Focus visible with ring indicator
+- WCAG 2.1 Level AA compliant
+- Minimum 44x44px touch targets for mobile
+- Screen reader compatible with proper ARIA labels
+- Error state communicated via `aria-invalid` attribute
+- Clear button has descriptive `aria-label`
+- Browse button includes proper semantic button element
+
+## Component API
+
+| Export         | Type                              | Description                        |
+| -------------- | --------------------------------- | ---------------------------------- |
+| FileInput      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| FileInputProps | `interface`                       | Component props interface          |

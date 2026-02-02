@@ -1,0 +1,260 @@
+---
+title: Label
+description: Accessible form label component with semantic variants and size options
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Label } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Label
+
+Form label component that provides clear, accessible text for form controls with semantic color variants and size options.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Label } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label htmlFor="username">Username</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label htmlFor="username">Username</Label>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label variant="default">Default Label</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label variant="default">Default Label</Label>
+    ```
+  </Tab>
+</Tabs>
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label variant="primary">Primary Label</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label variant="primary">Primary Label</Label>
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label variant="success">Success Label</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label variant="success">Success Label</Label>
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label variant="error">Error Label</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label variant="error">Error Label</Label>
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label variant="warning">Warning Label</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label variant="warning">Warning Label</Label>
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label variant="info">Info Label</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label variant="info">Info Label</Label>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label size="sm">Small Label</Label>
+      <Label size="md">Medium Label</Label>
+      <Label size="lg">Large Label</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label size="sm">Small Label</Label>
+    <Label size="md">Medium Label</Label>
+    <Label size="lg">Large Label</Label>
+    ```
+  </Tab>
+</Tabs>
+
+## Required Indicator
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label required>Email Address</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label required>Email Address</Label>
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Label disabled>Disabled Label</Label>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Label disabled>Disabled Label</Label>
+    ```
+  </Tab>
+</Tabs>
+
+## Form Integration
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-4">
+        <div>
+          <Label htmlFor="email" required>Email</Label>
+          <input 
+            id="email" 
+            type="email" 
+            className="w-full px-3 py-2 border rounded-md" 
+            placeholder="Enter your email"
+          />
+        </div>
+        <div>
+          <Label htmlFor="password" variant="error">Password</Label>
+          <input 
+            id="password" 
+            type="password" 
+            className="w-full px-3 py-2 border border-error rounded-md" 
+            placeholder="Enter your password"
+          />
+        </div>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <div>
+      <Label htmlFor="email" required>Email</Label>
+      <input 
+        id="email" 
+        type="email" 
+        className="w-full px-3 py-2 border rounded-md" 
+        placeholder="Enter your email"
+      />
+    </div>
+
+    <div>
+      <Label htmlFor="password" variant="error">Password</Label>
+      <input
+        id="password"
+        type="password"
+        className="w-full px-3 py-2 border border-error rounded-md"
+        placeholder="Enter your password"
+      />
+    </div>
+    ```
+
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop      | Type                                                        | Default   | Description                              |
+| --------- | ----------------------------------------------------------- | --------- | ---------------------------------------- |
+| variant   | `default \| success \| error \| warning \| info \| primary` | `default` | Semantic color variant                   |
+| size      | `sm \| md \| lg`                                            | `md`      | Label size                               |
+| required  | `boolean`                                                   | `false`   | Shows required indicator (asterisk)      |
+| disabled  | `boolean`                                                   | `false`   | Applies disabled styling                 |
+| htmlFor   | `string`                                                    | -         | Associates label with form control by ID |
+| className | `string`                                                    | -         | Additional CSS classes                   |
+
+Inherits all standard HTML label attributes.
+
+## Accessibility
+
+- Native `<label>` element for proper form association
+- Use `htmlFor` prop to associate with form controls by ID
+- Required indicator announced by screen readers with `aria-label="required"`
+- Sufficient color contrast in all variants (WCAG 2.1 Level AA)
+- Disabled state uses reduced opacity and default cursor
+- Screen reader compatible with semantic HTML
+- Smooth transitions respect user's motion preferences
+
+## Component API
+
+| Export     | Type                              | Description                        |
+| ---------- | --------------------------------- | ---------------------------------- |
+| Label      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| LabelProps | `interface`                       | Component props interface          |

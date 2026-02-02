@@ -1,0 +1,446 @@
+---
+title: NumberInput
+description: Number input with increment/decrement controls and validation states
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { NumberInput } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# NumberInput
+
+A number input component with built-in increment and decrement controls, validation states, and customizable placement options.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { NumberInput } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput value={0} placeholder="Enter amount" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Enter amount"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput variant="default" value={0} placeholder="Default variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      variant="default"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Default variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput
+        variant="success"
+        value={100}
+        placeholder="Success variant"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      variant="success"
+      value={100}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Success variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput variant="error" value={0} placeholder="Error variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      variant="error"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Error variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput variant="warning" value={50} placeholder="Warning variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      variant="warning"
+      value={50}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Warning variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput variant="info" value={25} placeholder="Info variant" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      variant="info"
+      value={25}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Info variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput size="sm" value={0} placeholder="Small" />
+      <NumberInput size="md" value={0} placeholder="Medium" />
+      <NumberInput size="lg" value={0} placeholder="Large" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      size="sm"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Small"
+    />
+    <NumberInput
+      size="md"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Medium"
+    />
+    <NumberInput
+      size="lg"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Large"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Controls Placement
+
+### End Placement (Default)
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput
+        controlsPlacement="end"
+        value={0}
+        placeholder="Controls on the right"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      controlsPlacement="end"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Controls on the right"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Start Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput
+        controlsPlacement="start"
+        value={0}
+        placeholder="Controls on the left"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      controlsPlacement="start"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Controls on the left"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### No Controls
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput
+        controlsPlacement="none"
+        value={0}
+        placeholder="No controls"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      controlsPlacement="none"
+      value={0}
+      onChange={(e) => console.log(e.target.value)}
+      placeholder="No controls"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## With Min and Max
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput value={5} min={0} max={10} placeholder="Range: 0-10" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      value={5}
+      min={0}
+      max={10}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Range: 0-10"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## With Custom Step
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput value={0} step={5} placeholder="Step by 5" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      value={0}
+      step={5}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Step by 5"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## With Error Message
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput
+        value={-5}
+        errorMessage="Value must be positive"
+        placeholder="Enter positive number"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      value={-5}
+      errorMessage="Value must be positive"
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Enter positive number"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## With Slots
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput
+        value={100}
+        leftSlot={<span className="text-muted-foreground">$</span>}
+        rightSlot={<span className="text-muted-foreground">USD</span>}
+        placeholder="0.00"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      value={100}
+      handleValueChange={(val) => console.log(val)}
+      leftSlot={<span className="text-muted-foreground">$</span>}
+      rightSlot={<span className="text-muted-foreground">USD</span>}
+      placeholder="0.00"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput rounded="sm" value={0} placeholder="Small radius" />
+      <NumberInput rounded="md" value={0} placeholder="Medium radius" />
+      <NumberInput rounded="lg" value={0} placeholder="Large radius" />
+      <NumberInput rounded="full" value={0} placeholder="Full radius" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      rounded="sm"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Small radius"
+    />
+    <NumberInput
+      rounded="md"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Medium radius"
+    />
+    <NumberInput
+      rounded="lg"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Large radius"
+    />
+    <NumberInput
+      rounded="full"
+      value={0}
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Full radius"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <NumberInput value={50} disabled placeholder="Disabled input" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <NumberInput
+      value={50}
+      disabled
+      handleValueChange={(val) => console.log(val)}
+      placeholder="Disabled input"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop              | Type                                             | Default   | Description                                 |
+| ----------------- | ------------------------------------------------ | --------- | ------------------------------------------- |
+| variant           | `default \| success \| error \| warning \| info` | `default` | Visual style variant with validation colors |
+| size              | `sm \| md \| lg`                                 | `md`      | Component size                              |
+| controlsPlacement | `start \| end \| none`                           | `end`     | Placement of increment/decrement controls   |
+| step              | `number`                                         | `1`       | Step value for increment/decrement          |
+| min               | `number`                                         | -         | Minimum value                               |
+| max               | `number`                                         | -         | Maximum value                               |
+| value             | `number`                                         | -         | Current value                               |
+| handleValueChange | `(value: number) => void`                        | -         | Callback when value changes via controls    |
+| errorMessage      | `string`                                         | `""`      | Error message to display in tooltip         |
+| leftSlot          | `React.ReactNode`                                | -         | Content to render on the left side          |
+| rightSlot         | `React.ReactNode`                                | -         | Content to render on the right side         |
+| rounded           | `sm \| md \| lg \| xl \| full \| none`           | -         | Border radius size                          |
+| disabled          | `boolean`                                        | `false`   | Disables the input and controls             |
+| className         | `string`                                         | -         | Additional CSS classes                      |
+
+Inherits all standard HTML input attributes (`placeholder`, `onChange`, `onBlur`, etc.).
+
+## Accessibility
+
+- Keyboard navigable with Tab key
+- Increment/decrement controls are hidden from tab order (tabIndex={-1})
+- Focus visible with ring indicator matching variant color
+- Native number input spinners are hidden for consistent styling
+- Error states automatically shown via InfoTip tooltip
+- Buttons are automatically disabled when min/max limits are reached
+- WCAG 2.1 Level AA compliant
+- Minimum 32px height on small size, 40px on medium, 48px on large for touch targets
+- Screen reader compatible with proper semantic elements
+
+## Component API
+
+| Export           | Type                              | Description                                 |
+| ---------------- | --------------------------------- | ------------------------------------------- |
+| NumberInput      | `React.ForwardRefExoticComponent` | Main component with ref forwarding to input |
+| NumberInputProps | `interface`                       | Component props interface                   |
