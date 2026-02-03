@@ -7,6 +7,7 @@ category: forms
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Chips } from "../../components/dandy";
 import { ComponentPreview } from "../../components/ComponentPreview";
+import { ChipsChange } from "../../components/chips-change";
 
 # Chips
 
@@ -25,20 +26,7 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["React", "TypeScript"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
-            placeholder="Add tags..."
-          />
-        );
-      })()}
+     <ChipsChange chips={["React", "TypeScript"]} inputValue="" placeholder="Add tags..." />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -66,27 +54,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState([
-          "Design",
-          "Development",
-          "Marketing",
-        ]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            chipVariant="primary"
-            placeholder="Add categories..."
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Design", "Development", "Marketing"]}
+        inputValue=""
+        chipVariant="primary"
+        placeholder="Add categories..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -109,27 +82,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState([
-          "JavaScript",
-          "Python",
-          "Go",
-        ]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            chipVariant="secondary"
-            placeholder="Add languages..."
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["JavaScript", "Python", "Go"]}
+        inputValue=""
+        chipVariant="secondary"
+        placeholder="Add languages..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -152,27 +110,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState([
-          "Completed",
-          "Verified",
-          "Approved",
-        ]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            chipVariant="success"
-            placeholder="Add status..."
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Completed", "Verified", "Approved"]}
+        inputValue=""
+        chipVariant="success"
+        placeholder="Add status..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -195,27 +138,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState([
-          "Pending",
-          "Review",
-          "On Hold",
-        ]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            chipVariant="warning"
-            placeholder="Add warnings..."
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Pending", "Review", "On Hold"]}
+        inputValue=""
+        chipVariant="warning"
+        placeholder="Add warnings..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -238,27 +166,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState([
-          "Failed",
-          "Rejected",
-          "Invalid",
-        ]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            chipVariant="error"
-            placeholder="Add errors..."
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Failed", "Rejected", "Invalid"]}
+        inputValue=""
+        chipVariant="error"
+        placeholder="Add errors..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -281,23 +194,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["Note", "Reminder", "Info"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            chipVariant="info"
-            placeholder="Add notes..."
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Note", "Reminder", "Info"]}
+        inputValue=""
+        chipVariant="info"
+        placeholder="Add notes..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -322,27 +224,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState([
-          "Outlined",
-          "Border",
-          "Style",
-        ]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            chipAppearance="outline"
-            placeholder="Add tags..."
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Outlined", "Border", "Style"]}
+        inputValue=""
+        chipAppearance="outline"
+        placeholder="Add tags..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -365,27 +252,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState([
-          "Filled",
-          "Solid",
-          "Background",
-        ]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            chipAppearance="filled"
-            placeholder="Add tags..."
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Filled", "Solid", "Background"]}
+        inputValue=""
+        chipAppearance="filled"
+        placeholder="Add tags..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -409,64 +281,30 @@ import { Chips } from "dandy-ui";
   <Tab value="Preview">
     <ComponentPreview>
       <div className="space-y-4">
-        {(() => {
-          const [chipsXs, setChipsXs] = React.useState(["XS Size"]);
-          const [inputXs, setInputXs] = React.useState("");
-          const [chipsSm, setChipsSm] = React.useState(["SM Size"]);
-          const [inputSm, setInputSm] = React.useState("");
-          const [chipsMd, setChipsMd] = React.useState(["MD Size"]);
-          const [inputMd, setInputMd] = React.useState("");
-          const [chipsLg, setChipsLg] = React.useState(["LG Size"]);
-          const [inputLg, setInputLg] = React.useState("");
-          return (
-            <>
-              <Chips
-                chips={chipsXs}
-                inputValue={inputXs}
-                onInputChange={setInputXs}
-                onAddChip={(chip) => setChipsXs([...chipsXs, chip])}
-                onRemoveChip={(_, index) =>
-                  setChipsXs(chipsXs.filter((_, i) => i !== index))
-                }
-                chipSize="xs"
-                placeholder="Extra Small"
-              />
-              <Chips
-                chips={chipsSm}
-                inputValue={inputSm}
-                onInputChange={setInputSm}
-                onAddChip={(chip) => setChipsSm([...chipsSm, chip])}
-                onRemoveChip={(_, index) =>
-                  setChipsSm(chipsSm.filter((_, i) => i !== index))
-                }
-                chipSize="sm"
-                placeholder="Small"
-              />
-              <Chips
-                chips={chipsMd}
-                inputValue={inputMd}
-                onInputChange={setInputMd}
-                onAddChip={(chip) => setChipsMd([...chipsMd, chip])}
-                onRemoveChip={(_, index) =>
-                  setChipsMd(chipsMd.filter((_, i) => i !== index))
-                }
-                chipSize="md"
-                placeholder="Medium"
-              />
-              <Chips
-                chips={chipsLg}
-                inputValue={inputLg}
-                onInputChange={setInputLg}
-                onAddChip={(chip) => setChipsLg([...chipsLg, chip])}
-                onRemoveChip={(_, index) =>
-                  setChipsLg(chipsLg.filter((_, i) => i !== index))
-                }
-                chipSize="lg"
-                placeholder="Large"
-              />
-            </>
-          );
-        })()}
+        <ChipsChange
+          chips={["XS Size"]}
+          inputValue=""
+          chipSize="xs"
+          placeholder="Extra Small"
+        />
+        <ChipsChange
+          chips={["SM Size"]}
+          inputValue=""
+          chipSize="sm"
+          placeholder="Small"
+        />
+        <ChipsChange
+          chips={["MD Size"]}
+          inputValue=""
+          chipSize="md"
+          placeholder="Medium"
+        />
+        <ChipsChange
+          chips={["LG Size"]}
+          inputValue=""
+          chipSize="lg"
+          placeholder="Large"
+        />
       </div>
     </ComponentPreview>
   </Tab>
@@ -487,23 +325,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["Tag 1", "Tag 2"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            inputVariant="default"
-            placeholder="Default variant"
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Tag 1", "Tag 2"]}
+        inputValue=""
+        inputVariant="default"
+        placeholder="Default variant"
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -526,23 +353,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["Valid", "Accepted"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            inputVariant="success"
-            placeholder="Success variant"
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Valid", "Accepted"]}
+        inputValue=""
+        inputVariant="success"
+        placeholder="Success variant"
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -565,23 +381,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["Caution", "Check"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            inputVariant="warning"
-            placeholder="Warning variant"
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Caution", "Check"]}
+        inputValue=""
+        inputVariant="warning"
+        placeholder="Warning variant"
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -604,23 +409,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["Info", "Notice"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            inputVariant="info"
-            placeholder="Info variant"
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Info", "Notice"]}
+        inputValue=""
+        inputVariant="info"
+        placeholder="Info variant"
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -644,77 +438,36 @@ import { Chips } from "dandy-ui";
   <Tab value="Preview">
     <ComponentPreview>
       <div className="space-y-4">
-        {(() => {
-          const [chips1, setChips1] = React.useState(["None"]);
-          const [input1, setInput1] = React.useState("");
-          const [chips2, setChips2] = React.useState(["Small"]);
-          const [input2, setInput2] = React.useState("");
-          const [chips3, setChips3] = React.useState(["Medium"]);
-          const [input3, setInput3] = React.useState("");
-          const [chips4, setChips4] = React.useState(["Large"]);
-          const [input4, setInput4] = React.useState("");
-          const [chips5, setChips5] = React.useState(["Full"]);
-          const [input5, setInput5] = React.useState("");
-          return (
-            <>
-              <Chips
-                chips={chips1}
-                inputValue={input1}
-                onInputChange={setInput1}
-                onAddChip={(chip) => setChips1([...chips1, chip])}
-                onRemoveChip={(_, index) =>
-                  setChips1(chips1.filter((_, i) => i !== index))
-                }
-                rounded="none"
-                placeholder="rounded-none"
-              />
-              <Chips
-                chips={chips2}
-                inputValue={input2}
-                onInputChange={setInput2}
-                onAddChip={(chip) => setChips2([...chips2, chip])}
-                onRemoveChip={(_, index) =>
-                  setChips2(chips2.filter((_, i) => i !== index))
-                }
-                rounded="sm"
-                placeholder="rounded-sm"
-              />
-              <Chips
-                chips={chips3}
-                inputValue={input3}
-                onInputChange={setInput3}
-                onAddChip={(chip) => setChips3([...chips3, chip])}
-                onRemoveChip={(_, index) =>
-                  setChips3(chips3.filter((_, i) => i !== index))
-                }
-                rounded="md"
-                placeholder="rounded-md"
-              />
-              <Chips
-                chips={chips4}
-                inputValue={input4}
-                onInputChange={setInput4}
-                onAddChip={(chip) => setChips4([...chips4, chip])}
-                onRemoveChip={(_, index) =>
-                  setChips4(chips4.filter((_, i) => i !== index))
-                }
-                rounded="lg"
-                placeholder="rounded-lg"
-              />
-              <Chips
-                chips={chips5}
-                inputValue={input5}
-                onInputChange={setInput5}
-                onAddChip={(chip) => setChips5([...chips5, chip])}
-                onRemoveChip={(_, index) =>
-                  setChips5(chips5.filter((_, i) => i !== index))
-                }
-                rounded="full"
-                placeholder="rounded-full"
-              />
-            </>
-          );
-        })()}
+        <ChipsChange
+          chips={["None"]}
+          inputValue=""
+          rounded="none"
+          placeholder="rounded-none"
+        />
+        <ChipsChange
+          chips={["Small"]}
+          inputValue=""
+          rounded="sm"
+          placeholder="rounded-sm"
+        />
+        <ChipsChange
+          chips={["Medium"]}
+          inputValue=""
+          rounded="md"
+          placeholder="rounded-md"
+        />
+        <ChipsChange
+          chips={["Large"]}
+          inputValue=""
+          rounded="lg"
+          placeholder="rounded-lg"
+        />
+        <ChipsChange
+          chips={["Full"]}
+          inputValue=""
+          rounded="full"
+          placeholder="rounded-full"
+        />
       </div>
     </ComponentPreview>
   </Tab>
@@ -736,23 +489,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["Invalid", "Error"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            errorMessage="This field has validation errors"
-            placeholder="Add tags..."
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Invalid", "Error"]}
+        inputValue=""
+        errorMessage="This field has validation errors"
+        placeholder="Add tags..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -775,28 +517,11 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["React", "Vue"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <div className="space-y-2">
-            <p className="text-sm text-muted-foreground">
-              Try adding "React" or "Vue" again - duplicates are prevented by
-              default
-            </p>
-            <Chips
-              chips={chips}
-              inputValue={inputValue}
-              onInputChange={setInputValue}
-              onAddChip={(chip) => setChips([...chips, chip])}
-              onRemoveChip={(_, index) =>
-                setChips(chips.filter((_, i) => i !== index))
-              }
-              placeholder="Add frameworks..."
-            />
-          </div>
-        );
-      })()}
+      <ChipsChange
+        chips={["React", "Vue"]}
+        inputValue=""
+        placeholder="Add frameworks..."
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -819,28 +544,17 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["Tag", "Label"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <div className="space-y-2">
-            <p className="text-sm text-muted-foreground">
-              Try adding the same value multiple times
-            </p>
-            <Chips
-              chips={chips}
-              inputValue={inputValue}
-              onInputChange={setInputValue}
-              onAddChip={(chip) => setChips([...chips, chip])}
-              onRemoveChip={(_, index) =>
-                setChips(chips.filter((_, i) => i !== index))
-              }
-              allowDuplicates
-              placeholder="Add tags..."
-            />
-          </div>
-        );
-      })()}
+      <div className="space-y-2">
+        <p className="text-sm text-muted-foreground">
+          Try adding the same value multiple times
+        </p>
+        <ChipsChange
+          chips={["Tag", "Label"]}
+          inputValue=""
+          allowDuplicates
+          placeholder="Add tags..."
+        />
+      </div>
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -863,25 +577,13 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["One", "Two"]);
-        const [inputValue, setInputValue] = React.useState("");
-        const maxChips = 5;
-        return (
-          <div className="space-y-2">
-            <p className="text-sm text-muted-foreground">Maximum 5 chips allowed ({chips.length}/{maxChips})</p>
-            <Chips
-              chips={chips}
-              inputValue={inputValue}
-              onInputChange={setInputValue}
-              onAddChip={(chip) => setChips([...chips, chip])}
-              onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
-              maxChips={maxChips}
-              placeholder="Add up to 5 tags..."
-            />
-          </div>
-        );
-      })()}
+      <ChipsChange
+        chips={["One", "Two"]}
+        inputValue=""
+        maxChips={5}
+        placeholder="Add up to 5 tags..."
+      />
+      <p className="text-sm text-muted-foreground">Maximum 5 chips allowed </p>
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -907,23 +609,12 @@ import { Chips } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      {(() => {
-        const [chips, setChips] = React.useState(["Read", "Only", "Tags"]);
-        const [inputValue, setInputValue] = React.useState("");
-        return (
-          <Chips
-            chips={chips}
-            inputValue={inputValue}
-            onInputChange={setInputValue}
-            onAddChip={(chip) => setChips([...chips, chip])}
-            onRemoveChip={(_, index) =>
-              setChips(chips.filter((_, i) => i !== index))
-            }
-            disabled
-            placeholder="Disabled input"
-          />
-        );
-      })()}
+      <ChipsChange
+        chips={["Read", "Only", "Tags"]}
+        inputValue=""
+        disabled
+        placeholder="Disabled input"
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">

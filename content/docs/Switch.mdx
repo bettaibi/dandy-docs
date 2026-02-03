@@ -7,6 +7,7 @@ category: forms
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Switch } from "../../components/dandy";
 import { ComponentPreview } from "../../components/ComponentPreview";
+import { SwitchChange } from "../../components/switch-change";
 
 # Switch
 
@@ -172,7 +173,7 @@ import { Switch } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Switch onCheckedChange={(checked) => console.log('Checked:', checked)} />
+     <SwitchChange />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">

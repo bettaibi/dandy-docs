@@ -163,16 +163,10 @@ import { Badge } from "dandy-ui";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
-    <ComponentPreview>
-      <Badge appearance="solid" variant="primary">
-        Solid
-      </Badge>
-      <Badge appearance="solid" variant="success">
-        Success
-      </Badge>
-      <Badge appearance="solid" variant="error">
-        Error
-      </Badge>
+    <ComponentPreview className="flex h-fit! w-fit!">
+      <Badge appearance="solid" variant="primary" label="Solid" />
+      <Badge appearance="solid" variant="success" label="Success" />
+      <Badge appearance="solid" variant="error" label="Error" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -196,26 +190,26 @@ import { Badge } from "dandy-ui";
   <Tab value="Preview">
     <ComponentPreview>
       <Badge appearance="outline" variant="primary">
-        Outline
+        <span>Outline</span>
       </Badge>
       <Badge appearance="outline" variant="success">
-        Success
+        <span>Success</span>
       </Badge>
       <Badge appearance="outline" variant="error">
-        Error
+        <span>Error</span>
       </Badge>
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
     ```tsx
     <Badge appearance="outline" variant="primary">
-      Outline
+      <span>Outline</span>
     </Badge>
     <Badge appearance="outline" variant="success">
-      Success
+      <span>Success</span>
     </Badge>
     <Badge appearance="outline" variant="error">
-      Error
+      <span>Error</span>
     </Badge>
     ```
   </Tab>
@@ -227,26 +221,26 @@ import { Badge } from "dandy-ui";
   <Tab value="Preview">
     <ComponentPreview>
       <Badge size="sm" variant="primary">
-        Small
+        <span>Small</span>
       </Badge>
       <Badge size="md" variant="primary">
-        Medium
+        <span>Medium</span>
       </Badge>
       <Badge size="lg" variant="primary">
-        Large
+        <span>Large</span>
       </Badge>
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
     ```tsx
     <Badge size="sm" variant="primary">
-      Small
+      <span>Small</span>
     </Badge>
     <Badge size="md" variant="primary">
-      Medium
+      <span>Medium</span>
     </Badge>
     <Badge size="lg" variant="primary">
-      Large
+      <span>Large</span>
     </Badge>
     ```
   </Tab>
@@ -259,16 +253,12 @@ import { Badge } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Badge shape="default" variant="primary">
-        Default Shape
-      </Badge>
+      <Badge shape="default" variant="primary" label="Default Shape" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
     ```tsx
-    <Badge shape="default" variant="primary">
-      Default Shape
-    </Badge>
+    <Badge shape="default" variant="primary" label="Default Shape" />
     ```
   </Tab>
 </Tabs>
@@ -278,16 +268,12 @@ import { Badge } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Badge shape="pill" variant="primary">
-        Pill Shape
-      </Badge>
+      <Badge shape="pill" variant="primary" label="Pill Shape" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
     ```tsx
-    <Badge shape="pill" variant="primary">
-      Pill Shape
-    </Badge>
+    <Badge shape="pill" variant="primary" label="Pill Shape" />
     ```
   </Tab>
 </Tabs>
@@ -312,28 +298,55 @@ import { Badge } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Badge size="sm" shape="pill" variant="success" appearance="outline">
-        New
-      </Badge>
-      <Badge size="md" shape="pill" variant="error" appearance="solid">
-        5
-      </Badge>
-      <Badge size="lg" shape="default" variant="warning" appearance="outline">
-        Beta
-      </Badge>
+      <Badge
+        size="sm"
+        shape="pill"
+        variant="success"
+        appearance="outline"
+        label="New"
+      />
+
+      <Badge
+        size="md"
+        shape="pill"
+        variant="error"
+        appearance="solid"
+        label="5"
+      />
+
+      <Badge
+        size="lg"
+        shape="default"
+        variant="warning"
+        appearance="outline"
+        label="Beta"
+      />
     </ComponentPreview>
+
   </Tab>
   <Tab value="Code">
     ```tsx
-    <Badge size="sm" shape="pill" variant="success" appearance="outline">
-      New
-    </Badge>
-    <Badge size="md" shape="pill" variant="error" appearance="solid">
-      5
-    </Badge>
-    <Badge size="lg" shape="default" variant="warning" appearance="outline">
-      Beta
-    </Badge>
+    <Badge
+      size="sm"
+      shape="pill"
+      variant="success"
+      appearance="outline"
+      label="New"
+    />
+    <Badge
+      size="md"
+      shape="pill"
+      variant="error"
+      appearance="solid"
+      label="5"
+    />
+    <Badge
+      size="lg"
+      shape="default"
+      variant="warning"
+      appearance="outline"
+      label="Beta"
+    />
     ```
   </Tab>
 </Tabs>

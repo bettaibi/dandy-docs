@@ -7,6 +7,8 @@ category: forms
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Slider } from "../../components/dandy";
 import { ComponentPreview } from "../../components/ComponentPreview";
+import { SliderChange } from "../../components/slider-change";
+import { SliderFormSubmit } from "../../components/slider-form-submit";
 
 # Slider
 
@@ -25,7 +27,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider label="Volume" defaultValue={50} />
+      <SliderChange label="Volume" defaultValue={50} />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -42,12 +44,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider
-        label="Brightness"
-        value={75}
-        onChange={(value) => console.log(value)}
-        showValue
-      />
+      <SliderChange label="Brightness" value={75} showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -62,10 +59,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider
-        label="Temperature"
-        onChange={(value) => console.log("Changed:", value)}
-      />
+      <SliderChange label="Temperature" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -85,7 +79,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider variant="primary" value={60} label="Primary" showValue />
+      <SliderChange variant="primary" value={60} label="Primary" showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -100,7 +94,12 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider variant="secondary" value={60} label="Secondary" showValue />
+      <SliderChange
+        variant="secondary"
+        value={60}
+        label="Secondary"
+        showValue
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -115,7 +114,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider variant="accent" value={60} label="Accent" showValue />
+      <SliderChange variant="accent" value={60} label="Accent" showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -130,7 +129,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider variant="success" value={60} label="Success" showValue />
+      <SliderChange variant="success" value={60} label="Success" showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -145,7 +144,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider variant="warning" value={60} label="Warning" showValue />
+      <SliderChange variant="warning" value={60} label="Warning" showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -160,7 +159,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider variant="error" value={60} label="Error" showValue />
+      <SliderChange variant="error" value={60} label="Error" showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -175,7 +174,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider variant="info" value={60} label="Info" showValue />
+      <SliderChange variant="info" value={60} label="Info" showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -190,9 +189,9 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider size="sm" value={40} label="Small" showValue />
-      <Slider size="md" value={60} label="Medium" showValue />
-      <Slider size="lg" value={80} label="Large" showValue />
+      <SliderChange size="sm" value={40} label="Small" showValue />
+      <SliderChange size="md" value={60} label="Medium" showValue />
+      <SliderChange size="lg" value={80} label="Large" showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -211,7 +210,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider min={0} max={10} value={5} label="Rate (0-10)" showValue />
+      <SliderChange min={0} max={10} value={5} label="Rate (0-10)" showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -226,7 +225,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider
+      <SliderChange
         min={0}
         max={100}
         step={25}
@@ -255,7 +254,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider
+      <SliderChange
         min={0}
         max={1}
         step={0.1}
@@ -279,7 +278,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider label="Volume Control" value={70} />
+      <SliderChange label="Volume Control" value={70} />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -294,7 +293,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider label="Brightness" value={85} showValue />
+      <SliderChange label="Brightness" value={85} showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -309,7 +308,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider value={45} showValue />
+      <SliderChange value={45} showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -324,7 +323,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Slider value={50} label="Disabled Slider" disabled showValue />
+      <SliderChange value={50} label="Disabled Slider" disabled showValue />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -339,24 +338,7 @@ import { Slider } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          alert("Form submitted!");
-        }}
-      >
-        <Slider
-          name="rating"
-          label="Rating"
-          min={1}
-          max={5}
-          value={3}
-          showValue
-        />
-        <button type="submit" style={{ marginTop: "1rem" }}>
-          Submit
-        </button>
-      </form>
+      <SliderFormSubmit />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">

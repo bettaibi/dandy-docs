@@ -7,6 +7,7 @@ category: forms
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { NumberInput } from "../../components/dandy";
 import { ComponentPreview } from "../../components/ComponentPreview";
+import { NumberInputChange } from "../../components/number-input-change";
 
 # NumberInput
 
@@ -25,7 +26,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput value={0} placeholder="Enter amount" />
+      <NumberInputChange value={0} placeholder="Enter amount" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -46,7 +47,11 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput variant="default" value={0} placeholder="Default variant" />
+      <NumberInputChange
+        variant="default"
+        value={0}
+        placeholder="Default variant"
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -66,7 +71,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput
+      <NumberInputChange
         variant="success"
         value={100}
         placeholder="Success variant"
@@ -90,7 +95,11 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput variant="error" value={0} placeholder="Error variant" />
+      <NumberInputChange
+        variant="error"
+        value={0}
+        placeholder="Error variant"
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -110,7 +119,11 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput variant="warning" value={50} placeholder="Warning variant" />
+      <NumberInputChange
+        variant="warning"
+        value={50}
+        placeholder="Warning variant"
+      />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -130,7 +143,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput variant="info" value={25} placeholder="Info variant" />
+      <NumberInputChange variant="info" value={25} placeholder="Info variant" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -150,9 +163,9 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput size="sm" value={0} placeholder="Small" />
-      <NumberInput size="md" value={0} placeholder="Medium" />
-      <NumberInput size="lg" value={0} placeholder="Large" />
+      <NumberInputChange size="sm" value={0} placeholder="Small" />
+      <NumberInputChange size="md" value={0} placeholder="Medium" />
+      <NumberInputChange size="lg" value={0} placeholder="Large" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -186,7 +199,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput
+      <NumberInputChange
         controlsPlacement="end"
         value={0}
         placeholder="Controls on the right"
@@ -210,7 +223,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput
+      <NumberInputChange
         controlsPlacement="start"
         value={0}
         placeholder="Controls on the left"
@@ -234,7 +247,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput
+      <NumberInputChange
         controlsPlacement="none"
         value={0}
         placeholder="No controls"
@@ -258,7 +271,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput value={5} min={0} max={10} placeholder="Range: 0-10" />
+      <NumberInputChange value={5} min={0} max={10} placeholder="Range: 0-10" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -279,7 +292,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput value={0} step={5} placeholder="Step by 5" />
+      <NumberInputChange value={0} step={5} placeholder="Step by 5" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -323,7 +336,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput
+      <NumberInputChange
         value={100}
         leftSlot={<span className="text-muted-foreground">$</span>}
         rightSlot={<span className="text-muted-foreground">USD</span>}
@@ -349,10 +362,10 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput rounded="sm" value={0} placeholder="Small radius" />
-      <NumberInput rounded="md" value={0} placeholder="Medium radius" />
-      <NumberInput rounded="lg" value={0} placeholder="Large radius" />
-      <NumberInput rounded="full" value={0} placeholder="Full radius" />
+      <NumberInputChange rounded="sm" value={0} placeholder="Small radius" />
+      <NumberInputChange rounded="md" value={0} placeholder="Medium radius" />
+      <NumberInputChange rounded="lg" value={0} placeholder="Large radius" />
+      <NumberInputChange rounded="full" value={0} placeholder="Full radius" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -390,7 +403,7 @@ import { NumberInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <NumberInput value={50} disabled placeholder="Disabled input" />
+      <NumberInputChange value={50} disabled placeholder="Disabled input" />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">

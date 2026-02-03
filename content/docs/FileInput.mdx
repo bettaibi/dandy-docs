@@ -7,6 +7,7 @@ category: forms
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { FileInput } from "../../components/dandy";
 import { ComponentPreview } from "../../components/ComponentPreview";
+import { FileInputChange } from "../../components/file-input-change";
 
 # FileInput
 
@@ -235,12 +236,7 @@ import { FileInput } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <FileInput
-        onFilesChange={(files) => {
-          console.log("Selected files:", files);
-        }}
-        placeholder="Upload your file"
-      />
+      <FileInputChange />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">

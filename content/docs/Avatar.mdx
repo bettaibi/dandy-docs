@@ -6,6 +6,7 @@ category: forms
 
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Avatar } from "../../components/dandy";
+import { AvatarError } from "../../components/avatar-error";
 import { ComponentPreview } from "../../components/ComponentPreview";
 
 # Avatar
@@ -219,12 +220,7 @@ import { Avatar } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Avatar
-        src="https://invalid-url.example.com/image.jpg"
-        placeholder="JD"
-        alt="John Doe"
-        onError={() => console.log("Image failed to load")}
-      />
+      <AvatarError />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
