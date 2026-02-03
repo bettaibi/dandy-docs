@@ -1,0 +1,6 @@
+{
+  "title": "Feedbacks",
+  "collapsible": true,
+  "defaultOpen": true,
+  "pages": ["Alert", "CircularProgress", "ProgressBar", "Spinner", "Skeleton"]
+}
