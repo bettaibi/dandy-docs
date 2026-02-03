@@ -6,7 +6,7 @@
     "Button",
     "Input",
     "Select",
-    "Checkbox",
+    "CheckBox",
     "Radio",
     "Switch",
     "Slider",
@@ -18,9 +18,19 @@
     "Badge",
     "Chips",
     "Label",
-    "Textarea",
     "accordion",
     "AspectRatio",
-    "NumberInput"
+    "NumberInput",
+    "Rating",
+    "CircularProgress",
+    "ProgressBar",
+    "TextArea",
+    "Alert",
+    "IconButton",
+    "Icon",
+    "Skeleton",
+    "Spinner",
+    "Carousel",
+    "Select-component"
   ]
 }

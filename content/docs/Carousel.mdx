@@ -1,0 +1,400 @@
+---
+title: Carousel
+description: A flexible carousel component with touch, mouse, and keyboard navigation support
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Carousel
+
+A composable carousel component built on Embla Carousel, featuring touch/swipe gestures, keyboard navigation, and extensive customization options.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "dandy-ui";
+```
+
+### Peer Dependencies
+
+This component requires the following peer dependency:
+
+```bash
+npm install embla-carousel-react
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Carousel className="w-full max-w-xs">
+        <CarouselContent>
+          <CarouselItem>
+            <div className="p-1">
+              <div className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-lg">
+                <span className="text-4xl font-semibold">1</span>
+              </div>
+            </div>
+          </CarouselItem>
+          <CarouselItem>
+            <div className="p-1">
+              <div className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-lg">
+                <span className="text-4xl font-semibold">2</span>
+              </div>
+            </div>
+          </CarouselItem>
+          <CarouselItem>
+            <div className="p-1">
+              <div className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-lg">
+                <span className="text-4xl font-semibold">3</span>
+              </div>
+            </div>
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Carousel className="w-full max-w-xs">
+      <CarouselContent>
+        <CarouselItem>
+          <div className="p-1">
+            <div className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-lg">
+              <span className="text-4xl font-semibold">1</span>
+            </div>
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div className="p-1">
+            <div className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-lg">
+              <span className="text-4xl font-semibold">2</span>
+            </div>
+          </div>
+        </CarouselItem>
+        <CarouselItem>
+          <div className="p-1">
+            <div className="flex aspect-square items-center justify-center p-6 bg-gray-100 rounded-lg">
+              <span className="text-4xl font-semibold">3</span>
+            </div>
+          </div>
+        </CarouselItem>
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+    ```
+  </Tab>
+</Tabs>
+
+## Orientation
+
+### Horizontal Carousel
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Carousel className="w-full max-w-xs">
+        <CarouselContent>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <CarouselItem key={index}>
+              <div className="p-1">
+                <div className="flex aspect-square items-center justify-center p-6 bg-blue-50 rounded-lg">
+                  <span className="text-2xl font-semibold">{index + 1}</span>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Carousel className="w-full max-w-xs">
+      <CarouselContent>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <div className="flex aspect-square items-center justify-center p-6 bg-blue-50 rounded-lg">
+                <span className="text-2xl font-semibold">{index + 1}</span>
+              </div>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+    ```
+  </Tab>
+</Tabs>
+
+### Vertical Carousel
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Carousel orientation="vertical" className="w-full max-w-xs">
+        <CarouselContent className="h-[200px]">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <CarouselItem key={index}>
+              <div className="p-1">
+                <div className="flex aspect-square items-center justify-center p-6 bg-green-50 rounded-lg">
+                  <span className="text-2xl font-semibold">{index + 1}</span>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Carousel orientation="vertical" className="w-full max-w-xs">
+      <CarouselContent className="h-[200px]">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <div className="flex aspect-square items-center justify-center p-6 bg-green-50 rounded-lg">
+                <span className="text-2xl font-semibold">{index + 1}</span>
+              </div>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+    ```
+  </Tab>
+</Tabs>
+
+## Multiple Items
+
+### Show Multiple Slides
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Carousel
+        className="w-full max-w-sm"
+        opts={{
+          align: "start",
+        }}
+      >
+        <CarouselContent>
+          {Array.from({ length: 8 }).map((_, index) => (
+            <CarouselItem key={index} className="basis-1/3">
+              <div className="p-1">
+                <div className="flex aspect-square items-center justify-center p-4 bg-purple-50 rounded-lg">
+                  <span className="text-lg font-semibold">{index + 1}</span>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Carousel
+      className="w-full max-w-sm"
+      opts={{
+        align: "start",
+      }}
+    >
+      <CarouselContent>
+        {Array.from({ length: 8 }).map((_, index) => (
+          <CarouselItem key={index} className="basis-1/3">
+            <div className="p-1">
+              <div className="flex aspect-square items-center justify-center p-4 bg-purple-50 rounded-lg">
+                <span className="text-lg font-semibold">{index + 1}</span>
+              </div>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+    ```
+  </Tab>
+</Tabs>
+
+## Loop & Autoplay
+
+### Infinite Loop
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Carousel
+        className="w-full max-w-xs"
+        opts={{
+          loop: true,
+        }}
+      >
+        <CarouselContent>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <CarouselItem key={index}>
+              <div className="p-1">
+                <div className="flex aspect-square items-center justify-center p-6 bg-orange-50 rounded-lg">
+                  <span className="text-2xl font-semibold">{index + 1}</span>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Carousel
+      className="w-full max-w-xs"
+      opts={{
+        loop: true,
+      }}
+    >
+      <CarouselContent>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <div className="flex aspect-square items-center justify-center p-6 bg-orange-50 rounded-lg">
+                <span className="text-2xl font-semibold">{index + 1}</span>
+              </div>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+    ```
+  </Tab>
+</Tabs>
+
+## Without Arrows
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Carousel className="w-full max-w-xs" hideArrows>
+        <CarouselContent>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <CarouselItem key={index}>
+              <div className="p-1">
+                <div className="flex aspect-square items-center justify-center p-6 bg-pink-50 rounded-lg">
+                  <span className="text-2xl font-semibold">{index + 1}</span>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Carousel className="w-full max-w-xs" hideArrows>
+      <CarouselContent>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <div className="flex aspect-square items-center justify-center p-6 bg-pink-50 rounded-lg">
+                <span className="text-2xl font-semibold">{index + 1}</span>
+              </div>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### Carousel Props
+
+| Prop        | Type                         | Default      | Description                                   |
+| ----------- | ---------------------------- | ------------ | --------------------------------------------- |
+| orientation | `horizontal \| vertical`     | `horizontal` | Carousel scroll direction                     |
+| opts        | `CarouselOptions`            | -            | Embla Carousel options object                 |
+| plugins     | `CarouselPlugin`             | -            | Embla Carousel plugins                        |
+| setApi      | `(api: CarouselApi) => void` | -            | Callback to receive the carousel API instance |
+| hideArrows  | `boolean`                    | `false`      | Hide navigation arrows                        |
+| className   | `string`                     | -            | Additional CSS classes                        |
+
+Inherits all standard HTML div attributes.
+
+### CarouselItem Props
+
+| Prop      | Type     | Default | Description            |
+| --------- | -------- | ------- | ---------------------- |
+| className | `string` | -       | Additional CSS classes |
+
+Inherits all standard HTML div attributes.
+
+### CarouselPrevious / CarouselNext Props
+
+| Prop       | Type                        | Default   | Description             |
+| ---------- | --------------------------- | --------- | ----------------------- |
+| variant    | `default \| primary \| ...` | `primary` | Button color variant    |
+| appearance | `filled \| outlined`        | `filled`  | Button appearance style |
+| size       | `sm \| md \| lg`            | `md`      | Button size             |
+| className  | `string`                    | -         | Additional CSS classes  |
+
+Inherits all IconButton component props.
+
+## Accessibility
+
+- Keyboard navigable with Arrow keys (Left/Right for horizontal, Up/Down for vertical)
+- Focus visible with ring indicator
+- WCAG 2.1 Level AA compliant
+- Proper ARIA attributes (`role="region"`, `aria-roledescription="carousel"`, `aria-roledescription="slide"`)
+- Navigation buttons have descriptive `aria-label` attributes
+- Touch and swipe gestures supported on mobile devices
+- Navigation buttons automatically disabled when at start/end (unless loop is enabled)
+
+## Component API
+
+| Export           | Type                              | Description                   |
+| ---------------- | --------------------------------- | ----------------------------- |
+| Carousel         | `React.ForwardRefExoticComponent` | Main carousel container       |
+| CarouselContent  | `React.FC`                        | Viewport and slides container |
+| CarouselItem     | `React.FC`                        | Individual slide wrapper      |
+| CarouselPrevious | `React.FC`                        | Previous navigation button    |
+| CarouselNext     | `React.FC`                        | Next navigation button        |
+| CarouselApi      | `type`                            | Embla Carousel API type       |

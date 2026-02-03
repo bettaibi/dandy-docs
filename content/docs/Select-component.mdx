@@ -1,0 +1,632 @@
+---
+title: Select
+description: Accessible dropdown select component with keyboard navigation and semantic variants
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectValue,
+  SelectItem,
+  SelectGroup,
+  SelectLabel,
+  SelectSeparator,
+} from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+import { SelectValueChange } from "../../components/select-value-change";
+
+# Select
+
+A customizable dropdown select component built on Radix UI primitives. Features semantic color variants, flexible sizing, keyboard navigation, and mobile-first design.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectValue,
+  SelectItem,
+  SelectGroup,
+  SelectLabel,
+  SelectSeparator,
+} from "dandy-ui";
+```
+
+### Peer Dependencies
+
+This component requires the following peer dependency:
+
+```bash
+npm install @radix-ui/react-select
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select>
+        <SelectTrigger className="w-64">
+          <SelectValue placeholder="Select a fruit" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="apple">Apple</SelectItem>
+          <SelectItem value="banana">Banana</SelectItem>
+          <SelectItem value="orange">Orange</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select>
+      <SelectTrigger className="w-64">
+        <SelectValue placeholder="Select a fruit" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="apple">Apple</SelectItem>
+        <SelectItem value="banana">Banana</SelectItem>
+        <SelectItem value="orange">Orange</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select variant="default">
+        <SelectTrigger className="w-64">
+          <SelectValue placeholder="Default variant" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2">Option 2</SelectItem>
+          <SelectItem value="3">Option 3</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select variant="default">
+      <SelectTrigger className="w-64">
+        <SelectValue placeholder="Default variant" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="1">Option 1</SelectItem>
+        <SelectItem value="2">Option 2</SelectItem>
+        <SelectItem value="3">Option 3</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select variant="success">
+        <SelectTrigger className="w-64">
+          <SelectValue placeholder="Success variant" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Valid Option 1</SelectItem>
+          <SelectItem value="2">Valid Option 2</SelectItem>
+          <SelectItem value="3">Valid Option 3</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select variant="success">
+      <SelectTrigger className="w-64">
+        <SelectValue placeholder="Success variant" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="1">Valid Option 1</SelectItem>
+        <SelectItem value="2">Valid Option 2</SelectItem>
+        <SelectItem value="3">Valid Option 3</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select variant="error">
+        <SelectTrigger className="w-64">
+          <SelectValue placeholder="Error variant" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Fix Option 1</SelectItem>
+          <SelectItem value="2">Fix Option 2</SelectItem>
+          <SelectItem value="3">Fix Option 3</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select variant="error">
+      <SelectTrigger className="w-64">
+        <SelectValue placeholder="Error variant" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="1">Fix Option 1</SelectItem>
+        <SelectItem value="2">Fix Option 2</SelectItem>
+        <SelectItem value="3">Fix Option 3</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select variant="warning">
+        <SelectTrigger className="w-64">
+          <SelectValue placeholder="Warning variant" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Caution Option 1</SelectItem>
+          <SelectItem value="2">Caution Option 2</SelectItem>
+          <SelectItem value="3">Caution Option 3</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select variant="warning">
+      <SelectTrigger className="w-64">
+        <SelectValue placeholder="Warning variant" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="1">Caution Option 1</SelectItem>
+        <SelectItem value="2">Caution Option 2</SelectItem>
+        <SelectItem value="3">Caution Option 3</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select variant="info">
+        <SelectTrigger className="w-64">
+          <SelectValue placeholder="Info variant" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Info Option 1</SelectItem>
+          <SelectItem value="2">Info Option 2</SelectItem>
+          <SelectItem value="3">Info Option 3</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select variant="info">
+      <SelectTrigger className="w-64">
+        <SelectValue placeholder="Info variant" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="1">Info Option 1</SelectItem>
+        <SelectItem value="2">Info Option 2</SelectItem>
+        <SelectItem value="3">Info Option 3</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select>
+        <SelectTrigger className="w-64" size="sm">
+          <SelectValue placeholder="Small size" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Small Option 1</SelectItem>
+          <SelectItem value="2">Small Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+      <Select>
+        <SelectTrigger className="w-64" size="md">
+          <SelectValue placeholder="Medium size (default)" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Medium Option 1</SelectItem>
+          <SelectItem value="2">Medium Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+      <Select>
+        <SelectTrigger className="w-64" size="lg">
+          <SelectValue placeholder="Large size" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Large Option 1</SelectItem>
+          <SelectItem value="2">Large Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select>
+      <SelectTrigger className="w-64" size="sm">
+        <SelectValue placeholder="Small size" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="1">Small Option 1</SelectItem>
+        <SelectItem value="2">Small Option 2</SelectItem>
+      </SelectContent>
+    </Select>
+
+    <Select>
+      <SelectTrigger className="w-64" size="md">
+        <SelectValue placeholder="Medium size (default)" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="1">Medium Option 1</SelectItem>
+        <SelectItem value="2">Medium Option 2</SelectItem>
+      </SelectContent>
+    </Select>
+
+    <Select>
+      <SelectTrigger className="w-64" size="lg">
+        <SelectValue placeholder="Large size" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="1">Large Option 1</SelectItem>
+        <SelectItem value="2">Large Option 2</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+
+  </Tab>
+</Tabs>
+
+## Rounded Corners
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select>
+        <SelectTrigger className="w-64" rounded="sm">
+          <SelectValue placeholder="Small rounded" />
+        </SelectTrigger>
+        <SelectContent rounded="sm">
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2">Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+      <Select>
+        <SelectTrigger className="w-64" rounded="lg">
+          <SelectValue placeholder="Large rounded" />
+        </SelectTrigger>
+        <SelectContent rounded="lg">
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2">Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+      <Select>
+        <SelectTrigger className="w-64" rounded="xl">
+          <SelectValue placeholder="Extra large rounded" />
+        </SelectTrigger>
+        <SelectContent rounded="xl">
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2">Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select>
+      <SelectTrigger className="w-64" rounded="sm">
+        <SelectValue placeholder="Small rounded" />
+      </SelectTrigger>
+      <SelectContent rounded="sm">
+        <SelectItem value="1">Option 1</SelectItem>
+        <SelectItem value="2">Option 2</SelectItem>
+      </SelectContent>
+    </Select>
+
+    <Select>
+      <SelectTrigger className="w-64" rounded="lg">
+        <SelectValue placeholder="Large rounded" />
+      </SelectTrigger>
+      <SelectContent rounded="lg">
+        <SelectItem value="1">Option 1</SelectItem>
+        <SelectItem value="2">Option 2</SelectItem>
+      </SelectContent>
+    </Select>
+
+    <Select>
+      <SelectTrigger className="w-64" rounded="xl">
+        <SelectValue placeholder="Extra large rounded" />
+      </SelectTrigger>
+      <SelectContent rounded="xl">
+        <SelectItem value="1">Option 1</SelectItem>
+        <SelectItem value="2">Option 2</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+
+  </Tab>
+</Tabs>
+
+## With Left Slot
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select>
+        <SelectTrigger className="w-64" leftSlot={<span>🌍</span>}>
+          <SelectValue placeholder="Select a country" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="us">United States</SelectItem>
+          <SelectItem value="uk">United Kingdom</SelectItem>
+          <SelectItem value="ca">Canada</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select>
+      <SelectTrigger className="w-64" leftSlot={<span>🌍</span>}>
+        <SelectValue placeholder="Select a country" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="us">United States</SelectItem>
+        <SelectItem value="uk">United Kingdom</SelectItem>
+        <SelectItem value="ca">Canada</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select disabled>
+        <SelectTrigger className="w-64">
+          <SelectValue placeholder="Disabled select" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2">Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select disabled>
+      <SelectTrigger className="w-64">
+        <SelectValue placeholder="Disabled select" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="1">Option 1</SelectItem>
+        <SelectItem value="2">Option 2</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+  </Tab>
+</Tabs>
+
+## With Groups and Labels
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Select>
+        <SelectTrigger className="w-64">
+          <SelectValue placeholder="Select a food" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectLabel>Fruits</SelectLabel>
+            <SelectItem value="apple">Apple</SelectItem>
+            <SelectItem value="banana">Banana</SelectItem>
+            <SelectItem value="orange">Orange</SelectItem>
+          </SelectGroup>
+          <SelectSeparator />
+          <SelectGroup>
+            <SelectLabel>Vegetables</SelectLabel>
+            <SelectItem value="carrot">Carrot</SelectItem>
+            <SelectItem value="broccoli">Broccoli</SelectItem>
+            <SelectItem value="spinach">Spinach</SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Select>
+      <SelectTrigger className="w-64">
+        <SelectValue placeholder="Select a food" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Fruits</SelectLabel>
+          <SelectItem value="apple">Apple</SelectItem>
+          <SelectItem value="banana">Banana</SelectItem>
+          <SelectItem value="orange">Orange</SelectItem>
+        </SelectGroup>
+        <SelectSeparator />
+        <SelectGroup>
+          <SelectLabel>Vegetables</SelectLabel>
+          <SelectItem value="carrot">Carrot</SelectItem>
+          <SelectItem value="broccoli">Broccoli</SelectItem>
+          <SelectItem value="spinach">Spinach</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+    ```
+  </Tab>
+</Tabs>
+
+## Controlled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+     <SelectValueChange />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [value, setValue] = React.useState("apple");
+
+    <Select value={value} onValueChange={setValue}>
+      <SelectTrigger className="w-64">
+        <SelectValue placeholder="Select a fruit" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="apple">Apple</SelectItem>
+        <SelectItem value="banana">Banana</SelectItem>
+        <SelectItem value="orange">Orange</SelectItem>
+      </SelectContent>
+    </Select>
+    ```
+
+  </Tab>
+</Tabs>
+
+## Props
+
+### Select
+
+| Prop          | Type                                             | Default   | Description                              |
+| ------------- | ------------------------------------------------ | --------- | ---------------------------------------- |
+| variant       | `default \| success \| error \| warning \| info` | `default` | Visual style variant for focus and items |
+| value         | `string`                                         | -         | Controlled selected value                |
+| defaultValue  | `string`                                         | -         | Default selected value                   |
+| onValueChange | `(value: string) => void`                        | -         | Callback when selection changes          |
+| disabled      | `boolean`                                        | `false`   | Disables the select                      |
+| required      | `boolean`                                        | `false`   | Makes the select required                |
+| name          | `string`                                         | -         | Name for form submission                 |
+| open          | `boolean`                                        | -         | Controlled open state                    |
+| defaultOpen   | `boolean`                                        | -         | Default open state                       |
+| onOpenChange  | `(open: boolean) => void`                        | -         | Callback when open state changes         |
+
+### SelectTrigger
+
+| Prop      | Type                                             | Default   | Description                   |
+| --------- | ------------------------------------------------ | --------- | ----------------------------- |
+| variant   | `default \| success \| error \| warning \| info` | inherited | Visual style variant override |
+| size      | `sm \| md \| lg`                                 | `md`      | Trigger size                  |
+| leftSlot  | `React.ReactNode`                                | -         | Content in the left slot      |
+| rounded   | `sm \| md \| lg \| xl`                           | -         | Corner radius override        |
+| className | `string`                                         | -         | Additional CSS classes        |
+
+Inherits all standard HTML button attributes.
+
+### SelectContent
+
+| Prop       | Type                     | Default  | Description                      |
+| ---------- | ------------------------ | -------- | -------------------------------- |
+| position   | `item-aligned \| popper` | `popper` | Position preference for dropdown |
+| rounded    | `sm \| md \| lg \| xl`   | -        | Corner radius override           |
+| sideOffset | `number`                 | `4`      | Distance from trigger            |
+| className  | `string`                 | -        | Additional CSS classes           |
+
+### SelectItem
+
+| Prop      | Type                                                       | Default   | Description                   |
+| --------- | ---------------------------------------------------------- | --------- | ----------------------------- |
+| value     | `string`                                                   | -         | Option value (required)       |
+| variant   | `default \| success \| error \| warning \| info \| accent` | inherited | Visual style variant override |
+| disabled  | `boolean`                                                  | `false`   | Disables the item             |
+| className | `string`                                                   | -         | Additional CSS classes        |
+
+### SelectLabel
+
+| Prop      | Type     | Default | Description            |
+| --------- | -------- | ------- | ---------------------- |
+| className | `string` | -       | Additional CSS classes |
+
+### SelectGroup
+
+Standard Radix Select Group component with no custom props.
+
+### SelectSeparator
+
+| Prop      | Type     | Default | Description            |
+| --------- | -------- | ------- | ---------------------- |
+| className | `string` | -       | Additional CSS classes |
+
+### SelectValue
+
+| Prop        | Type     | Default | Description                 |
+| ----------- | -------- | ------- | --------------------------- |
+| placeholder | `string` | -       | Placeholder text when empty |
+
+## Accessibility
+
+- Keyboard navigable with Tab, Space/Enter to open, Arrow keys to navigate
+- Type-ahead search to quickly find options
+- Escape to close the dropdown
+- Focus indicators on trigger and items
+- Proper ARIA attributes for screen readers
+- Supports disabled state with proper communication
+- Minimum 44x44px touch targets for mobile
+- WCAG 2.1 Level AA compliant
+- Respects prefers-reduced-motion for animations
+
+## Component API
+
+| Export                 | Type                              | Description                            |
+| ---------------------- | --------------------------------- | -------------------------------------- |
+| Select                 | `React.FC`                        | Root component with variant context    |
+| SelectTrigger          | `React.ForwardRefExoticComponent` | Trigger button with ref forwarding     |
+| SelectContent          | `React.ForwardRefExoticComponent` | Dropdown content container             |
+| SelectValue            | `React.ForwardRefExoticComponent` | Displays selected value or placeholder |
+| SelectItem             | `React.ForwardRefExoticComponent` | Individual selectable option           |
+| SelectGroup            | `React.ForwardRefExoticComponent` | Groups related items                   |
+| SelectLabel            | `React.ForwardRefExoticComponent` | Labels a group of items                |
+| SelectSeparator        | `React.ForwardRefExoticComponent` | Visual separator between groups        |
+| SelectScrollUpButton   | `React.ForwardRefExoticComponent` | Scroll indicator at top                |
+| SelectScrollDownButton | `React.ForwardRefExoticComponent` | Scroll indicator at bottom             |
+| SelectProps            | `interface`                       | Select component props                 |
+| SelectTriggerProps     | `interface`                       | SelectTrigger component props          |
+| SelectContentProps     | `interface`                       | SelectContent component props          |
+| SelectItemProps        | `interface`                       | SelectItem component props             |

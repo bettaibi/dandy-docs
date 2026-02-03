@@ -1,0 +1,725 @@
+---
+title: IconButton
+description: A square or circular button component optimized for displaying single icons
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { IconButton } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# IconButton
+
+A versatile icon button component with multiple variants, sizes, and appearance options. Ideal for actions represented by icons, toolbar buttons, and compact UI controls.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { IconButton } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="w-5 h-5"
+      >
+        <path
+          fillRule="evenodd"
+          d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton variant="primary" appearance="filled">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton variant="primary" appearance="outlined">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton variant="primary" appearance="filled">
+      <SearchIcon />
+    </IconButton>
+    <IconButton variant="primary" appearance="outlined">
+      <SearchIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton variant="secondary" appearance="filled">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h14.69l-6.22-6.22a.75.75 0 010-1.06z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton variant="secondary" appearance="outlined">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h14.69l-6.22-6.22a.75.75 0 010-1.06z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton variant="secondary" appearance="filled">
+      <ArrowRightIcon />
+    </IconButton>
+    <IconButton variant="secondary" appearance="outlined">
+      <ArrowRightIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+### Ghost
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton variant="ghost" appearance="filled">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 6.75a5.25 5.25 0 016.775-5.025.75.75 0 01.313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 011.248.313 5.25 5.25 0 01-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 112.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0112 6.75zM4.117 19.125a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton variant="ghost" appearance="outlined">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 6.75a5.25 5.25 0 016.775-5.025.75.75 0 01.313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 011.248.313 5.25 5.25 0 01-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 112.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0112 6.75zM4.117 19.125a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton variant="ghost" appearance="filled">
+      <SettingsIcon />
+    </IconButton>
+    <IconButton variant="ghost" appearance="outlined">
+      <SettingsIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton variant="success" appearance="filled">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton variant="success" appearance="outlined">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton variant="success" appearance="filled">
+      <CheckIcon />
+    </IconButton>
+    <IconButton variant="success" appearance="outlined">
+      <CheckIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton variant="warning" appearance="filled">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton variant="warning" appearance="outlined">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton variant="warning" appearance="filled">
+      <WarningIcon />
+    </IconButton>
+    <IconButton variant="warning" appearance="outlined">
+      <WarningIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton variant="error" appearance="filled">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton variant="error" appearance="outlined">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton variant="error" appearance="filled">
+      <DeleteIcon />
+    </IconButton>
+    <IconButton variant="error" appearance="outlined">
+      <DeleteIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton variant="info" appearance="filled">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton variant="info" appearance="outlined">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton variant="info" appearance="filled">
+      <InfoIcon />
+    </IconButton>
+    <IconButton variant="info" appearance="outlined">
+      <InfoIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton size="sm">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-4 h-4"
+        >
+          <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+        </svg>
+      </IconButton>
+      <IconButton size="md">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+        </svg>
+      </IconButton>
+      <IconButton size="lg">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-6 h-6"
+        >
+          <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton size="sm">
+      <HeartIcon className="w-4 h-4" />
+    </IconButton>
+    <IconButton size="md">
+      <HeartIcon className="w-5 h-5" />
+    </IconButton>
+    <IconButton size="lg">
+      <HeartIcon className="w-6 h-6" />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton rounded="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton rounded="sm">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton rounded="md">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton rounded="lg">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton rounded="full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton rounded="none">
+      <PlayIcon />
+    </IconButton>
+    <IconButton rounded="sm">
+      <PlayIcon />
+    </IconButton>
+    <IconButton rounded="md">
+      <PlayIcon />
+    </IconButton>
+    <IconButton rounded="lg">
+      <PlayIcon />
+    </IconButton>
+    <IconButton rounded="full">
+      <PlayIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+## Elevation
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton elevation={0}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton elevation={1}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton elevation={2}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton elevation={3}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton elevation={0}>
+      <SendIcon />
+    </IconButton>
+    <IconButton elevation={1}>
+      <SendIcon />
+    </IconButton>
+    <IconButton elevation={2}>
+      <SendIcon />
+    </IconButton>
+    <IconButton elevation={3}>
+      <SendIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <IconButton disabled>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton variant="secondary" disabled>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+      <IconButton appearance="outlined" disabled>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </IconButton>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <IconButton disabled>
+      <PlusIcon />
+    </IconButton>
+    <IconButton variant="secondary" disabled>
+      <PlusIcon />
+    </IconButton>
+    <IconButton appearance="outlined" disabled>
+      <PlusIcon />
+    </IconButton>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop       | Type                                                                   | Default   | Description             |
+| ---------- | ---------------------------------------------------------------------- | --------- | ----------------------- |
+| size       | `sm \| md \| lg`                                                       | `md`      | Button size             |
+| variant    | `primary \| secondary \| ghost \| success \| warning \| error \| info` | `primary` | Color variant           |
+| appearance | `filled \| outlined`                                                   | `filled`  | Visual appearance style |
+| rounded    | `sm \| md \| lg \| full \| none`                                       | -         | Border radius override  |
+| elevation  | `0 \| 1 \| 2 \| 3`                                                     | `0`       | Shadow elevation level  |
+| disabled   | `boolean`                                                              | `false`   | Disables the button     |
+| children   | `React.ReactNode`                                                      | -         | Icon element to render  |
+| className  | `string`                                                               | -         | Additional CSS classes  |
+
+Inherits all standard HTML button attributes (`onClick`, `type`, `aria-label`, etc.).
+
+## Accessibility
+
+- Keyboard navigable with Tab and Enter/Space keys
+- Focus visible with ring indicator
+- WCAG 2.1 Level AA compliant
+- Minimum 32x32px touch target on small size (sm: 32px, md: 40px, lg: 48px)
+- Disabled state prevents interaction and reduces opacity
+- Always include `aria-label` for screen reader accessibility since icons don't provide text context
+
+```tsx
+<IconButton aria-label="Close dialog">
+  <XIcon />
+</IconButton>
+```
+
+## Component API
+
+| Export          | Type                              | Description                        |
+| --------------- | --------------------------------- | ---------------------------------- |
+| IconButton      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| IconButtonProps | `interface`                       | Component props interface          |

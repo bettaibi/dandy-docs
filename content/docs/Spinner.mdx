@@ -1,0 +1,226 @@
+---
+title: Spinner
+description: Animated loading indicator for async operations and loading states
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Spinner } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Spinner
+
+An animated loading indicator that provides visual feedback during asynchronous operations, data fetching, or processing states.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Spinner } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner variant="default" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner variant="default" />
+    ```
+  </Tab>
+</Tabs>
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner variant="primary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner variant="primary" />
+    ```
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner variant="secondary" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner variant="secondary" />
+    ```
+  </Tab>
+</Tabs>
+
+### Accent
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner variant="accent" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner variant="accent" />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner variant="success" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner variant="success" />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner variant="warning" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner variant="warning" />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner variant="error" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner variant="error" />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner variant="info" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner variant="info" />
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner size="xs" />
+      <Spinner size="sm" />
+      <Spinner size="md" />
+      <Spinner size="lg" />
+      <Spinner size="xl" />
+      <Spinner size="2xl" />
+      <Spinner size="3xl" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner size="xs" />
+    <Spinner size="sm" />
+    <Spinner size="md" />
+    <Spinner size="lg" />
+    <Spinner size="xl" />
+    <Spinner size="2xl" />
+    <Spinner size="3xl" />
+    ```
+  </Tab>
+</Tabs>
+
+## Custom Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Spinner label="Processing your request..." />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Spinner label="Processing your request..." />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop      | Type                                                                               | Default        | Description                     |
+| --------- | ---------------------------------------------------------------------------------- | -------------- | ------------------------------- |
+| size      | `xs \| sm \| md \| lg \| xl \| 2xl \| 3xl`                                         | `md`           | Spinner size                    |
+| variant   | `default \| primary \| secondary \| accent \| success \| warning \| error \| info` | `default`      | Color variant                   |
+| label     | `string`                                                                           | `"Loading..."` | Loading text for screen readers |
+| className | `string`                                                                           | -              | Additional CSS classes          |
+
+Inherits all standard HTML `div` attributes (`role`, `aria-*`, etc.).
+
+## Accessibility
+
+- Uses `role="status"` for live region announcements
+- Includes screen reader text via `label` prop (visually hidden)
+- Icon marked with `aria-hidden="true"` to avoid duplication
+- Respects user's motion preferences (animation can be disabled via CSS)
+- Semantic HTML structure for assistive technologies
+
+## Component API
+
+| Export       | Type                              | Description                        |
+| ------------ | --------------------------------- | ---------------------------------- |
+| Spinner      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| SpinnerProps | `interface`                       | Component props interface          |

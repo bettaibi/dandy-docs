@@ -7,6 +7,7 @@ category: forms
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { CircularProgress } from "../../components/dandy";
 import { ComponentPreview } from "../../components/ComponentPreview";
+import { CircularProgressCompleteFeedback } from "../../components/circular-progress-complete-feedback";
 
 # CircularProgress
 
@@ -260,11 +261,7 @@ import "dandy-ui/theme.css";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <CircularProgress
-        value={10}
-        variant="success"
-        onComplete={() => alert("Countdown complete!")}
-      />
+      <CircularProgressCompleteFeedback />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">

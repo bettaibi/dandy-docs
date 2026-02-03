@@ -1,0 +1,415 @@
+---
+title: Alert
+description: Display contextual feedback messages with variant-based styling and icons
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Alert } from "../../components/dandy";
+import { ComponentPreview } from "../../components/ComponentPreview";
+
+# Alert
+
+A versatile notification component for displaying important messages to users with semantic color variants, optional icons, and flexible content layouts.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Alert } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert
+        title="Default Alert"
+        description="This is a default alert message with an informational tone."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert
+      title="Default Alert"
+      description="This is a default alert message with an informational tone."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert
+        variant="success"
+        title="Success"
+        description="Your changes have been saved successfully."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert
+      variant="success"
+      title="Success"
+      description="Your changes have been saved successfully."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert
+        variant="warning"
+        title="Warning"
+        description="Your session will expire in 5 minutes. Please save your work."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert
+      variant="warning"
+      title="Warning"
+      description="Your session will expire in 5 minutes. Please save your work."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert
+        variant="error"
+        title="Error"
+        description="Failed to save changes. Please try again."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert
+      variant="error"
+      title="Error"
+      description="Failed to save changes. Please try again."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert
+        variant="info"
+        title="Information"
+        description="New features are now available. Check out the latest updates."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert
+      variant="info"
+      title="Information"
+      description="New features are now available. Check out the latest updates."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Without Icon
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert
+        variant="success"
+        title="Success"
+        description="Operation completed successfully."
+        showIcon={false}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert
+      variant="success"
+      title="Success"
+      description="Operation completed successfully."
+      showIcon={false}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Without Title
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert variant="info" description="This is an alert without a title." />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert variant="info" description="This is an alert without a title." />
+    ```
+  </Tab>
+</Tabs>
+
+## Elevation
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert
+        variant="default"
+        title="No Shadow"
+        description="Alert with no elevation."
+        elevation="none"
+      />
+      <Alert
+        variant="info"
+        title="Small Shadow"
+        description="Alert with small shadow elevation."
+        elevation="sm"
+      />
+      <Alert
+        variant="success"
+        title="Medium Shadow"
+        description="Alert with medium shadow elevation."
+        elevation="md"
+      />
+      <Alert
+        variant="warning"
+        title="Large Shadow"
+        description="Alert with large shadow elevation."
+        elevation="lg"
+      />
+      <Alert
+        variant="error"
+        title="Extra Large Shadow"
+        description="Alert with extra large shadow elevation."
+        elevation="xl"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert
+      variant="default"
+      title="No Shadow"
+      description="Alert with no elevation."
+      elevation="none"
+    />
+    <Alert
+      variant="info"
+      title="Small Shadow"
+      description="Alert with small shadow elevation."
+      elevation="sm"
+    />
+    <Alert
+      variant="success"
+      title="Medium Shadow"
+      description="Alert with medium shadow elevation."
+      elevation="md"
+    />
+    <Alert
+      variant="warning"
+      title="Large Shadow"
+      description="Alert with large shadow elevation."
+      elevation="lg"
+    />
+    <Alert
+      variant="error"
+      title="Extra Large Shadow"
+      description="Alert with extra large shadow elevation."
+      elevation="xl"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert
+        variant="info"
+        title="No Rounded Corners"
+        description="Alert with sharp corners."
+        rounded="none"
+      />
+      <Alert
+        variant="info"
+        title="Small Radius"
+        description="Alert with small border radius."
+        rounded="sm"
+      />
+      <Alert
+        variant="info"
+        title="Medium Radius"
+        description="Alert with medium border radius."
+        rounded="md"
+      />
+      <Alert
+        variant="info"
+        title="Large Radius"
+        description="Alert with large border radius (default)."
+        rounded="lg"
+      />
+      <Alert
+        variant="info"
+        title="Extra Large Radius"
+        description="Alert with extra large border radius."
+        rounded="xl"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert
+      variant="info"
+      title="No Rounded Corners"
+      description="Alert with sharp corners."
+      rounded="none"
+    />
+    <Alert
+      variant="info"
+      title="Small Radius"
+      description="Alert with small border radius."
+      rounded="sm"
+    />
+    <Alert
+      variant="info"
+      title="Medium Radius"
+      description="Alert with medium border radius."
+      rounded="md"
+    />
+    <Alert
+      variant="info"
+      title="Large Radius"
+      description="Alert with large border radius (default)."
+      rounded="lg"
+    />
+    <Alert
+      variant="info"
+      title="Extra Large Radius"
+      description="Alert with extra large border radius."
+      rounded="xl"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Custom Icon
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert
+        variant="success"
+        title="Custom Icon"
+        description="You can provide your own custom icon."
+        icon={<span>🎉</span>}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert
+      variant="success"
+      title="Custom Icon"
+      description="You can provide your own custom icon."
+      icon={<span>🎉</span>}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Custom Content
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Alert variant="info" customContent>
+        <div className="flex items-center gap-3">
+          <span className="text-2xl">📢</span>
+          <div>
+            <h4 className="font-bold">Custom Layout</h4>
+            <p className="text-sm">
+              Build your own alert structure with full control over the content.
+            </p>
+            <button className="mt-2 text-xs underline">Learn more</button>
+          </div>
+        </div>
+      </Alert>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Alert variant="info" customContent>
+      <div className="flex items-center gap-3">
+        <span className="text-2xl">📢</span>
+        <div>
+          <h4 className="font-bold">Custom Layout</h4>
+          <p className="text-sm">
+            Build your own alert structure with full control over the content.
+          </p>
+          <button className="mt-2 text-xs underline">Learn more</button>
+        </div>
+      </div>
+    </Alert>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop          | Type                                             | Default   | Description                                      |
+| ------------- | ------------------------------------------------ | --------- | ------------------------------------------------ |
+| variant       | `default \| success \| warning \| error \| info` | `default` | Visual style variant with semantic colors        |
+| title         | `React.ReactNode`                                | -         | Optional heading/title text                      |
+| description   | `React.ReactNode`                                | -         | Optional description (falls back to children)    |
+| showIcon      | `boolean`                                        | `true`    | Show the leading icon                            |
+| icon          | `React.ReactNode`                                | -         | Provide a custom icon (defaults to variant icon) |
+| rounded       | `sm \| md \| lg \| xl \| full \| none`           | `lg`      | Border radius size                               |
+| elevation     | `none \| sm \| md \| lg \| xl`                   | `none`    | Shadow elevation level                           |
+| customContent | `boolean`                                        | `false`   | Whether to use custom content layout             |
+| className     | `string`                                         | -         | Additional CSS classes                           |
+
+Inherits all standard HTML `div` attributes (`onClick`, `role`, etc.).
+
+## Accessibility
+
+- Uses semantic `role="alert"` by default for screen reader announcements
+- Icons are marked `aria-hidden="true"` to avoid redundant announcements
+- Focus visible with ring indicator
+- High contrast border and background colors for WCAG compliance
+- Semantic color variants for different message types
+
+## Component API
+
+| Export     | Type                              | Description                        |
+| ---------- | --------------------------------- | ---------------------------------- |
+| Alert      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| AlertProps | `interface`                       | Component props interface          |

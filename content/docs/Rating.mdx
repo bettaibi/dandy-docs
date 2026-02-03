@@ -7,6 +7,7 @@ category: forms
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Rating } from "../../components/dandy";
 import { ComponentPreview } from "../../components/ComponentPreview";
+import { RatingChange } from "../../components/rating-change";
 
 # Rating
 
@@ -181,7 +182,7 @@ import { Rating } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Rating value={3.5} showValue />
+      <RatingChange value={3.5} />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
@@ -232,11 +233,7 @@ import { Rating } from "dandy-ui";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-      <Rating
-        value={3}
-        interactive
-        onValueChange={(value) => console.log("New rating:", value)}
-      />
+      <RatingChange value={3} interactive />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">
