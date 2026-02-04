@@ -4,15 +4,16 @@
   "defaultOpen": true,
   "pages": [
     "Input",
+    "FileInput",
+    "TextArea",
     "Select-component",
+    "NumberInput",
+    "InputOTP",
     "CheckBox",
     "Radio",
     "Switch",
+    "Label",
     "Slider",
-    "FileInput",
-    "InputOTP",
-    "NumberInput",
-    "Rating",
-    "TextArea"
+    "Rating"
   ]
 }
