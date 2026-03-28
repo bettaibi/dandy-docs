@@ -1,0 +1,57 @@
+---
+title: Hooks
+description: React hooks for media queries and theme management
+---
+
+# Hooks
+
+React hooks for responsive design and theme control.
+
+```tsx
+import { useMediaQuery, useTheme } from 'dandy-ui/utils';
+```
+
+---
+
+## useMediaQuery
+
+Returns whether the viewport matches a media query or breakpoint name. Breakpoint names resolve to `max-width` queries using the library's scale (`sm: 640`, `md: 768`, `lg: 1024`, `xl: 1280`, `2xl: 1536`). SSR-safe -- returns `false` until mounted.
+
+```tsx
+const isMobile = useMediaQuery("md");
+const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
+```
+
+```ts
+type Breakpoint = "sm" | "md" | "lg" | "xl" | "xlg" | "2xl";
+function useMediaQuery(input: string | Breakpoint): boolean
+```
+
+---
+
+## useTheme
+
+Returns the current theme and a function to change it. Must be used within a `ThemeProvider`.
+
+```tsx
+function ThemeToggle() {
+  const { theme, onThemeChange } = useTheme();
+
+  return (
+    <button onClick={() => onThemeChange(theme === "light" ? "dark" : "light")}>
+      Current: {theme}
+    </button>
+  );
+}
+```
+
+```ts
+type Theme = "light" | "dark";
+
+interface ThemeContextValue {
+  theme: Theme;
+  onThemeChange: (theme: Theme) => void;
+}
+
+function useTheme(): ThemeContextValue
+```

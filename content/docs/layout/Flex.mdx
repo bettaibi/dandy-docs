@@ -1,0 +1,195 @@
+---
+title: Flex
+description: A flexbox layout component for composing flexible row and column layouts
+category: layout
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Flex } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Flex
+
+A mobile-first flexbox container that simplifies layout composition. Supports all standard flexbox properties with sensible defaults and responsive behavior.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Flex } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Flex gap="4" justify="center" align="center">
+        <div className="bg-primary/20 text-foreground rounded-lg px-4 py-2 text-sm">Item 1</div>
+        <div className="bg-primary/20 text-foreground rounded-lg px-4 py-2 text-sm">Item 2</div>
+        <div className="bg-primary/20 text-foreground rounded-lg px-4 py-2 text-sm">Item 3</div>
+      </Flex>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Flex gap="4" justify="center" align="center">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </Flex>
+    ```
+  </Tab>
+</Tabs>
+
+## Direction
+
+Control the flow direction of flex items.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Flex direction="col" gap="3" align="start" fullHeight={false}>
+        <div className="bg-primary/20 text-foreground rounded-lg px-4 py-2 text-sm w-full">Row 1</div>
+        <div className="bg-primary/20 text-foreground rounded-lg px-4 py-2 text-sm w-full">Row 2</div>
+        <div className="bg-primary/20 text-foreground rounded-lg px-4 py-2 text-sm w-full">Row 3</div>
+      </Flex>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Flex direction="col" gap="3" align="start">
+      <div>Row 1</div>
+      <div>Row 2</div>
+      <div>Row 3</div>
+    </Flex>
+    ```
+  </Tab>
+</Tabs>
+
+## Justify Content
+
+Distribute items along the main axis.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Flex direction="col" gap="4" fullHeight={false}>
+        <Flex justify="start" className="bg-muted/30 p-2 rounded" fullHeight={false}>
+          <div className="bg-primary/20 text-foreground rounded px-3 py-1 text-xs">start</div>
+          <div className="bg-primary/20 text-foreground rounded px-3 py-1 text-xs">start</div>
+        </Flex>
+        <Flex justify="center" className="bg-muted/30 p-2 rounded" fullHeight={false}>
+          <div className="bg-primary/20 text-foreground rounded px-3 py-1 text-xs">center</div>
+          <div className="bg-primary/20 text-foreground rounded px-3 py-1 text-xs">center</div>
+        </Flex>
+        <Flex justify="end" className="bg-muted/30 p-2 rounded" fullHeight={false}>
+          <div className="bg-primary/20 text-foreground rounded px-3 py-1 text-xs">end</div>
+          <div className="bg-primary/20 text-foreground rounded px-3 py-1 text-xs">end</div>
+        </Flex>
+        <Flex justify="between" className="bg-muted/30 p-2 rounded" fullHeight={false}>
+          <div className="bg-primary/20 text-foreground rounded px-3 py-1 text-xs">between</div>
+          <div className="bg-primary/20 text-foreground rounded px-3 py-1 text-xs">between</div>
+        </Flex>
+      </Flex>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Flex justify="start">...</Flex>
+    <Flex justify="center">...</Flex>
+    <Flex justify="end">...</Flex>
+    <Flex justify="between">...</Flex>
+    ```
+  </Tab>
+</Tabs>
+
+## Wrap
+
+Allow items to wrap onto multiple lines.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Flex wrap="wrap" gap="3" fullHeight={false}>
+        {["React", "TypeScript", "Tailwind", "Next.js", "Vite", "Node.js", "ESLint", "Prettier"].map((tech) => (
+          <div key={tech} className="bg-primary/20 text-foreground rounded-full px-4 py-1.5 text-sm">{tech}</div>
+        ))}
+      </Flex>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Flex wrap="wrap" gap="3">
+      <div>React</div>
+      <div>TypeScript</div>
+      <div>Tailwind</div>
+      <div>Next.js</div>
+      <div>Vite</div>
+      <div>Node.js</div>
+    </Flex>
+    ```
+  </Tab>
+</Tabs>
+
+## Inline Flex
+
+Use `inline` to render as `inline-flex` instead of `flex`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p className="text-sm text-foreground">
+        Status:{" "}
+        <Flex inline gap="2" fullWidth={false} fullHeight={false}>
+          <span className="inline-block w-2 h-2 rounded-full bg-green-500 mt-1" />
+          <span>Online</span>
+        </Flex>
+      </p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <p>
+      Status:{" "}
+      <Flex inline gap="2" fullWidth={false} fullHeight={false}>
+        <span className="w-2 h-2 rounded-full bg-green-500" />
+        <span>Online</span>
+      </Flex>
+    </p>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| direction | `"row" \| "row-reverse" \| "col" \| "col-reverse"` | `"row"` | Flex direction |
+| justify | `"start" \| "end" \| "center" \| "between" \| "around" \| "evenly" \| "stretch"` | `"center"` | Justify content alignment |
+| align | `"start" \| "end" \| "center" \| "baseline" \| "stretch"` | `"center"` | Align items alignment |
+| gap | `"0" \| "1" \| "2" \| "3" \| "4" \| "5" \| "6" \| "8" \| "10" \| "12" \| "16"` | `"4"` | Gap between flex items (Tailwind spacing scale) |
+| wrap | `"wrap" \| "wrap-reverse" \| "nowrap"` | `"nowrap"` | Flex wrap behavior |
+| fullWidth | `boolean` | `true` | Make the container take full width |
+| fullHeight | `boolean` | `true` | Make the container take full height |
+| grow | `boolean` | `false` | Enable flex grow |
+| shrink | `boolean` | `false` | Enable flex shrink |
+| inline | `boolean` | `false` | Display as inline-flex instead of flex |
+| hidden | `"sm" \| "md" \| "lg" \| "xl"` | - | Hide content at the specified breakpoint and above |
+| className | `string` | - | Additional CSS classes |
+
+Inherits all standard HTML `div` attributes (except `hidden`).
+
+## Accessibility
+
+- Renders as a standard `div` element with flexbox display
+- Supports all standard ARIA attributes via prop spread
+- Works with screen readers as a generic grouping container
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| Flex | `React.ForwardRefExoticComponent` | Flexbox layout container component |
+| FlexProps | `interface` | Props for the Flex component |

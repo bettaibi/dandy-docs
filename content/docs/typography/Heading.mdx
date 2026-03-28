@@ -1,0 +1,235 @@
+---
+title: Heading
+description: Semantic heading component with independent size and level control for flexible typographic hierarchy
+category: typography
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Heading } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Heading
+
+A semantic heading component that renders `h1` through `h6` elements with independent size control. The `level` prop determines the HTML element while `size` allows visual flexibility, enabling proper document structure without being locked to default heading sizes.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Heading } from "dandy-ui";
+import "dandy-ui/theme.css";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Heading>Welcome to the Documentation</Heading>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Heading>Welcome to the Documentation</Heading>
+    ```
+  </Tab>
+</Tabs>
+
+## Heading Levels
+
+Each level renders its corresponding HTML heading element (`h1`-`h6`) with a default size mapped to each level.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Heading level={1}>Heading Level 1</Heading>
+      <Heading level={2}>Heading Level 2</Heading>
+      <Heading level={3}>Heading Level 3</Heading>
+      <Heading level={4}>Heading Level 4</Heading>
+      <Heading level={5}>Heading Level 5</Heading>
+      <Heading level={6}>Heading Level 6</Heading>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Heading level={1}>Heading Level 1</Heading>
+    <Heading level={2}>Heading Level 2</Heading>
+    <Heading level={3}>Heading Level 3</Heading>
+    <Heading level={4}>Heading Level 4</Heading>
+    <Heading level={5}>Heading Level 5</Heading>
+    <Heading level={6}>Heading Level 6</Heading>
+    ```
+  </Tab>
+</Tabs>
+
+## Independent Sizes
+
+Override the default size mapping for visual flexibility while keeping semantic correctness.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Heading level={3} size="4xl">Semantic h3, visually 4xl</Heading>
+      <Heading level={1} size="base">Semantic h1, visually base</Heading>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Heading level={3} size="4xl">Semantic h3, visually 4xl</Heading>
+    <Heading level={1} size="base">Semantic h1, visually base</Heading>
+    ```
+  </Tab>
+</Tabs>
+
+## Weights
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Heading level={2} weight="normal">Normal weight heading</Heading>
+      <Heading level={2} weight="medium">Medium weight heading</Heading>
+      <Heading level={2} weight="semibold">Semibold weight heading</Heading>
+      <Heading level={2} weight="bold">Bold weight heading</Heading>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Heading level={2} weight="normal">Normal weight heading</Heading>
+    <Heading level={2} weight="medium">Medium weight heading</Heading>
+    <Heading level={2} weight="semibold">Semibold weight heading</Heading>
+    <Heading level={2} weight="bold">Bold weight heading</Heading>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Heading level={3} variant="default">Default heading</Heading>
+      <Heading level={3} variant="muted">Muted heading</Heading>
+      <Heading level={3} variant="success">Success heading</Heading>
+      <Heading level={3} variant="warning">Warning heading</Heading>
+      <Heading level={3} variant="error">Error heading</Heading>
+      <Heading level={3} variant="info">Info heading</Heading>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Heading level={3} variant="default">Default heading</Heading>
+    <Heading level={3} variant="muted">Muted heading</Heading>
+    <Heading level={3} variant="success">Success heading</Heading>
+    <Heading level={3} variant="warning">Warning heading</Heading>
+    <Heading level={3} variant="error">Error heading</Heading>
+    <Heading level={3} variant="info">Info heading</Heading>
+    ```
+  </Tab>
+</Tabs>
+
+## Decorations
+
+### Underline
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Heading level={2} underline>Underlined section title</Heading>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Heading level={2} underline>Underlined section title</Heading>
+    ```
+  </Tab>
+</Tabs>
+
+### Line Through
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Heading level={3} lineThrough>Deprecated feature name</Heading>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Heading level={3} lineThrough>Deprecated feature name</Heading>
+    ```
+  </Tab>
+</Tabs>
+
+### Uppercase
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Heading level={4} uppercase>Section Label</Heading>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Heading level={4} uppercase>Section Label</Heading>
+    ```
+  </Tab>
+</Tabs>
+
+## Truncate
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ maxWidth: "400px" }}>
+        <Heading level={2} truncate>
+          This is a very long heading that will be truncated with an ellipsis when it overflows
+        </Heading>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <div style={{ maxWidth: "400px" }}>
+      <Heading level={2} truncate>
+        This is a very long heading that will be truncated with
+        an ellipsis when it overflows
+      </Heading>
+    </div>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop        | Type                                                        | Default     | Description                                         |
+| ----------- | ----------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| level       | `1 \| 2 \| 3 \| 4 \| 5 \| 6`                              | `1`         | Heading level, determines the HTML element           |
+| size        | `xs \| sm \| base \| lg \| xl \| 2xl \| 3xl \| 4xl`       | -           | Size variant (defaults based on level if not set)    |
+| weight      | `normal \| medium \| semibold \| bold`                      | `semibold`  | Text font weight                                    |
+| variant     | `default \| muted \| success \| warning \| error \| info`  | `default`   | Text color variant                                  |
+| lineThrough | `boolean`                                                   | `false`     | Apply line-through text decoration                  |
+| uppercase   | `boolean`                                                   | `false`     | Transform text to uppercase                         |
+| underline   | `boolean`                                                   | `false`     | Apply underline text decoration                     |
+| truncate    | `boolean`                                                   | `false`     | Truncate text with ellipsis on overflow              |
+| trim        | `boolean`                                                   | `false`     | Trim leading and trailing whitespace                 |
+| wrap        | `boolean`                                                   | `false`     | Prevent text wrapping                               |
+| className   | `string`                                                    | -           | Additional CSS classes                               |
+
+**Default size mapping:** h1=4xl, h2=3xl, h3=2xl, h4=xl, h5=lg, h6=base.
+
+Inherits all standard HTML heading element attributes.
+
+## Accessibility
+
+- Renders semantic heading elements (`h1`-`h6`) for proper document outline
+- Heading levels should follow a logical hierarchy (do not skip levels)
+- Color variants maintain sufficient contrast ratios for WCAG 2.1 Level AA
+- Includes `tracking-tight` for improved readability at large sizes
+- Screen readers announce the correct heading level for navigation
+
+## Component API
+
+| Export       | Type                              | Description                        |
+| ------------ | --------------------------------- | ---------------------------------- |
+| Heading      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| HeadingProps | `interface`                       | Component props interface          |

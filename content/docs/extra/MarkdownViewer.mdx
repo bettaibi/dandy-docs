@@ -1,0 +1,232 @@
+---
+title: MarkdownViewer
+description: A markdown renderer with GFM support, syntax highlighting, and HTML sanitization
+category: extra
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { MarkdownViewer } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# MarkdownViewer
+
+> This component is from the `dandy-ui/markdown` package. For optimal bundle size, use dynamic imports or lazy loading.
+
+A full-featured markdown renderer built on `react-markdown`. Supports GitHub Flavored Markdown (tables, task lists, strikethrough), syntax-highlighted code blocks with copy buttons, raw HTML rendering, and XSS sanitization. All typography is theme-aware and responsive.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { MarkdownViewer } from "dandy-ui/markdown";
+import "dandy-ui/syntax-highlighting.css";
+```
+
+### Peer Dependencies
+
+```bash
+npm install react-markdown rehype-highlight rehype-raw rehype-sanitize remark-gfm
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <MarkdownViewer
+        content={`# Hello World
+
+This is a **bold** statement and this is *italic*.
+
+- Item one
+- Item two
+- Item three
+
+> A blockquote for emphasis.
+`}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MarkdownViewer
+      content={`# Hello World
+
+This is a **bold** statement and this is *italic*.
+
+- Item one
+- Item two
+- Item three
+
+> A blockquote for emphasis.
+`}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Code Blocks
+
+Syntax highlighting is enabled by default. Code blocks include a copy-to-clipboard button on hover.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <MarkdownViewer
+        content={`Here is a code snippet:
+
+\`\`\`typescript
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+function greet(user: User): string {
+  return \`Hello, \${user.name}!\`;
+}
+\`\`\`
+
+And some \`inline code\` as well.
+`}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MarkdownViewer
+      content={`\`\`\`typescript
+interface User {
+  id: string;
+  name: string;
+}
+\`\`\`
+`}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## GFM Tables
+
+GitHub Flavored Markdown tables are rendered with theme-aware borders and striped headers.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <MarkdownViewer
+        content={`| Feature | Status | Notes |
+| --- | --- | --- |
+| Tables | Supported | GFM syntax |
+| Task lists | Supported | Checkbox items |
+| Strikethrough | Supported | ~~like this~~ |
+`}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MarkdownViewer
+      content={`| Feature | Status |
+| --- | --- |
+| Tables | Supported |
+| Task lists | Supported |
+`}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Disable Features
+
+Toggle individual features on or off.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <MarkdownViewer
+        gfm={false}
+        syntaxHighlighting={false}
+        showCodeCopy={false}
+        content={`This viewer has GFM, syntax highlighting, and copy buttons disabled.
+
+\`\`\`js
+console.log("no highlighting");
+\`\`\`
+`}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MarkdownViewer
+      gfm={false}
+      syntaxHighlighting={false}
+      showCodeCopy={false}
+      content="..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Raw HTML
+
+Enable raw HTML rendering with the `allowRawHtml` prop. Sanitization is still applied for XSS protection.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <MarkdownViewer
+        allowRawHtml
+        content={`Regular markdown text.
+
+<div style="padding: 12px; border: 1px solid; border-radius: 8px;">
+  <strong>This is raw HTML</strong> rendered safely inside markdown.
+</div>
+`}
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MarkdownViewer
+      allowRawHtml
+      content={`<div style="padding: 12px;">
+  <strong>Raw HTML</strong> rendered safely.
+</div>`}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| content | `string` | required | Markdown content to render |
+| gfm | `boolean` | `true` | Enable GitHub Flavored Markdown |
+| syntaxHighlighting | `boolean` | `true` | Enable syntax highlighting for code blocks |
+| sanitize | `boolean` | `true` | Enable HTML sanitization for XSS protection |
+| allowRawHtml | `boolean` | `false` | Allow raw HTML in markdown |
+| showCodeCopy | `boolean` | `true` | Show copy button on code blocks |
+| components | `Record<string, React.ComponentType>` | - | Custom component overrides |
+| className | `string` | - | Additional CSS classes |
+
+Inherits all standard HTML `div` attributes.
+
+## Accessibility
+
+- Semantic HTML output (headings, lists, links, blockquotes)
+- Code blocks have a labeled copy button
+- Links open in new tabs with `rel="noopener noreferrer"`
+- Images include `alt` attributes and lazy loading
+- Theme-aware colors adapt to light/dark mode
+- Word break applied to prevent overflow
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| MarkdownViewer | `React.ForwardRefExoticComponent` | Markdown renderer component |
+| MarkdownViewerProps | `interface` | Props for the MarkdownViewer |

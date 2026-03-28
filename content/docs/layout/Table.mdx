@@ -1,0 +1,662 @@
+---
+title: Table
+description: A compound data table component with selection, sorting, and responsive visibility
+category: layout
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Table, TableHead, TableBody, TableFooter, TableRow, TableColumn, TableCell } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Table
+
+A mobile-first, compound data table component for displaying tabular data. Supports theme-aware variants, row selection, sticky headers, striped rows, and responsive column visibility.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Table } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableColumn>Name</TableColumn>
+            <TableColumn>Role</TableColumn>
+            <TableColumn>Department</TableColumn>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow rowKey="1">
+            <TableCell>Alice Martin</TableCell>
+            <TableCell>Engineer</TableCell>
+            <TableCell>Platform</TableCell>
+          </TableRow>
+          <TableRow rowKey="2">
+            <TableCell>Bob Chen</TableCell>
+            <TableCell>Designer</TableCell>
+            <TableCell>Product</TableCell>
+          </TableRow>
+          <TableRow rowKey="3">
+            <TableCell>Carol Davis</TableCell>
+            <TableCell>PM</TableCell>
+            <TableCell>Operations</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Table>
+      <Table.Head>
+        <Table.Row>
+          <Table.Column>Name</Table.Column>
+          <Table.Column>Role</Table.Column>
+          <Table.Column>Department</Table.Column>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row rowKey="1">
+          <Table.Cell>Alice Martin</Table.Cell>
+          <Table.Cell>Engineer</Table.Cell>
+          <Table.Cell>Platform</Table.Cell>
+        </Table.Row>
+        <Table.Row rowKey="2">
+          <Table.Cell>Bob Chen</Table.Cell>
+          <Table.Cell>Designer</Table.Cell>
+          <Table.Cell>Product</Table.Cell>
+        </Table.Row>
+        <Table.Row rowKey="3">
+          <Table.Cell>Carol Davis</Table.Cell>
+          <Table.Cell>PM</Table.Cell>
+          <Table.Cell>Operations</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+Apply theme-aware color variants for hover and selection states.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Table variant="primary" striped>
+        <TableHead>
+          <TableRow>
+            <TableColumn>Product</TableColumn>
+            <TableColumn>SKU</TableColumn>
+            <TableColumn align="right">Price</TableColumn>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow rowKey="1">
+            <TableCell>Wireless Keyboard</TableCell>
+            <TableCell>KB-2024</TableCell>
+            <TableCell align="right">$79.99</TableCell>
+          </TableRow>
+          <TableRow rowKey="2">
+            <TableCell>USB-C Hub</TableCell>
+            <TableCell>HB-1087</TableCell>
+            <TableCell align="right">$49.99</TableCell>
+          </TableRow>
+          <TableRow rowKey="3">
+            <TableCell>Monitor Stand</TableCell>
+            <TableCell>MS-3321</TableCell>
+            <TableCell align="right">$34.99</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Table variant="primary" striped>
+      <Table.Head>
+        <Table.Row>
+          <Table.Column>Product</Table.Column>
+          <Table.Column>SKU</Table.Column>
+          <Table.Column align="right">Price</Table.Column>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row rowKey="1">
+          <Table.Cell>Wireless Keyboard</Table.Cell>
+          <Table.Cell>KB-2024</Table.Cell>
+          <Table.Cell align="right">$79.99</Table.Cell>
+        </Table.Row>
+        {/* more rows */}
+      </Table.Body>
+    </Table>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+Control row padding and text size with the `size` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-6 w-full">
+        <div>
+          <span className="text-xs text-muted-foreground mb-2 block">size="sm"</span>
+          <Table size="sm" outlined>
+            <TableHead>
+              <TableRow>
+                <TableColumn>Metric</TableColumn>
+                <TableColumn align="right">Value</TableColumn>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow rowKey="1">
+                <TableCell>Response Time</TableCell>
+                <TableCell align="right">142ms</TableCell>
+              </TableRow>
+              <TableRow rowKey="2">
+                <TableCell>Uptime</TableCell>
+                <TableCell align="right">99.98%</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+        <div>
+          <span className="text-xs text-muted-foreground mb-2 block">size="lg"</span>
+          <Table size="lg" outlined>
+            <TableHead>
+              <TableRow>
+                <TableColumn>Metric</TableColumn>
+                <TableColumn align="right">Value</TableColumn>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow rowKey="1">
+                <TableCell>Response Time</TableCell>
+                <TableCell align="right">142ms</TableCell>
+              </TableRow>
+              <TableRow rowKey="2">
+                <TableCell>Uptime</TableCell>
+                <TableCell align="right">99.98%</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Table size="sm" outlined>...</Table>
+    <Table size="lg" outlined>...</Table>
+    ```
+  </Tab>
+</Tabs>
+
+## Striped & Outlined
+
+Combine `striped` for alternating row backgrounds and `outlined` for cell borders.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Table striped outlined>
+        <TableHead>
+          <TableRow>
+            <TableColumn>Quarter</TableColumn>
+            <TableColumn align="right">Revenue</TableColumn>
+            <TableColumn align="right">Growth</TableColumn>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow rowKey="q1">
+            <TableCell>Q1 2026</TableCell>
+            <TableCell align="right">$1.2M</TableCell>
+            <TableCell align="right">+12%</TableCell>
+          </TableRow>
+          <TableRow rowKey="q2">
+            <TableCell>Q2 2026</TableCell>
+            <TableCell align="right">$1.5M</TableCell>
+            <TableCell align="right">+25%</TableCell>
+          </TableRow>
+          <TableRow rowKey="q3">
+            <TableCell>Q3 2026</TableCell>
+            <TableCell align="right">$1.8M</TableCell>
+            <TableCell align="right">+20%</TableCell>
+          </TableRow>
+          <TableRow rowKey="q4">
+            <TableCell>Q4 2026</TableCell>
+            <TableCell align="right">$2.1M</TableCell>
+            <TableCell align="right">+17%</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Table striped outlined>
+      <Table.Head>
+        <Table.Row>
+          <Table.Column>Quarter</Table.Column>
+          <Table.Column align="right">Revenue</Table.Column>
+          <Table.Column align="right">Growth</Table.Column>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row rowKey="q1">
+          <Table.Cell>Q1 2026</Table.Cell>
+          <Table.Cell align="right">$1.2M</Table.Cell>
+          <Table.Cell align="right">+12%</Table.Cell>
+        </Table.Row>
+        {/* more rows */}
+      </Table.Body>
+    </Table>
+    ```
+  </Tab>
+</Tabs>
+
+## Sticky Header
+
+Enable `sticky` to keep the header visible while scrolling.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="max-h-[200px] w-full">
+        <Table sticky outlined elevation="md">
+          <TableHead>
+            <TableRow>
+              <TableColumn>ID</TableColumn>
+              <TableColumn>Task</TableColumn>
+              <TableColumn>Status</TableColumn>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow rowKey="t1"><TableCell>001</TableCell><TableCell>Setup CI pipeline</TableCell><TableCell>Done</TableCell></TableRow>
+            <TableRow rowKey="t2"><TableCell>002</TableCell><TableCell>Write unit tests</TableCell><TableCell>In Progress</TableCell></TableRow>
+            <TableRow rowKey="t3"><TableCell>003</TableCell><TableCell>Deploy to staging</TableCell><TableCell>Pending</TableCell></TableRow>
+            <TableRow rowKey="t4"><TableCell>004</TableCell><TableCell>Code review</TableCell><TableCell>Done</TableCell></TableRow>
+            <TableRow rowKey="t5"><TableCell>005</TableCell><TableCell>Update docs</TableCell><TableCell>Pending</TableCell></TableRow>
+            <TableRow rowKey="t6"><TableCell>006</TableCell><TableCell>Performance audit</TableCell><TableCell>In Progress</TableCell></TableRow>
+            <TableRow rowKey="t7"><TableCell>007</TableCell><TableCell>Security scan</TableCell><TableCell>Done</TableCell></TableRow>
+            <TableRow rowKey="t8"><TableCell>008</TableCell><TableCell>Release v2.0</TableCell><TableCell>Pending</TableCell></TableRow>
+          </TableBody>
+        </Table>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <div className="max-h-[200px]">
+      <Table sticky outlined elevation="md">
+        <Table.Head>
+          <Table.Row>
+            <Table.Column>ID</Table.Column>
+            <Table.Column>Task</Table.Column>
+            <Table.Column>Status</Table.Column>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
+          <Table.Row rowKey="t1">
+            <Table.Cell>001</Table.Cell>
+            <Table.Cell>Setup CI pipeline</Table.Cell>
+            <Table.Cell>Done</Table.Cell>
+          </Table.Row>
+          {/* more rows to enable scrolling */}
+        </Table.Body>
+      </Table>
+    </div>
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded & Elevation
+
+Customize the table container shape and shadow depth.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Table rounded="xl" elevation="lg" outlined>
+        <TableHead>
+          <TableRow>
+            <TableColumn>Service</TableColumn>
+            <TableColumn align="right">Latency</TableColumn>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow rowKey="1">
+            <TableCell>API Gateway</TableCell>
+            <TableCell align="right">23ms</TableCell>
+          </TableRow>
+          <TableRow rowKey="2">
+            <TableCell>Auth Service</TableCell>
+            <TableCell align="right">45ms</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Table rounded="xl" elevation="lg" outlined>
+      <Table.Head>
+        <Table.Row>
+          <Table.Column>Service</Table.Column>
+          <Table.Column align="right">Latency</Table.Column>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row rowKey="1">
+          <Table.Cell>API Gateway</Table.Cell>
+          <Table.Cell align="right">23ms</Table.Cell>
+        </Table.Row>
+        <Table.Row rowKey="2">
+          <Table.Cell>Auth Service</Table.Cell>
+          <Table.Cell align="right">45ms</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+    ```
+  </Tab>
+</Tabs>
+
+## Selectable Rows
+
+Enable row selection with `selectable`. Use `"single"` for radio-style selection or `"multiple"` for checkbox-style.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Table variant="primary" selectable="multiple" outlined>
+        <TableHead>
+          <TableRow>
+            <TableColumn>Employee</TableColumn>
+            <TableColumn>Email</TableColumn>
+            <TableColumn hiddenAt="sm">Location</TableColumn>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow rowKey="emp-1">
+            <TableCell>Sarah Kim</TableCell>
+            <TableCell>sarah@acme.com</TableCell>
+            <TableCell hiddenAt="sm">San Francisco</TableCell>
+          </TableRow>
+          <TableRow rowKey="emp-2">
+            <TableCell>James Wu</TableCell>
+            <TableCell>james@acme.com</TableCell>
+            <TableCell hiddenAt="sm">New York</TableCell>
+          </TableRow>
+          <TableRow rowKey="emp-3" disableRowSelect>
+            <TableCell>Alex Rivera</TableCell>
+            <TableCell>alex@acme.com</TableCell>
+            <TableCell hiddenAt="sm">London</TableCell>
+          </TableRow>
+          <TableRow rowKey="emp-4">
+            <TableCell>Mei Zhang</TableCell>
+            <TableCell>mei@acme.com</TableCell>
+            <TableCell hiddenAt="sm">Tokyo</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [selected, setSelected] = useState<string[]>([]);
+
+    <Table
+      variant="primary"
+      selectable="multiple"
+      selectedKeys={selected}
+      onSelectionChange={setSelected}
+      outlined
+    >
+      <Table.Head>
+        <Table.Row>
+          <Table.Column>Employee</Table.Column>
+          <Table.Column>Email</Table.Column>
+          <Table.Column hiddenAt="sm">Location</Table.Column>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row rowKey="emp-1">
+          <Table.Cell>Sarah Kim</Table.Cell>
+          <Table.Cell>sarah@acme.com</Table.Cell>
+          <Table.Cell hiddenAt="sm">San Francisco</Table.Cell>
+        </Table.Row>
+        <Table.Row rowKey="emp-2">
+          <Table.Cell>James Wu</Table.Cell>
+          <Table.Cell>james@acme.com</Table.Cell>
+          <Table.Cell hiddenAt="sm">New York</Table.Cell>
+        </Table.Row>
+        <Table.Row rowKey="emp-3" disableRowSelect>
+          <Table.Cell>Alex Rivera</Table.Cell>
+          <Table.Cell>alex@acme.com</Table.Cell>
+          <Table.Cell hiddenAt="sm">London</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+    ```
+  </Tab>
+</Tabs>
+
+## Empty State
+
+Display a custom empty state when the table body has no rows.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Table outlined emptyState={
+        <div className="text-center">
+          <span className="text-sm font-medium text-foreground mb-1 block">No results found</span>
+          <span className="text-xs text-muted-foreground block">Try adjusting your search or filters.</span>
+        </div>
+      }>
+        <TableHead>
+          <TableRow>
+            <TableColumn>Name</TableColumn>
+            <TableColumn>Status</TableColumn>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+        </TableBody>
+      </Table>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Table
+      outlined
+      emptyState={
+        <div className="text-center">
+          <p>No results found</p>
+          <p>Try adjusting your search or filters.</p>
+        </div>
+      }
+    >
+      <Table.Head>
+        <Table.Row>
+          <Table.Column>Name</Table.Column>
+          <Table.Column>Status</Table.Column>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body />
+    </Table>
+    ```
+  </Tab>
+</Tabs>
+
+## Table with Footer
+
+Use `Table.Footer` for summary rows or totals.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Table outlined striped>
+        <TableHead>
+          <TableRow>
+            <TableColumn>Item</TableColumn>
+            <TableColumn align="right">Qty</TableColumn>
+            <TableColumn align="right">Amount</TableColumn>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow rowKey="i1">
+            <TableCell>Design System License</TableCell>
+            <TableCell align="right">1</TableCell>
+            <TableCell align="right">$299.00</TableCell>
+          </TableRow>
+          <TableRow rowKey="i2">
+            <TableCell>Premium Support (Annual)</TableCell>
+            <TableCell align="right">1</TableCell>
+            <TableCell align="right">$99.00</TableCell>
+          </TableRow>
+          <TableRow rowKey="i3">
+            <TableCell>Extra Seat</TableCell>
+            <TableCell align="right">3</TableCell>
+            <TableCell align="right">$45.00</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell>Total</TableCell>
+            <TableCell align="right">5</TableCell>
+            <TableCell align="right">$443.00</TableCell>
+          </TableRow>
+        </TableFooter>
+      </Table>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Table outlined striped>
+      <Table.Head>
+        <Table.Row>
+          <Table.Column>Item</Table.Column>
+          <Table.Column align="right">Qty</Table.Column>
+          <Table.Column align="right">Amount</Table.Column>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row rowKey="i1">
+          <Table.Cell>Design System License</Table.Cell>
+          <Table.Cell align="right">1</Table.Cell>
+          <Table.Cell align="right">$299.00</Table.Cell>
+        </Table.Row>
+        <Table.Row rowKey="i2">
+          <Table.Cell>Premium Support (Annual)</Table.Cell>
+          <Table.Cell align="right">1</Table.Cell>
+          <Table.Cell align="right">$99.00</Table.Cell>
+        </Table.Row>
+        <Table.Row rowKey="i3">
+          <Table.Cell>Extra Seat</Table.Cell>
+          <Table.Cell align="right">3</Table.Cell>
+          <Table.Cell align="right">$45.00</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+      <Table.Footer>
+        <Table.Row>
+          <Table.Cell>Total</Table.Cell>
+          <Table.Cell align="right">5</Table.Cell>
+          <Table.Cell align="right">$443.00</Table.Cell>
+        </Table.Row>
+      </Table.Footer>
+    </Table>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### Table
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| variant | `"default" \| "primary" \| "secondary" \| "success" \| "warning" \| "error" \| "info"` | `"default"` | Theme-aware color variant for hover and selection states |
+| size | `"sm" \| "md" \| "lg"` | `"md"` | Controls row padding and text size |
+| striped | `boolean` | `false` | Applies alternating row background colors |
+| outlined | `boolean` | `false` | Adds borders to the table and cells |
+| sticky | `boolean` | `false` | Makes the table header sticky on scroll |
+| rounded | `"none" \| "sm" \| "md" \| "lg" \| "xl"` | - | Border radius of the table container |
+| elevation | `"none" \| "xs" \| "sm" \| "md" \| "lg" \| "xl"` | `"sm"` | Shadow elevation of the table container |
+| selectable | `"single" \| "multiple"` | - | Enables row selection mode |
+| selectedKeys | `string[]` | - | Array of selected row keys (controlled) |
+| onSelectionChange | `(keys: string[]) => void` | - | Callback fired when selection changes |
+| emptyState | `React.ReactNode` | - | Content displayed when table body is empty |
+| className | `string` | - | Additional CSS classes |
+
+Inherits all standard HTML `table` attributes.
+
+### Table.Row
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| rowKey | `string` | - | Unique identifier for selection tracking |
+| isSelected | `boolean` | - | Controlled selected state |
+| disableRowSelect | `boolean` | `false` | Prevents row from being selected |
+| onRowClick | `(event: React.MouseEvent) => void` | - | Callback fired when row is clicked |
+| className | `string` | - | Additional CSS classes |
+
+### Table.Column
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| hiddenAt | `"xs" \| "sm" \| "md" \| "lg"` | - | Breakpoint at which column becomes hidden |
+| width | `string \| number` | - | Column width |
+| align | `"left" \| "center" \| "right"` | `"left"` | Text alignment |
+| className | `string` | - | Additional CSS classes |
+
+### Table.Cell
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| hiddenAt | `"xs" \| "sm" \| "md" \| "lg"` | - | Breakpoint at which cell becomes hidden |
+| width | `string \| number` | - | Cell width |
+| align | `"left" \| "center" \| "right"` | `"left"` | Text alignment |
+| className | `string` | - | Additional CSS classes |
+
+### Table.Head / Table.Body / Table.Footer
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| className | `string` | - | Additional CSS classes |
+| children | `React.ReactNode` | - | Row content |
+
+## Accessibility
+
+- Renders as native `<table>`, `<thead>`, `<tbody>`, `<tfoot>`, `<tr>`, `<th>`, `<td>` elements
+- `Table.Column` uses `scope="col"` for proper header association
+- Table container uses `role="region"` with `aria-label="Data table"`
+- Row selection supports keyboard navigation with Enter and Space keys
+- Selected rows use `aria-selected` attribute
+- Disabled rows use `aria-disabled` attribute
+- Select-all checkbox in `Table.Head` supports indeterminate state
+- Focus ring indicator for keyboard-navigable rows
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| Table | `React.FC & { Head, Body, Footer, Row, Column, Cell }` | Compound table component |
+| TableProps | `interface` | Props for the Table root |
+| TableHeadProps | `interface` | Props for Table.Head |
+| TableBodyProps | `interface` | Props for Table.Body |
+| TableFooterProps | `interface` | Props for Table.Footer |
+| TableRowProps | `interface` | Props for Table.Row |
+| TableColumnProps | `interface` | Props for Table.Column |
+| TableCellProps | `interface` | Props for Table.Cell |

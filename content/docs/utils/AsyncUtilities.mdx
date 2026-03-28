@@ -1,0 +1,72 @@
+---
+title: Async Utilities
+description: Debounce, throttle, and clipboard helpers for async operations
+---
+
+# Async Utilities
+
+Common async patterns for rate-limiting function calls and clipboard access.
+
+```tsx
+import { debounce, throttle, copyToClipboard } from 'dandy-ui/utils';
+```
+
+---
+
+## debounce
+
+Creates a debounced function that delays invocation until after `delay` ms have elapsed since the last call.
+
+```tsx
+const handleSearch = debounce((query: string) => {
+  fetchResults(query);
+}, 300);
+
+input.addEventListener("input", (e) => handleSearch(e.target.value));
+```
+
+```ts
+function debounce<T extends (...args: never[]) => unknown>(
+  fn: T,
+  delay: number
+): (...args: Parameters<T>) => void
+```
+
+---
+
+## throttle
+
+Creates a throttled function that invokes at most once per `delay` ms.
+
+```tsx
+const handleScroll = throttle(() => {
+  updateScrollPosition();
+}, 100);
+
+window.addEventListener("scroll", handleScroll);
+```
+
+```ts
+function throttle<T extends (...args: never[]) => unknown>(
+  fn: T,
+  delay: number
+): (...args: Parameters<T>) => void
+```
+
+---
+
+## copyToClipboard
+
+Copies text to the clipboard using the Clipboard API. Returns a promise.
+
+```tsx
+await copyToClipboard("Hello, World!");
+
+copyToClipboard("Some text")
+  .then(() => console.log("Copied!"))
+  .catch((err) => console.error("Failed:", err));
+```
+
+```ts
+function copyToClipboard(text: string): Promise<void>
+```

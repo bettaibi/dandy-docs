@@ -1,0 +1,258 @@
+---
+title: DatePicker
+description: A date picker with calendar popup, locale formatting, and responsive mobile drawer
+category: extra
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { DatePicker } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# DatePicker
+
+> This component is part of the `dandy-ui/extra` package. For optimal bundle size, use dynamic imports or lazy loading.
+
+A date picker that combines an input field with a calendar popup. Uses a Popover on desktop and a Drawer on mobile for an optimal experience on all screen sizes. Supports locale-aware date formatting, validation, and calendar variants.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { DatePicker } from "dandy-ui/extra";
+```
+
+### Peer Dependencies
+
+```bash
+npm install react-day-picker
+```
+
+When using the `errorMessage` prop, also install:
+
+```bash
+npm install @radix-ui/react-tooltip
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <DatePicker placeholder="Select a date" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [date, setDate] = React.useState<Date | undefined>();
+
+    <DatePicker
+      value={date}
+      onChange={setDate}
+      placeholder="Select a date"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Input Size
+
+Control the input height and padding.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <DatePicker inputSize="sm" placeholder="Small" />
+        <DatePicker inputSize="md" placeholder="Medium (default)" />
+        <DatePicker inputSize="lg" placeholder="Large" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DatePicker inputSize="sm" placeholder="Small" />
+    <DatePicker inputSize="md" placeholder="Medium" />
+    <DatePicker inputSize="lg" placeholder="Large" />
+    ```
+  </Tab>
+</Tabs>
+
+## Input Variant
+
+Control the input border and focus color.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <DatePicker inputVariant="default" placeholder="Default variant" />
+        <DatePicker inputVariant="success" placeholder="Success variant" />
+        <DatePicker inputVariant="error" placeholder="Error variant" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DatePicker inputVariant="default" placeholder="Default" />
+    <DatePicker inputVariant="success" placeholder="Success" />
+    <DatePicker inputVariant="error" placeholder="Error" />
+    ```
+  </Tab>
+</Tabs>
+
+## Error Message
+
+Display validation errors with the `errorMessage` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <DatePicker
+          placeholder="Pick a date"
+          errorMessage="Date is required"
+        />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DatePicker
+      placeholder="Pick a date"
+      errorMessage="Date is required"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <DatePicker placeholder="Disabled" disabled />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DatePicker placeholder="Disabled" disabled />
+    ```
+  </Tab>
+</Tabs>
+
+## Date Locale
+
+Format dates using different locales via `Intl.DateTimeFormat`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <DatePicker dateLocale="en-US" placeholder="English (US)" />
+        <DatePicker dateLocale="fr-FR" placeholder="French" />
+        <DatePicker dateLocale="ar-TN" placeholder="Arabic (Tunisia)" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DatePicker dateLocale="en-US" placeholder="English (US)" />
+    <DatePicker dateLocale="fr-FR" placeholder="French" />
+    <DatePicker dateLocale="ar-TN" placeholder="Arabic (Tunisia)" />
+    ```
+  </Tab>
+</Tabs>
+
+## Date Format
+
+Customize how the selected date is displayed in the input.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <DatePicker
+          placeholder="Short format"
+          dateFormat={{ year: "2-digit", month: "2-digit", day: "2-digit" }}
+        />
+        <DatePicker
+          placeholder="Long format"
+          dateFormat={{ year: "numeric", month: "long", day: "numeric", weekday: "long" }}
+        />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DatePicker
+      dateFormat={{ year: "2-digit", month: "2-digit", day: "2-digit" }}
+    />
+    <DatePicker
+      dateFormat={{ year: "numeric", month: "long", day: "numeric", weekday: "long" }}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Calendar Variant
+
+The calendar popup inherits the `variant` prop for color theming.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <DatePicker variant="primary" placeholder="Primary" />
+        <DatePicker variant="success" placeholder="Success" />
+        <DatePicker variant="warning" placeholder="Warning" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DatePicker variant="primary" placeholder="Primary" />
+    <DatePicker variant="success" placeholder="Success" />
+    <DatePicker variant="warning" placeholder="Warning" />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| value | `Date` | - | Selected date (controlled) |
+| onChange | `(date: Date \| undefined) => void` | - | Callback when date is selected |
+| placeholder | `string` | `"Pick a date"` | Input placeholder text |
+| dateLocale | `"en-US" \| "fr-FR" \| "es-ES" \| "de-DE" \| "it-IT" \| "ar-EG" \| "ar-TN"` | `"en-US"` | Locale for date formatting |
+| dateFormat | `Intl.DateTimeFormatOptions` | `{ year: "numeric", month: "long", day: "numeric" }` | Date display format |
+| inputSize | `InputProps["size"]` | `"md"` | Input height and padding |
+| inputVariant | `InputProps["variant"]` | `"default"` | Input border and focus color |
+| errorMessage | `string` | - | Validation error message |
+| disabled | `boolean` | `false` | Disables the picker |
+| inputClassName | `string` | - | Additional classes for the input |
+| contentClassName | `string` | - | Additional classes for the popup |
+| align | `"start" \| "center" \| "end"` | `"start"` | Popover alignment (desktop) |
+| variant | `"primary" \| "secondary" \| "success" \| "info" \| "warning" \| "error"` | `"primary"` | Calendar color variant |
+
+Also inherits `BaseCalendarProps` (excluding `mode`, `selected`, `onSelect`), including `showOutsideDays`, `captionLayout`, `numberOfMonths`, `disabled` dates, etc.
+
+## Accessibility
+
+- Keyboard navigable: `Enter`/`Space` toggle, `ArrowDown` opens, `Escape` closes
+- Calendar keyboard navigation via react-day-picker
+- Responsive: uses Popover on desktop, Drawer on mobile
+- Read-only input prevents manual text entry errors
+- Screen reader accessible with proper ARIA labels
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| DatePicker | `React.ForwardRefExoticComponent` | Date picker component |
+| DatePickerProps | `interface` | Props for the DatePicker |

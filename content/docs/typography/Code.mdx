@@ -1,0 +1,329 @@
+---
+title: Code
+description: Inline and block code display with syntax highlighting, line numbers, and color variants
+category: typography
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Code } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Code
+
+A versatile code display component supporting both inline snippets and multi-line code blocks. Includes built-in syntax highlighting for common languages, optional line numbers, and multiple color variants for contextual emphasis.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Code } from "dandy-ui";
+import "dandy-ui/theme.css";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p>
+        Run <Code>npm install dandy-ui</Code> to get started.
+      </p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <p>
+      Run <Code>npm install dandy-ui</Code> to get started.
+    </p>
+    ```
+  </Tab>
+</Tabs>
+
+## Inline Code
+
+The default rendering is an inline code element, suited for embedding within text.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p>
+        Use the <Code>useState</Code> hook to manage local state, or <Code>useReducer</Code> for complex state logic.
+      </p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <p>
+      Use the <Code>useState</Code> hook to manage local state,
+      or <Code>useReducer</Code> for complex state logic.
+    </p>
+    ```
+  </Tab>
+</Tabs>
+
+## Block Mode
+
+Set `block` to render a full-width code block with padding, a border, and horizontal scroll for overflow.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Code block language="typescript">
+{`const greet = (name: string): string => {
+  return \`Hello, \${name}!\`;
+};
+
+console.log(greet("World"));`}
+      </Code>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Code block language="typescript">
+{`const greet = (name: string): string => {
+  return \`Hello, \${name}!\`;
+};
+
+console.log(greet("World"));`}
+    </Code>
+    ```
+  </Tab>
+</Tabs>
+
+## Syntax Highlighting
+
+Pass the `language` prop to enable built-in syntax highlighting. Supported languages: `javascript`, `typescript`, `jsx`, `tsx`, `html`, `css`, `json`, `python`, `sql`, `bash`, `shell`, `plaintext`.
+
+### TypeScript
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Code block language="typescript">
+{`interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+async function fetchUser(id: string): Promise<User> {
+  const response = await fetch(\`/api/users/\${id}\`);
+  return response.json();
+}`}
+      </Code>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Code block language="typescript">
+{`interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+async function fetchUser(id: string): Promise<User> {
+  const response = await fetch(\`/api/users/\${id}\`);
+  return response.json();
+}`}
+    </Code>
+    ```
+  </Tab>
+</Tabs>
+
+### SQL
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Code block language="sql">
+{`SELECT users.name, COUNT(orders.id) AS total_orders
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id
+WHERE users.created_at > '2025-01-01'
+GROUP BY users.name
+ORDER BY total_orders DESC
+LIMIT 10;`}
+      </Code>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Code block language="sql">
+{`SELECT users.name, COUNT(orders.id) AS total_orders
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id
+WHERE users.created_at > '2025-01-01'
+GROUP BY users.name
+ORDER BY total_orders DESC
+LIMIT 10;`}
+    </Code>
+    ```
+  </Tab>
+</Tabs>
+
+### Bash
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Code block language="bash">
+{`# Install dependencies
+npm install dandy-ui
+npm install -D tailwindcss`}
+      </Code>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Code block language="bash">
+{`# Install dependencies
+npm install dandy-ui
+npm install -D tailwindcss`}
+    </Code>
+    ```
+  </Tab>
+</Tabs>
+
+## Line Numbers
+
+Enable line numbers in block mode with `showLineNumbers`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Code block language="javascript" showLineNumbers>
+{`function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+for (let i = 0; i < 10; i++) {
+  console.log(fibonacci(i));
+}`}
+      </Code>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Code block language="javascript" showLineNumbers>
+{`function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+for (let i = 0; i < 10; i++) {
+  console.log(fibonacci(i));
+}`}
+    </Code>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p><Code size="xs">xs size code</Code></p>
+      <p><Code size="sm">sm size code</Code></p>
+      <p><Code size="base">base size code</Code></p>
+      <p><Code size="lg">lg size code</Code></p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Code size="xs">xs size code</Code>
+    <Code size="sm">sm size code</Code>
+    <Code size="base">base size code</Code>
+    <Code size="lg">lg size code</Code>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p><Code variant="default">default variant</Code></p>
+      <p><Code variant="primary">primary variant</Code></p>
+      <p><Code variant="secondary">secondary variant</Code></p>
+      <p><Code variant="success">success variant</Code></p>
+      <p><Code variant="warning">warning variant</Code></p>
+      <p><Code variant="error">error variant</Code></p>
+      <p><Code variant="info">info variant</Code></p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Code variant="default">default variant</Code>
+    <Code variant="primary">primary variant</Code>
+    <Code variant="secondary">secondary variant</Code>
+    <Code variant="success">success variant</Code>
+    <Code variant="warning">warning variant</Code>
+    <Code variant="error">error variant</Code>
+    <Code variant="info">info variant</Code>
+    ```
+  </Tab>
+</Tabs>
+
+## Block Variants
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Code block variant="success" language="bash">
+{`Build completed successfully in 2.4s`}
+      </Code>
+      <Code block variant="error" language="bash">
+{`Error: Module not found - cannot resolve 'missing-package'`}
+      </Code>
+      <Code block variant="warning" language="bash">
+{`Warning: React does not recognize the 'isActive' prop on a DOM element`}
+      </Code>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Code block variant="success" language="bash">
+      Build completed successfully in 2.4s
+    </Code>
+    <Code block variant="error" language="bash">
+      Error: Module not found - cannot resolve 'missing-package'
+    </Code>
+    <Code block variant="warning" language="bash">
+      Warning: React does not recognize the 'isActive' prop on a DOM element
+    </Code>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop            | Type                                                                                    | Default     | Description                             |
+| --------------- | --------------------------------------------------------------------------------------- | ----------- | --------------------------------------- |
+| size            | `xs \| sm \| base \| lg`                                                               | `sm`        | Text size of the code                   |
+| variant         | `default \| primary \| secondary \| success \| warning \| error \| info`                | `default`   | Color variant                           |
+| block           | `boolean`                                                                               | `false`     | Render as a full-width code block       |
+| language        | `javascript \| typescript \| jsx \| tsx \| html \| css \| json \| python \| sql \| bash \| shell \| plaintext` | -  | Language for syntax highlighting        |
+| showLineNumbers | `boolean`                                                                               | `false`     | Show line numbers (block mode only)     |
+| className       | `string`                                                                                | -           | Additional CSS classes                  |
+
+Inherits all standard HTML `code` element attributes.
+
+## Accessibility
+
+- Uses semantic `<code>` element for proper code identification
+- Monospace font ensures consistent character width for readability
+- Block mode supports horizontal scrolling with `overflow-x: auto`
+- Line numbers are hidden from screen readers with `aria-hidden="true"`
+- Color variants maintain readable contrast in both light and dark modes
+
+## Component API
+
+| Export    | Type                              | Description                        |
+| --------- | --------------------------------- | ---------------------------------- |
+| Code      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| CodeProps | `interface`                       | Component props interface          |

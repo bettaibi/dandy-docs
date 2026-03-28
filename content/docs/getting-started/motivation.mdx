@@ -1,0 +1,42 @@
+---
+title: Why Dandy UI
+description: A lightweight, edge-optimized React component library built on Tailwind CSS v4
+---
+
+# Why Dandy UI
+
+Dandy UI is a lightweight UI library for React and Tailwind CSS, optimized for edge and serverless environments. It reduces boilerplate and helps you ship faster with production-ready components that speed up the development process.
+
+## Design Principles
+
+### Tailwind CSS v4, Zero Runtime CSS
+
+Dandy UI is built on **React and Tailwind CSS v4**. All styling is resolved at build time through utility classes -- there is no CSS-in-JS runtime, no style injection, and no hydration mismatch concerns. This makes it naturally compatible with streaming SSR and React Server Components.
+
+### Theme-Aware by Default
+
+Every component reads from a shared set of CSS custom properties defined in `theme.css`. This ensures visual consistency across your entire application without prop drilling or context providers for styling. Copy the file, change the variables, and your entire UI updates.
+
+### Built-In Dark Mode
+
+Dark mode is handled through semantic color tokens. Toggle the `.dark` class on your root element and every component adapts automatically. Light and dark palettes are defined side by side in `theme.css`, making it straightforward to customize both modes at once.
+
+### Mobile-First
+
+Components are designed with touch interactions as the baseline. Touch targets meet the recommended 44px minimum, layouts are responsive by default, and interactive elements are optimized for both pointer and touch input.
+
+### SSR Compatible
+
+Dandy UI works with Next.js (App Router and Pages Router), Remix, and any framework that supports React Server Components. The included `ThemeScript` component prevents flash-of-unstyled-content during server-side rendering.
+
+### Accessible
+
+Components follow **WCAG 2.1 AA** guidelines. Keyboard navigation, focus management, ARIA attributes, and screen reader support are built in -- not bolted on.
+
+### Tree-Shakable
+
+The library is fully tree-shakable. Only the components you import are included in your final bundle. Heavy components like date pickers and rich text viewers are isolated in `dandy-ui/extra` and `dandy-ui/markdown` so they never bloat your core bundle.
+
+### Zero Config Theming
+
+There is no theme provider required for styling. Copy `theme.css` into your project, adjust the CSS variables to match your brand, and you are done. No build plugins, no configuration files, no JavaScript theme objects.

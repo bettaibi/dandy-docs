@@ -1,0 +1,278 @@
+---
+title: Theme Customization
+description: Customize colors, radius, and typography using CSS custom properties
+---
+
+# Theme Customization
+
+Dandy UI uses CSS custom properties for all design tokens. Copy `theme.css` from the package into your project and modify the variables to match your brand. No JavaScript theme objects or build plugins required.
+
+## Token Overview
+
+All tokens are defined inside a `@theme` block (Tailwind v4 syntax) and scoped under `.dark` for the dark palette.
+
+### Brand Colors
+
+| Token                          | Light     | Dark      |
+| ------------------------------ | --------- | --------- |
+| `--color-primary`              | `#3b82f6` | `#61afef` |
+| `--color-primary-foreground`   | `#ffffff` | `#ffffff` |
+| `--color-secondary`            | `#9333ea` | `#c678dd` |
+| `--color-secondary-foreground` | `#ffffff` | `#ffffff` |
+| `--color-accent`               | `#f59e0b` | `#e5c07b` |
+| `--color-accent-foreground`    | `#111827` | `#101214` |
+
+### Neutral Colors
+
+| Token                      | Light     | Dark      |
+| -------------------------- | --------- | --------- |
+| `--color-background`       | `#ffffff` | `#101214` |
+| `--color-foreground`       | `#111827` | `#e1e7ef` |
+| `--color-muted`            | `#f3f4f6` | `#1b222a` |
+| `--color-muted-foreground` | `#6b7280` | `#9ca3af` |
+| `--color-border`           | `#dee2e6` | `#495057` |
+| `--color-input`            | `#ffffff` | `#12171d` |
+
+### Surface Colors
+
+| Token                        | Light     | Dark      |
+| ---------------------------- | --------- | --------- |
+| `--color-card`               | `#ffffff` | `#12171d` |
+| `--color-card-foreground`    | `#111827` | `#e1e7ef` |
+| `--color-popover`            | `#ffffff` | `#0d1117` |
+| `--color-popover-foreground` | `#111827` | `#e1e7ef` |
+
+### Feedback Colors
+
+| Token             | Light     | Dark      |
+| ----------------- | --------- | --------- |
+| `--color-success` | `#46b9b7` | `#98c379` |
+| `--color-warning` | `#f59e0b` | `#e5c07b` |
+| `--color-error`   | `#ef4444` | `#e06c75` |
+| `--color-info`    | `#1985b7` | `#61afef` |
+
+Each feedback color has a matching `-foreground` variant for text contrast.
+
+## Radius Tokens
+
+Base radius values used by the utility scale:
+
+| Token         | Value      |
+| ------------- | ---------- |
+| `--radius-sm` | `0.25rem`  |
+| `--radius-md` | `0.375rem` |
+| `--radius-lg` | `0.5rem`   |
+| `--radius-xl` | `1rem`     |
+| `--radius`    | `0.375rem` |
+
+### Semantic Radius Aliases
+
+These aliases map to specific component categories for consistent rounding:
+
+| Token              | Value      | Used By                            |
+| ------------------ | ---------- | ---------------------------------- |
+| `--radius-button`  | `9999px`   | Buttons (pill-shaped by default)   |
+| `--radius-overlay` | `1.5rem`   | Dialogs, popovers, menus, tooltips |
+| `--radius-control` | `0.875rem` | Inputs, selects, textareas         |
+| `--radius-surface` | `1.25rem`  | Cards, panels, papers              |
+
+Override these to change the shape language of your entire UI at once.
+
+## Typography
+
+| Token         | Default Value                    |
+| ------------- | -------------------------------- |
+| `--font-sans` | `"Inter", system-ui, sans-serif` |
+| `--font-mono` | `"Fira Code", monospace`         |
+
+## Customizing the Theme
+
+Copy `theme.css` to your project and edit the values:
+
+```css
+@import "tailwindcss";
+
+/* ===========================
+   🎨 Dandy UI Theme Variables
+   
+   Customize these variables to match your brand.
+   Copy this file to your project and modify as needed.
+   =========================== */
+
+/* ===========================
+   🌞 Light Theme
+   =========================== */
+@theme {
+  /* Brand */
+  --color-primary: #3b82f6; /* Blue 500 */
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #9333ea; /* Purple 600 */
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: #f59e0b; /* Amber 500 */
+  --color-accent-foreground: #111827;
+
+  /* Neutral Page Background */
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+
+  --color-muted: #f3f4f6; /* Gray 100 */
+  --color-muted-foreground: #6b7280; /* Gray 500 */
+
+  --color-border: #dee2e6; /* default border color */
+  --color-input: #ffffff; /* Pure white for clean input appearance */
+
+  /* Surfaces */
+  --color-card: #ffffff;
+  --color-card-foreground: #111827;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #111827;
+
+  /* Feedback */
+  --color-success: #46b9b7; /* Green 500 */ /* Second choice #22c55e; */
+  --color-success-foreground: #ffffff;
+
+  --color-warning: #f59e0b; /* Amber 500 */
+  --color-warning-foreground: #111827;
+
+  --color-error: #ef4444; /* Red 500 */
+  --color-error-foreground: #ffffff;
+
+  --color-info: #1985b7; /* Blue 500 */
+  --color-info-foreground: #ffffff;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 1rem;
+  --radius: 0.375rem; /* Default radius */
+
+  /* Semantic radius aliases for specific components. 
+ Use these for consistent styling. 
+ If you need to change the radius for a specific component, use the rounded property at component level or overwrite with classNames.
+ */
+  --radius-button: 9999px; /* default buttons radius - pill shaped */
+  --radius-overlay: 1.5rem; /* default popovers, dialogs, menus, and tooltips radius */
+  --radius-control: 0.875rem; /* default inputs radius */
+  --radius-surface: 1.25rem; /* default cards, papers, panels, etc.. */
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+/* ===========================
+   🌙 Dark Theme - Atom One Dark Inspired
+   =========================== */
+.dark {
+  /* Brand */
+  --color-primary: #61afef; /* Atom blue */
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #c678dd; /* Atom purple */
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: #e5c07b; /* Atom yellow */
+  --color-accent-foreground: #101214;
+
+  /* Neutral - Custom dark palette for your page background */
+  --color-background: #101214; /* Main dark background */
+  --color-foreground: #e1e7ef; /* Clean light foreground */
+
+  --color-muted: #1b222a; /* Secondary background layer */
+  --color-muted-foreground: #9ca3af; /* Muted text */
+
+  --color-border: #495057; /* Subtle borders */
+  --color-input: #12171d; /* Input background */
+
+  /* Surfaces */
+  --color-card: #12171d; /* Card background */
+  --color-card-foreground: #e1e7ef;
+
+  --color-popover: #0d1117; /* Even darker popover */
+  --color-popover-foreground: #e1e7ef;
+
+  /* Feedback - Atom syntax colors */
+  --color-success: #98c379; /* Atom green */
+  --color-success-foreground: #101214;
+
+  --color-warning: #e5c07b; /* Atom yellow */
+  --color-warning-foreground: #101214;
+
+  --color-error: #e06c75; /* Atom red */
+  --color-error-foreground: #ffffff;
+
+  --color-info: #61afef; /* Atom blue */
+  --color-info-foreground: #101214;
+}
+```
+
+Import your customized file instead of the default:
+
+```tsx
+import "dandy-ui/base.css";
+import "./my-theme.css";
+```
+
+## Dark Mode
+
+Dark mode is activated by adding the `.dark` class to the `<html>` element. All `--color-*` tokens are redefined under `.dark` in `theme.css`.
+
+### ThemeProvider and ThemeScript
+
+`ThemeProvider` manages the current theme state and exposes it via React context. `ThemeScript` is an inline script that applies the saved theme preference before first paint, preventing a flash of incorrect colors during SSR.
+
+```tsx
+import { ThemeProvider, ThemeScript } from "dandy-ui";
+
+function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <ThemeScript lightBg="#ffffff" darkBg="#101214" />
+      </head>
+      <body>
+        <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+### useTheme Hook
+
+Access the current theme and toggle it from any component:
+
+```tsx
+import { useTheme } from "dandy-ui";
+
+function ThemeToggle() {
+  const { theme, onThemeChange } = useTheme();
+
+  return (
+    <button onClick={() => onThemeChange(theme === "dark" ? "light" : "dark")}>
+      {theme === "dark" ? "Light Mode" : "Dark Mode"}
+    </button>
+  );
+}
+```
+
+`useTheme` must be used within a `ThemeProvider`. It returns:
+
+- `theme` -- the current theme (`"light"` or `"dark"`)
+- `onThemeChange(theme)` -- function to set the theme
+
+## Component-Level Overrides
+
+Override any token at the component level using Tailwind classes via `className`:
+
+```tsx
+<Button className="bg-emerald-600 hover:bg-emerald-700 rounded-lg">
+  Custom Button
+</Button>
+```
+
+This takes precedence over the theme tokens for that specific instance without affecting the rest of your application.

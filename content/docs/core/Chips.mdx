@@ -1,0 +1,695 @@
+---
+title: Chips
+description: Input component for managing multiple tag/chip values with keyboard and paste support
+category: forms
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Chips } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+import { ChipsChange } from "../../../components/chips-change";
+
+# Chips
+
+A controlled input component for managing multiple tag or chip values. Supports keyboard shortcuts (Enter, comma), paste operations, validation, and duplicate detection.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Chips } from "dandy-ui";
+```
+
+### Peer Dependencies
+
+When using the `errorMessage` prop, install the tooltip peer dependency:
+
+```bash
+npm install @radix-ui/react-tooltip
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+     <ChipsChange chips={["React", "TypeScript"]} inputValue="" placeholder="Add tags..." />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [chips, setChips] = React.useState(["React", "TypeScript"]);
+    const [inputValue, setInputValue] = React.useState("");
+
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      placeholder="Add tags..."
+    />
+    ```
+
+  </Tab>
+</Tabs>
+
+## Chip Variants
+
+### Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Design", "Development", "Marketing"]}
+        inputValue=""
+        chipVariant="primary"
+        placeholder="Add categories..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      chipVariant="primary"
+      placeholder="Add categories..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["JavaScript", "Python", "Go"]}
+        inputValue=""
+        chipVariant="secondary"
+        placeholder="Add languages..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      chipVariant="secondary"
+      placeholder="Add languages..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Completed", "Verified", "Approved"]}
+        inputValue=""
+        chipVariant="success"
+        placeholder="Add status..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      chipVariant="success"
+      placeholder="Add status..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Pending", "Review", "On Hold"]}
+        inputValue=""
+        chipVariant="warning"
+        placeholder="Add warnings..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      chipVariant="warning"
+      placeholder="Add warnings..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Failed", "Rejected", "Invalid"]}
+        inputValue=""
+        chipVariant="error"
+        placeholder="Add errors..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      chipVariant="error"
+      placeholder="Add errors..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Note", "Reminder", "Info"]}
+        inputValue=""
+        chipVariant="info"
+        placeholder="Add notes..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      chipVariant="info"
+      placeholder="Add notes..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Chip Appearance
+
+### Outline
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Outlined", "Border", "Style"]}
+        inputValue=""
+        chipAppearance="outline"
+        placeholder="Add tags..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      chipAppearance="outline"
+      placeholder="Add tags..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Filled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Filled", "Solid", "Background"]}
+        inputValue=""
+        chipAppearance="filled"
+        placeholder="Add tags..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      chipAppearance="filled"
+      placeholder="Add tags..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Chip Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-4">
+        <ChipsChange
+          chips={["XS Size"]}
+          inputValue=""
+          chipSize="xs"
+          placeholder="Extra Small"
+        />
+        <ChipsChange
+          chips={["SM Size"]}
+          inputValue=""
+          chipSize="sm"
+          placeholder="Small"
+        />
+        <ChipsChange
+          chips={["MD Size"]}
+          inputValue=""
+          chipSize="md"
+          placeholder="Medium"
+        />
+        <ChipsChange
+          chips={["LG Size"]}
+          inputValue=""
+          chipSize="lg"
+          placeholder="Large"
+        />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips chipSize="xs" {...props} />
+    <Chips chipSize="sm" {...props} />
+    <Chips chipSize="md" {...props} />
+    <Chips chipSize="lg" {...props} />
+    ```
+  </Tab>
+</Tabs>
+
+## Input Variants
+
+### Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Tag 1", "Tag 2"]}
+        inputValue=""
+        inputVariant="default"
+        placeholder="Default variant"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      inputVariant="default"
+      placeholder="Default variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Valid", "Accepted"]}
+        inputValue=""
+        inputVariant="success"
+        placeholder="Success variant"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      inputVariant="success"
+      placeholder="Success variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Caution", "Check"]}
+        inputValue=""
+        inputVariant="warning"
+        placeholder="Warning variant"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      inputVariant="warning"
+      placeholder="Warning variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+### Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Info", "Notice"]}
+        inputValue=""
+        inputVariant="info"
+        placeholder="Info variant"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      inputVariant="info"
+      placeholder="Info variant"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Rounded
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-4">
+        <ChipsChange
+          chips={["None"]}
+          inputValue=""
+          rounded="none"
+          placeholder="rounded-none"
+        />
+        <ChipsChange
+          chips={["Small"]}
+          inputValue=""
+          rounded="sm"
+          placeholder="rounded-sm"
+        />
+        <ChipsChange
+          chips={["Medium"]}
+          inputValue=""
+          rounded="md"
+          placeholder="rounded-md"
+        />
+        <ChipsChange
+          chips={["Large"]}
+          inputValue=""
+          rounded="lg"
+          placeholder="rounded-lg"
+        />
+        <ChipsChange
+          chips={["Full"]}
+          inputValue=""
+          rounded="full"
+          placeholder="rounded-full"
+        />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips rounded="none" {...props} />
+    <Chips rounded="sm" {...props} />
+    <Chips rounded="md" {...props} />
+    <Chips rounded="lg" {...props} />
+    <Chips rounded="full" {...props} />
+    ```
+  </Tab>
+</Tabs>
+
+## Validation
+
+### Error State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Invalid", "Error"]}
+        inputValue=""
+        errorMessage="This field has validation errors"
+        placeholder="Add tags..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      errorMessage="This field has validation errors"
+      placeholder="Add tags..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Duplicate Prevention
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["React", "Vue"]}
+        inputValue=""
+        placeholder="Add frameworks..."
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    {/* Duplicates prevented by default (allowDuplicates={false}) */}
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      placeholder="Add frameworks..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Allow Duplicates
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-2">
+        <p className="text-sm text-muted-foreground">
+          Try adding the same value multiple times
+        </p>
+        <ChipsChange
+          chips={["Tag", "Label"]}
+          inputValue=""
+          allowDuplicates
+          placeholder="Add tags..."
+        />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      allowDuplicates
+      placeholder="Add tags..."
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Max Chips Limit
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["One", "Two"]}
+        inputValue=""
+        maxChips={5}
+        placeholder="Add up to 5 tags..."
+      />
+      <p className="text-sm text-muted-foreground">Maximum 5 chips allowed </p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const maxChips = 5;
+
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      maxChips={maxChips}
+      placeholder="Add up to 5 tags..."
+    />
+    ```
+
+  </Tab>
+</Tabs>
+
+## Disabled State
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ChipsChange
+        chips={["Read", "Only", "Tags"]}
+        inputValue=""
+        disabled
+        placeholder="Disabled input"
+      />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Chips
+      chips={chips}
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      onAddChip={(chip) => setChips([...chips, chip])}
+      onRemoveChip={(_, index) => setChips(chips.filter((_, i) => i !== index))}
+      disabled
+      placeholder="Disabled input"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop            | Type                                                                     | Default   | Description                                      |
+| --------------- | ------------------------------------------------------------------------ | --------- | ------------------------------------------------ |
+| chips           | `string[]`                                                               | -         | Current chips to display (controlled)            |
+| inputValue      | `string`                                                                 | -         | Controlled input value                           |
+| onInputChange   | `(value: string) => void`                                                | -         | Change handler for the input value               |
+| onAddChip       | `(chip: string) => void`                                                 | -         | Add handler called after validation              |
+| onRemoveChip    | `(chip: string, index: number) => void`                                  | -         | Remove handler                                   |
+| allowDuplicates | `boolean`                                                                | `false`   | Allow duplicate chip values                      |
+| maxChips        | `number`                                                                 | -         | Optional cap on number of chips                  |
+| chipVariant     | `default \| primary \| secondary \| success \| warning \| error \| info` | `primary` | Badge variant for chips                          |
+| chipAppearance  | `outline \| filled`                                                      | `outline` | Badge appearance for chips                       |
+| chipSize        | `xs \| sm \| md \| lg`                                                   | `sm`      | Badge size for chips                             |
+| inputVariant    | `default \| success \| error \| warning \| info`                         | `default` | Input variant for validation feedback            |
+| errorMessage    | `string`                                                                 | -         | Error message to display                         |
+| rounded         | `sm \| md \| lg \| xl \| full \| none`                                   | -         | Border radius                                    |
+| disabled        | `boolean`                                                                | `false`   | Disables the component                           |
+| placeholder     | `string`                                                                 | -         | Placeholder text for input                       |
+| onKeyDown       | `React.KeyboardEventHandler<HTMLInputElement>`                           | -         | Optional keydown handler (called after built-in) |
+| onPaste         | `React.ClipboardEventHandler<HTMLInputElement>`                          | -         | Optional paste handler (overrides default)       |
+| className       | `string`                                                                 | -         | Additional CSS classes                           |
+
+Inherits all standard HTML input attributes (`id`, `name`, `autoComplete`, etc.).
+
+## Accessibility
+
+- Keyboard navigable with Tab key
+- Press Enter or comma to add chips
+- Click X button or use keyboard to remove chips
+- Focus visible with ring indicator
+- WCAG 2.1 Level AA compliant
+- Screen reader compatible with proper ARIA labels
+- Minimum 44x44px touch targets for mobile
+- Error states announced to assistive technologies via InfoTip
+
+## Keyboard Shortcuts
+
+- **Enter**: Add current input value as a chip
+- **Comma (,)**: Add current input value as a chip
+- **Tab**: Navigate to next focusable element
+- **Click X**: Remove individual chip
+
+## Paste Behavior
+
+The component automatically splits pasted content by commas and newlines, allowing users to quickly add multiple chips at once. To override this behavior, provide a custom `onPaste` handler.
+
+## Component API
+
+| Export     | Type                              | Description                        |
+| ---------- | --------------------------------- | ---------------------------------- |
+| Chips      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| ChipsProps | `interface`                       | Component props interface          |

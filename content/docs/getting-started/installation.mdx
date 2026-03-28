@@ -1,0 +1,147 @@
+---
+title: Installation
+description: Install Dandy UI and configure your project in minutes
+---
+
+# Installation
+
+## Install the Package
+
+```bash
+npm install dandy-ui
+```
+
+```bash
+yarn add dandy-ui
+```
+
+```bash
+pnpm add dandy-ui
+```
+
+### Peer Dependencies
+
+Dandy UI requires the following peer dependencies:
+
+- `react` (v18 or v19)
+- `react-dom` (v18 or v19)
+- `tailwindcss` (v4+)
+
+Some components have optional peer dependencies (e.g., `@radix-ui/react-dialog` for Dialog, `vaul` for Drawer). Install them as needed when you use those components.
+
+## Setup
+
+### 1. Import Styles
+
+Add the base and theme stylesheets to your application entry point:
+
+```tsx
+import "dandy-ui/base.css";
+import "dandy-ui/theme.css";
+```
+
+`base.css` contains Tailwind's base layer and component styles. `theme.css` defines the color tokens, radius values, and typography variables that all components use. You can copy `theme.css` into your project and customize it.
+
+### 2. Configure Tailwind
+
+Tailwind v4 needs to scan Dandy UI's classes to include them in your build output. Add the `@source` directive to your main CSS file:
+
+```css
+@import "tailwindcss";
+@source '../node_modules/dandy-ui';
+```
+
+### 3. Set Up Dark Mode (Optional)
+
+Wrap your app with `ThemeProvider` and add `ThemeScript` to prevent flash-of-unstyled-content during SSR:
+
+```tsx
+import { ThemeProvider, ThemeScript } from "dandy-ui";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+`ThemeScript` is a small inline script that reads the user's saved preference from `localStorage` and applies the `.dark` class before the first paint.
+
+## Next.js App Router
+
+A complete `layout.tsx` setup:
+
+```tsx
+import type { Metadata } from "next";
+import { ThemeProvider, ThemeScript } from "dandy-ui";
+import "dandy-ui/base.css";
+import "dandy-ui/theme.css";
+
+export const metadata: Metadata = {
+  title: "My App",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+Then use components anywhere in your app:
+
+```tsx
+import { Button, Paper, Heading } from "dandy-ui";
+
+export default function Page() {
+  return (
+    <Paper>
+      <Heading level={2}>Welcome</Heading>
+      <Button>Get Started</Button>
+    </Paper>
+  );
+}
+```
+
+## Additional Entry Points
+
+Dandy UI ships multiple entry points to keep your bundle lean:
+
+| Entry Point         | Contents                                              |
+| ------------------- | ----------------------------------------------------- |
+| `dandy-ui`          | Core components (Button, Paper, Input, etc.)          |
+| `dandy-ui/extra`    | Heavy components (DatePicker, OTPInput, Drawer, etc.) |
+| `dandy-ui/markdown` | MarkdownViewer component                              |
+| `dandy-ui/utils`    | Utility functions and hooks (`useTheme`, `cn`, etc.)  |
+
+Components from `dandy-ui/extra` and `dandy-ui/markdown` have additional peer dependencies and are best lazy-loaded to avoid impacting initial bundle size:
+
+```tsx
+import { lazy } from "react";
+
+const DatePicker = lazy(() =>
+  import("dandy-ui/extra").then((m) => ({ default: m.DatePicker })),
+);
+```

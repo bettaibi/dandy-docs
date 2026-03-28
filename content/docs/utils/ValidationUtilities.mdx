@@ -1,0 +1,60 @@
+---
+title: Validation Utilities
+description: Validate emails, phone numbers, and URLs with lightweight regex helpers
+---
+
+# Validation Utilities
+
+Lightweight validation functions for common input formats. No external dependencies.
+
+```tsx
+import { isEmail, isPhoneNumber, isURL } from 'dandy-ui/utils';
+```
+
+---
+
+## isEmail
+
+Validates email address format with local part and domain length checks.
+
+```tsx
+isEmail("user@example.com");       // true
+isEmail("user+tag@example.co.uk"); // true
+isEmail("invalid.email");          // false
+```
+
+```ts
+function isEmail(value: string): boolean
+```
+
+---
+
+## isPhoneNumber
+
+Validates phone number format. Supports a `strict` mode requiring exactly 10-11 digits.
+
+```tsx
+isPhoneNumber("(123) 456-7890");     // true
+isPhoneNumber("+1-234-567-8901");    // true
+isPhoneNumber("123", true);          // false
+```
+
+```ts
+function isPhoneNumber(value: string, strict?: boolean): boolean
+```
+
+---
+
+## isURL
+
+Validates URL format. Optionally requires `http://` or `https://` protocol.
+
+```tsx
+isURL("https://example.com");    // true
+isURL("example.com");            // true
+isURL("example.com", true);      // false (no protocol)
+```
+
+```ts
+function isURL(value: string, requireProtocol?: boolean): boolean
+```

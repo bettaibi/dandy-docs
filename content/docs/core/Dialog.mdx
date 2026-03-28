@@ -1,0 +1,385 @@
+---
+title: Dialog
+description: A modal dialog overlay with focus trapping, animations, and responsive sizing
+category: core
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogClose,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  Button,
+} from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Dialog
+
+A modal dialog built on Radix UI Dialog primitive. Provides focus trapping, keyboard dismissal, scroll locking, and configurable animations. Supports multiple sizes, placements, and fullscreen modes.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Dialog } from "dandy-ui";
+```
+
+### Peer Dependencies
+
+```bash
+npm install @radix-ui/react-dialog
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button>Open Dialog</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Confirm Action</DialogTitle>
+            <DialogDescription>
+              Are you sure you want to proceed? This action cannot be undone.
+            </DialogDescription>
+          </DialogHeader>
+          <span className="text-sm text-muted-foreground">
+            Review the details before confirming.
+          </span>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button variant="outline">Cancel</Button>
+            </DialogClose>
+            <Button>Confirm</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Dialog>
+      <Dialog.Trigger asChild>
+        <Button>Open Dialog</Button>
+      </Dialog.Trigger>
+      <Dialog.Content>
+        <Dialog.Header>
+          <Dialog.Title>Confirm Action</Dialog.Title>
+          <Dialog.Description>
+            Are you sure you want to proceed? This action cannot be undone.
+          </Dialog.Description>
+        </Dialog.Header>
+        <p>Review the details before confirming.</p>
+        <Dialog.Footer>
+          <Dialog.Close asChild>
+            <Button variant="outline">Cancel</Button>
+          </Dialog.Close>
+          <Button>Confirm</Button>
+        </Dialog.Footer>
+      </Dialog.Content>
+    </Dialog>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+Control the dialog width with the `size` prop on `Dialog.Content`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline" size="sm">
+            XS Dialog
+          </Button>
+        </DialogTrigger>
+        <DialogContent size="xs">
+          <DialogHeader>
+            <DialogTitle>Extra Small</DialogTitle>
+          </DialogHeader>
+          <span className="text-sm">Compact dialog for brief messages.</span>
+        </DialogContent>
+      </Dialog>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline" size="sm">
+            SM Dialog
+          </Button>
+        </DialogTrigger>
+        <DialogContent size="sm">
+          <DialogHeader>
+            <DialogTitle>Small</DialogTitle>
+          </DialogHeader>
+          <span className="text-sm">Small dialog for simple forms.</span>
+        </DialogContent>
+      </Dialog>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline" size="sm">
+            LG Dialog
+          </Button>
+        </DialogTrigger>
+        <DialogContent size="lg">
+          <DialogHeader>
+            <DialogTitle>Large</DialogTitle>
+          </DialogHeader>
+          <span className="text-sm">
+            Large dialog for more complex content.
+          </span>
+        </DialogContent>
+      </Dialog>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Dialog.Content size="xs">...</Dialog.Content>
+    <Dialog.Content size="sm">...</Dialog.Content>
+    <Dialog.Content size="md">...</Dialog.Content> {/* default */}
+    <Dialog.Content size="lg">...</Dialog.Content>
+    <Dialog.Content size="xl">...</Dialog.Content>
+    <Dialog.Content size="auto">...</Dialog.Content>
+    ```
+  </Tab>
+</Tabs>
+
+## Placement
+
+Position the dialog at the center (default) or top of the viewport.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline">Top Placement</Button>
+        </DialogTrigger>
+        <DialogContent placement="top">
+          <DialogHeader>
+            <DialogTitle>Top Aligned</DialogTitle>
+            <DialogDescription>
+              This dialog appears near the top of the viewport.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Dialog.Content placement="top">...</Dialog.Content>
+    ```
+  </Tab>
+</Tabs>
+
+## Fullscreen
+
+The `fullscreen` prop controls responsive fullscreen behavior.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline">Mobile Fullscreen</Button>
+        </DialogTrigger>
+        <DialogContent fullscreen="mobile-only" size="md">
+          <DialogHeader>
+            <DialogTitle>Mobile Fullscreen</DialogTitle>
+            <DialogDescription>This dialog is fullscreen on mobile and sized normally on desktop.</DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button variant="outline">Close</Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Dialog.Content fullscreen="mobile-only" size="md">
+      ...
+    </Dialog.Content>
+
+    {/* Other fullscreen options */}
+    <Dialog.Content fullscreen="desktop-only">...</Dialog.Content>
+    <Dialog.Content fullscreen="always">...</Dialog.Content>
+    ```
+
+  </Tab>
+</Tabs>
+
+## Animation
+
+Choose between `fadeIn` (default) and `slideIn` animations.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline">Slide In</Button>
+        </DialogTrigger>
+        <DialogContent animate="slideIn">
+          <DialogHeader>
+            <DialogTitle>Slide Animation</DialogTitle>
+            <DialogDescription>This dialog slides into view.</DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button>Got it</Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Dialog.Content animate="slideIn">...</Dialog.Content>
+    ```
+  </Tab>
+</Tabs>
+
+## Backdrop Exit
+
+Disable closing the dialog by clicking the overlay with `backdropExit={false}`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline">Persistent Dialog</Button>
+        </DialogTrigger>
+        <DialogContent backdropExit={false}>
+          <DialogHeader>
+            <DialogTitle>Persistent</DialogTitle>
+            <DialogDescription>
+              This dialog cannot be closed by clicking the backdrop. Use the
+              button below.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button>Close</Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Dialog.Content backdropExit={false}>...</Dialog.Content>
+    ```
+  </Tab>
+</Tabs>
+
+## Overlay Styles
+
+Customize the backdrop overlay with the `overlay` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline" size="sm">
+            Blur Overlay
+          </Button>
+        </DialogTrigger>
+        <DialogContent overlay="blur">
+          <DialogHeader>
+            <DialogTitle>Blur Backdrop</DialogTitle>
+          </DialogHeader>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button size="sm">Close</Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline" size="sm">
+            No Overlay
+          </Button>
+        </DialogTrigger>
+        <DialogContent overlay="none">
+          <DialogHeader>
+            <DialogTitle>No Backdrop</DialogTitle>
+          </DialogHeader>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button size="sm">Close</Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Dialog.Content overlay="blur">...</Dialog.Content>
+    <Dialog.Content overlay="transparent">...</Dialog.Content> {/* default */}
+    <Dialog.Content overlay="none">...</Dialog.Content>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### Dialog.Content
+
+| Prop         | Type                                             | Default      | Description                                |
+| ------------ | ------------------------------------------------ | ------------ | ------------------------------------------ |
+| size         | `"auto" \| "xs" \| "sm" \| "md" \| "lg" \| "xl"` | `"md"`       | Dialog width                               |
+| backdropExit | `boolean`                                        | `true`       | Whether clicking outside closes the dialog |
+| overlay      | `"blur" \| "transparent" \| "none"`              | `"blur"`     | Backdrop overlay style                     |
+| placement    | `"centered" \| "top"`                            | `"centered"` | Dialog position                            |
+| animate      | `"fadeIn" \| "slideIn"`                          | `"fadeIn"`   | Animation type                             |
+| fullscreen   | `"mobile-only" \| "desktop-only" \| "always"`    | -            | Fullscreen behavior                        |
+| rounded      | `"sm" \| "md" \| "lg" \| "xl"`                   | -            | Border radius override                     |
+| className    | `string`                                         | -            | Additional CSS classes                     |
+
+Inherits all Radix `Dialog.Content` attributes.
+
+## Accessibility
+
+- Built on Radix UI Dialog for full WCAG compliance
+- Focus trap when open, focus returns to trigger on close
+- `Escape` key closes the dialog
+- Background scroll is prevented while open
+- `aria-labelledby` linked to `Dialog.Title`
+- `aria-describedby` linked to `Dialog.Description`
+- Respects `prefers-reduced-motion`
+
+## Component API
+
+| Export             | Type                              | Description                    |
+| ------------------ | --------------------------------- | ------------------------------ |
+| Dialog             | Compound component                | Root dialog controller         |
+| Dialog.Trigger     | `Radix DialogTrigger`             | Element that opens the dialog  |
+| Dialog.Content     | `React.ForwardRefExoticComponent` | Dialog content container       |
+| Dialog.Close       | `Radix DialogClose`               | Element that closes the dialog |
+| Dialog.Overlay     | `React.ForwardRefExoticComponent` | Backdrop overlay               |
+| Dialog.Header      | `React.ForwardRefExoticComponent` | Header layout container        |
+| Dialog.Footer      | `React.ForwardRefExoticComponent` | Footer layout container        |
+| Dialog.Title       | `React.ForwardRefExoticComponent` | Dialog title heading           |
+| Dialog.Description | `React.ForwardRefExoticComponent` | Dialog description text        |
+| DialogContentProps | `interface`                       | Props for Dialog.Content       |
+| DialogHeaderProps  | `type`                            | Props for Dialog.Header        |
+| DialogFooterProps  | `type`                            | Props for Dialog.Footer        |

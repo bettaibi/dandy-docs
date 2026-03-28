@@ -1,0 +1,290 @@
+---
+title: Text
+description: Polymorphic text component for body copy, labels, and inline text with size, weight, color, and decoration controls
+category: typography
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Text } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Text
+
+A flexible, polymorphic text component for rendering body copy, labels, captions, and inline content. Supports multiple sizes, weights, color variants, and text decorations with the ability to render as different HTML elements.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Text } from "dandy-ui";
+import "dandy-ui/theme.css";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Text>The quick brown fox jumps over the lazy dog.</Text>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text>The quick brown fox jumps over the lazy dog.</Text>
+    ```
+  </Tab>
+</Tabs>
+
+## Polymorphic Rendering
+
+Use the `as` prop to control which HTML element is rendered. Defaults to `p`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Text as="p">Rendered as a paragraph element</Text>
+      <Text as="span">Rendered as a span element</Text>
+      <Text as="div">Rendered as a div element</Text>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text as="p">Rendered as a paragraph element</Text>
+    <Text as="span">Rendered as a span element</Text>
+    <Text as="div">Rendered as a div element</Text>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Text size="xs">Extra small text (xs)</Text>
+      <Text size="sm">Small text (sm)</Text>
+      <Text size="base">Base text (base)</Text>
+      <Text size="lg">Large text (lg)</Text>
+      <Text size="xl">Extra large text (xl)</Text>
+      <Text size="2xl">2XL text</Text>
+      <Text size="3xl">3XL text</Text>
+      <Text size="4xl">4XL text</Text>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text size="xs">Extra small text (xs)</Text>
+    <Text size="sm">Small text (sm)</Text>
+    <Text size="base">Base text (base)</Text>
+    <Text size="lg">Large text (lg)</Text>
+    <Text size="xl">Extra large text (xl)</Text>
+    <Text size="2xl">2XL text</Text>
+    <Text size="3xl">3XL text</Text>
+    <Text size="4xl">4XL text</Text>
+    ```
+  </Tab>
+</Tabs>
+
+## Weights
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Text weight="normal">Normal weight text</Text>
+      <Text weight="medium">Medium weight text</Text>
+      <Text weight="semibold">Semibold weight text</Text>
+      <Text weight="bold">Bold weight text</Text>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text weight="normal">Normal weight text</Text>
+    <Text weight="medium">Medium weight text</Text>
+    <Text weight="semibold">Semibold weight text</Text>
+    <Text weight="bold">Bold weight text</Text>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Text variant="default">Default variant text</Text>
+      <Text variant="muted">Muted variant for secondary content</Text>
+      <Text variant="success">Success variant for positive feedback</Text>
+      <Text variant="warning">Warning variant for cautionary messages</Text>
+      <Text variant="error">Error variant for validation errors</Text>
+      <Text variant="info">Info variant for informational notes</Text>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text variant="default">Default variant text</Text>
+    <Text variant="muted">Muted variant for secondary content</Text>
+    <Text variant="success">Success variant for positive feedback</Text>
+    <Text variant="warning">Warning variant for cautionary messages</Text>
+    <Text variant="error">Error variant for validation errors</Text>
+    <Text variant="info">Info variant for informational notes</Text>
+    ```
+  </Tab>
+</Tabs>
+
+## Decorations
+
+### Underline
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Text underline>This text has an underline decoration</Text>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text underline>This text has an underline decoration</Text>
+    ```
+  </Tab>
+</Tabs>
+
+### Line Through
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Text lineThrough>This text has a line-through decoration</Text>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text lineThrough>This text has a line-through decoration</Text>
+    ```
+  </Tab>
+</Tabs>
+
+### Uppercase
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Text uppercase>This text is transformed to uppercase</Text>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text uppercase>This text is transformed to uppercase</Text>
+    ```
+  </Tab>
+</Tabs>
+
+## Truncate
+
+Truncates overflowing text with an ellipsis. Useful for single-line previews.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ maxWidth: "300px" }}>
+        <Text truncate>
+          This is a very long piece of text that will be truncated with an ellipsis when it overflows the container width
+        </Text>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <div style={{ maxWidth: "300px" }}>
+      <Text truncate>
+        This is a very long piece of text that will be truncated
+        with an ellipsis when it overflows the container width
+      </Text>
+    </div>
+    ```
+  </Tab>
+</Tabs>
+
+## No Wrap
+
+Prevent text from wrapping to the next line.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ maxWidth: "200px", overflow: "hidden" }}>
+        <Text wrap>This text will not wrap to the next line regardless of container size</Text>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text wrap>
+      This text will not wrap to the next line regardless of container size
+    </Text>
+    ```
+  </Tab>
+</Tabs>
+
+## Combined Example
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Text size="lg" weight="bold" variant="success">
+        Order confirmed successfully
+      </Text>
+      <Text size="sm" variant="muted">
+        Your order #12345 has been placed and is being processed.
+      </Text>
+      <Text size="xs" variant="error" uppercase weight="semibold">
+        Action required
+      </Text>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Text size="lg" weight="bold" variant="success">
+      Order confirmed successfully
+    </Text>
+    <Text size="sm" variant="muted">
+      Your order #12345 has been placed and is being processed.
+    </Text>
+    <Text size="xs" variant="error" uppercase weight="semibold">
+      Action required
+    </Text>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop        | Type                                                        | Default     | Description                                  |
+| ----------- | ----------------------------------------------------------- | ----------- | -------------------------------------------- |
+| size        | `xs \| sm \| base \| lg \| xl \| 2xl \| 3xl \| 4xl`       | `base`      | Text size variant                            |
+| weight      | `normal \| medium \| semibold \| bold`                      | `normal`    | Text font weight                             |
+| variant     | `default \| muted \| success \| warning \| error \| info`  | `default`   | Text color variant                           |
+| as          | `p \| span \| div`                                         | `p`         | HTML element to render                       |
+| lineThrough | `boolean`                                                   | `false`     | Apply line-through text decoration           |
+| uppercase   | `boolean`                                                   | `false`     | Transform text to uppercase                  |
+| underline   | `boolean`                                                   | `false`     | Apply underline text decoration              |
+| truncate    | `boolean`                                                   | `false`     | Truncate text with ellipsis on overflow      |
+| trim        | `boolean`                                                   | `false`     | Trim leading and trailing whitespace         |
+| wrap        | `boolean`                                                   | `false`     | Prevent text wrapping                        |
+| className   | `string`                                                    | -           | Additional CSS classes                       |
+
+Inherits all standard HTML `p` element attributes.
+
+## Accessibility
+
+- Renders semantic HTML elements (`p`, `span`, `div`) based on the `as` prop
+- Color variants maintain sufficient contrast ratios for WCAG 2.1 Level AA
+- Text sizes remain readable across all viewport sizes
+- Supports screen readers with proper semantic structure
+
+## Component API
+
+| Export    | Type                              | Description                        |
+| --------- | --------------------------------- | ---------------------------------- |
+| Text      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| TextProps | `interface`                       | Component props interface          |

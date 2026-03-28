@@ -1,0 +1,315 @@
+---
+title: MultiSelect
+description: A multi-selection dropdown with checkboxes, grouping, and keyboard navigation
+category: extra
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { MultiSelect, MultiSelectTrigger, MultiSelectContent, MultiSelectItem, MultiSelectGroup, MultiSelectLabel, MultiSelectSeparator } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# MultiSelect
+
+> This component is part of the `dandy-ui/extra` package. For optimal bundle size, use dynamic imports or lazy loading.
+
+A compound multi-selection dropdown built on Radix UI Popover. Supports checkboxes, item grouping, labels, separators, max selection limits, and theme-aware variants. Fully keyboard navigable.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { MultiSelect } from "dandy-ui/extra";
+```
+
+### Peer Dependencies
+
+When using the `errorMessage` prop, install the tooltip peer dependency:
+
+```bash
+npm install @radix-ui/react-tooltip
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <MultiSelect>
+          <MultiSelectTrigger placeholder="Choose fruits" />
+          <MultiSelectContent>
+            <MultiSelectItem value="apple">Apple</MultiSelectItem>
+            <MultiSelectItem value="banana">Banana</MultiSelectItem>
+            <MultiSelectItem value="cherry">Cherry</MultiSelectItem>
+            <MultiSelectItem value="grape">Grape</MultiSelectItem>
+            <MultiSelectItem value="mango">Mango</MultiSelectItem>
+          </MultiSelectContent>
+        </MultiSelect>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [selected, setSelected] = React.useState<string[]>([]);
+
+    <MultiSelect value={selected} onValueChange={setSelected}>
+      <MultiSelect.Trigger placeholder="Choose fruits" />
+      <MultiSelect.Content>
+        <MultiSelect.Item value="apple">Apple</MultiSelect.Item>
+        <MultiSelect.Item value="banana">Banana</MultiSelect.Item>
+        <MultiSelect.Item value="cherry">Cherry</MultiSelect.Item>
+        <MultiSelect.Item value="grape">Grape</MultiSelect.Item>
+        <MultiSelect.Item value="mango">Mango</MultiSelect.Item>
+      </MultiSelect.Content>
+    </MultiSelect>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <MultiSelect variant="default" defaultValue={["a"]}>
+          <MultiSelectTrigger placeholder="Default" />
+          <MultiSelectContent>
+            <MultiSelectItem value="a">Option A</MultiSelectItem>
+            <MultiSelectItem value="b">Option B</MultiSelectItem>
+          </MultiSelectContent>
+        </MultiSelect>
+        <MultiSelect variant="success" defaultValue={["a"]}>
+          <MultiSelectTrigger placeholder="Success" />
+          <MultiSelectContent>
+            <MultiSelectItem value="a">Option A</MultiSelectItem>
+            <MultiSelectItem value="b">Option B</MultiSelectItem>
+          </MultiSelectContent>
+        </MultiSelect>
+        <MultiSelect variant="error" defaultValue={["a"]}>
+          <MultiSelectTrigger placeholder="Error" />
+          <MultiSelectContent>
+            <MultiSelectItem value="a">Option A</MultiSelectItem>
+            <MultiSelectItem value="b">Option B</MultiSelectItem>
+          </MultiSelectContent>
+        </MultiSelect>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiSelect variant="default">...</MultiSelect>
+    <MultiSelect variant="success">...</MultiSelect>
+    <MultiSelect variant="error">...</MultiSelect>
+    <MultiSelect variant="warning">...</MultiSelect>
+    <MultiSelect variant="info">...</MultiSelect>
+    ```
+  </Tab>
+</Tabs>
+
+## Max Selection
+
+Limit how many items can be selected. Items beyond the limit are automatically disabled.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <MultiSelect maxSelection={2}>
+          <MultiSelectTrigger placeholder="Pick up to 2" />
+          <MultiSelectContent>
+            <MultiSelectItem value="red">Red</MultiSelectItem>
+            <MultiSelectItem value="blue">Blue</MultiSelectItem>
+            <MultiSelectItem value="green">Green</MultiSelectItem>
+            <MultiSelectItem value="yellow">Yellow</MultiSelectItem>
+          </MultiSelectContent>
+        </MultiSelect>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiSelect maxSelection={2}>
+      <MultiSelect.Trigger placeholder="Pick up to 2" />
+      <MultiSelect.Content>
+        <MultiSelect.Item value="red">Red</MultiSelect.Item>
+        <MultiSelect.Item value="blue">Blue</MultiSelect.Item>
+        <MultiSelect.Item value="green">Green</MultiSelect.Item>
+        <MultiSelect.Item value="yellow">Yellow</MultiSelect.Item>
+      </MultiSelect.Content>
+    </MultiSelect>
+    ```
+  </Tab>
+</Tabs>
+
+## Groups & Labels
+
+Organize items into labeled groups with separators.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <MultiSelect>
+          <MultiSelectTrigger placeholder="Select technologies" />
+          <MultiSelectContent>
+            <MultiSelectGroup>
+              <MultiSelectLabel>Frontend</MultiSelectLabel>
+              <MultiSelectItem value="react">React</MultiSelectItem>
+              <MultiSelectItem value="vue">Vue</MultiSelectItem>
+              <MultiSelectItem value="angular">Angular</MultiSelectItem>
+            </MultiSelectGroup>
+            <MultiSelectSeparator />
+            <MultiSelectGroup>
+              <MultiSelectLabel>Backend</MultiSelectLabel>
+              <MultiSelectItem value="node">Node.js</MultiSelectItem>
+              <MultiSelectItem value="python">Python</MultiSelectItem>
+              <MultiSelectItem value="go">Go</MultiSelectItem>
+            </MultiSelectGroup>
+          </MultiSelectContent>
+        </MultiSelect>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiSelect>
+      <MultiSelect.Trigger placeholder="Select technologies" />
+      <MultiSelect.Content>
+        <MultiSelect.Group>
+          <MultiSelect.Label>Frontend</MultiSelect.Label>
+          <MultiSelect.Item value="react">React</MultiSelect.Item>
+          <MultiSelect.Item value="vue">Vue</MultiSelect.Item>
+        </MultiSelect.Group>
+        <MultiSelect.Separator />
+        <MultiSelect.Group>
+          <MultiSelect.Label>Backend</MultiSelect.Label>
+          <MultiSelect.Item value="node">Node.js</MultiSelect.Item>
+          <MultiSelect.Item value="python">Python</MultiSelect.Item>
+        </MultiSelect.Group>
+      </MultiSelect.Content>
+    </MultiSelect>
+    ```
+  </Tab>
+</Tabs>
+
+## Trigger Size
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <MultiSelect>
+          <MultiSelectTrigger size="sm" placeholder="Small" />
+          <MultiSelectContent>
+            <MultiSelectItem value="a">Option A</MultiSelectItem>
+          </MultiSelectContent>
+        </MultiSelect>
+        <MultiSelect>
+          <MultiSelectTrigger size="md" placeholder="Medium" />
+          <MultiSelectContent>
+            <MultiSelectItem value="a">Option A</MultiSelectItem>
+          </MultiSelectContent>
+        </MultiSelect>
+        <MultiSelect>
+          <MultiSelectTrigger size="lg" placeholder="Large" />
+          <MultiSelectContent>
+            <MultiSelectItem value="a">Option A</MultiSelectItem>
+          </MultiSelectContent>
+        </MultiSelect>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiSelect.Trigger size="sm" placeholder="Small" />
+    <MultiSelect.Trigger size="md" placeholder="Medium" />
+    <MultiSelect.Trigger size="lg" placeholder="Large" />
+    ```
+  </Tab>
+</Tabs>
+
+## Error Message
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <MultiSelect>
+          <MultiSelectTrigger placeholder="Select items" errorMessage="At least one item is required" />
+          <MultiSelectContent>
+            <MultiSelectItem value="a">Option A</MultiSelectItem>
+            <MultiSelectItem value="b">Option B</MultiSelectItem>
+          </MultiSelectContent>
+        </MultiSelect>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiSelect.Trigger
+      placeholder="Select items"
+      errorMessage="At least one item is required"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### MultiSelect (Root)
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| variant | `"default" \| "success" \| "error" \| "warning" \| "info"` | `"default"` | Visual color variant |
+| value | `string[]` | - | Controlled selected values |
+| defaultValue | `string[]` | `[]` | Default selected values (uncontrolled) |
+| onValueChange | `(values: string[]) => void` | - | Callback when selection changes |
+| maxSelection | `number` | - | Maximum selectable items |
+| open | `boolean` | - | Controlled open state |
+| onOpenChange | `(open: boolean) => void` | - | Callback on open state change |
+
+### MultiSelect.Trigger
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| size | `"sm" \| "md" \| "lg"` | `"md"` | Trigger button size |
+| placeholder | `string` | `"Select items"` | Placeholder when nothing selected |
+| leftSlot | `React.ReactNode` | - | Content on the left side |
+| errorMessage | `string` | - | Error tooltip message |
+| rounded | `"sm" \| "md" \| "lg" \| "xl"` | - | Border radius |
+
+### MultiSelect.Item
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| value | `string` | required | Unique value for the item |
+| disabled | `boolean` | `false` | Whether the item is disabled |
+| leftSlot | `React.ReactNode` | - | Content on the left side |
+| rightSlot | `React.ReactNode` | - | Content on the right side |
+
+## Accessibility
+
+- Full keyboard navigation: `ArrowUp`/`ArrowDown`, `Home`/`End`, `Space`/`Enter` to toggle
+- `aria-multiselectable="true"` listbox role
+- Items use `role="option"` with `aria-selected` and `aria-disabled`
+- Focus trap within the dropdown
+- Min 44px touch targets for mobile
+- Respects `prefers-reduced-motion`
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| MultiSelect | Compound component | Root multi-select controller |
+| MultiSelect.Trigger | `React.ForwardRefExoticComponent` | Trigger button |
+| MultiSelect.Content | `React.ForwardRefExoticComponent` | Dropdown content |
+| MultiSelect.Item | `React.ForwardRefExoticComponent` | Selectable item |
+| MultiSelect.Label | `React.ForwardRefExoticComponent` | Group label |
+| MultiSelect.Separator | `React.ForwardRefExoticComponent` | Visual separator |
+| MultiSelect.Group | `React.ForwardRefExoticComponent` | Semantic group wrapper |
+| MultiSelectProps | `interface` | Props for MultiSelect root |
+| MultiSelectTriggerProps | `interface` | Props for MultiSelect.Trigger |
+| MultiSelectContentProps | `interface` | Props for MultiSelect.Content |
+| MultiSelectItemProps | `interface` | Props for MultiSelect.Item |

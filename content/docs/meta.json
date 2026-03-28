@@ -1,20 +1,12 @@
 {
   "title": "Docs",
   "pages": [
-    "index",
+    "getting-started",
+    "layout",
     "typography",
-    "Button",
-    "Avatar",
-    "AvatarGroup",
-    "Badge",
-    "Chips",
-    "Label",
-    "accordion",
-    "AspectRatio",
-    "IconButton",
-    "Icon",
-    "Carousel",
-    "forms",
-    "feedbacks"
+    "core",
+    "feedbacks",
+    "extra",
+    "utils"
   ]
 }

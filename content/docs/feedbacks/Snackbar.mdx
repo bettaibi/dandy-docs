@@ -1,0 +1,183 @@
+---
+title: Snackbar
+description: Toast notification system with provider pattern and variants
+category: feedbacks
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+import { SnackbarBasicDemo, SnackbarVariantsDemo } from "../../../components/demos/SnackbarDemos";
+
+# Snackbar
+
+A toast notification system using a Provider + hook pattern. Wrap your app with `SnackbarProvider`, then call `useSnackbar()` anywhere to show dismissible, auto-expiring notifications with variant styling and configurable positioning.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { SnackbarProvider, useSnackbar } from 'dandy-ui';
+import 'dandy-ui/theme.css';
+```
+
+## Usage
+
+The Snackbar system requires two parts: a `SnackbarProvider` wrapper and the `useSnackbar` hook to trigger notifications.
+
+```tsx
+import { SnackbarProvider, useSnackbar, Button } from 'dandy-ui';
+
+function App() {
+  return (
+    <SnackbarProvider>
+      <NotifyButton />
+    </SnackbarProvider>
+  );
+}
+
+function NotifyButton() {
+  const { showSnackbarMsg } = useSnackbar();
+
+  return (
+    <Button onClick={() => showSnackbarMsg("Operation completed")}>
+      Show Notification
+    </Button>
+  );
+}
+```
+
+### Basic
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <SnackbarBasicDemo />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const { showSnackbarMsg } = useSnackbar();
+
+    showSnackbarMsg("Operation completed");
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+Five built-in variants for different notification types: `default`, `success`, `warning`, `error`, and `info`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <SnackbarVariantsDemo />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const { showSnackbarMsg } = useSnackbar();
+
+    showSnackbarMsg("Default notification");
+    showSnackbarMsg("Changes saved successfully", { variant: "success" });
+    showSnackbarMsg("Storage almost full", { variant: "warning" });
+    showSnackbarMsg("Failed to save changes", { variant: "error" });
+    showSnackbarMsg("New update available", { variant: "info" });
+    ```
+  </Tab>
+</Tabs>
+
+## Position
+
+Control where notifications appear on screen with the `position` prop on `SnackbarProvider`. On mobile, snackbars always span full width.
+
+```tsx
+<SnackbarProvider position="top-center">
+  {children}
+</SnackbarProvider>
+
+<SnackbarProvider position="top-left">
+  {children}
+</SnackbarProvider>
+
+<SnackbarProvider position="top-right">
+  {children}
+</SnackbarProvider>
+
+<SnackbarProvider position="bottom-center">
+  {children}
+</SnackbarProvider>
+
+<SnackbarProvider position="bottom-left">
+  {children}
+</SnackbarProvider>
+
+<SnackbarProvider position="bottom-right">
+  {children}
+</SnackbarProvider>
+```
+
+## Duration
+
+Set auto-dismiss timing globally on the provider or per-notification. Duration is in milliseconds.
+
+```tsx
+// Global: all snackbars dismiss after 6 seconds
+<SnackbarProvider duration={6000}>
+  {children}
+</SnackbarProvider>
+
+// Per-notification override
+const { showSnackbarMsg } = useSnackbar();
+showSnackbarMsg("Quick notice", { duration: 2000 });
+showSnackbarMsg("Read this carefully", { duration: 8000 });
+```
+
+## Max Snackbars
+
+Limit the number of visible notifications. Older ones are evicted when the limit is reached.
+
+```tsx
+<SnackbarProvider maxSnackbars={5}>
+  {children}
+</SnackbarProvider>
+```
+
+## Props
+
+### SnackbarProviderProps
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| children | `React.ReactNode` | - | Application content |
+| position | `"top-center" \| "top-left" \| "top-right" \| "bottom-center" \| "bottom-left" \| "bottom-right"` | `"bottom-center"` | Snackbar placement on screen |
+| duration | `number` | `4000` | Auto-dismiss duration in ms |
+| maxSnackbars | `number` | `3` | Maximum visible snackbars |
+
+### SnackbarOptions
+
+Passed as the second argument to `showSnackbarMsg()`.
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| variant | `"default" \| "success" \| "warning" \| "error" \| "info"` | `"default"` | Visual variant |
+| duration | `number` | Provider's `duration` | Per-notification auto-dismiss override |
+
+## Accessibility
+
+- Notification region uses `role="region"` with `aria-label="Notifications"` and `aria-live="polite"`
+- Individual snackbars use `role="status"` for screen reader announcements
+- Dismiss button has `aria-label="Dismiss notification"` and visible focus ring
+- Animations respect `prefers-reduced-motion` via `motion-reduce:animate-none`
+- Rendered via portal to `document.body` to avoid z-index conflicts
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| SnackbarProvider | `React.FC` | Context provider that renders the notification container |
+| useSnackbar | `() => SnackbarContextValue` | Hook returning `{ showSnackbarMsg }` |
+| SnackbarProviderProps | `interface` | Props for SnackbarProvider |
+| SnackbarOptions | `interface` | Options for showSnackbarMsg |
+| SnackbarVariant | `type` | `"default" \| "success" \| "warning" \| "error" \| "info"` |
+| SnackbarPosition | `type` | Position union type |

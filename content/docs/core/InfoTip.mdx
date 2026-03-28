@@ -1,0 +1,199 @@
+---
+title: InfoTip
+description: A tooltip component with theme-aware color variants and responsive sizing
+category: core
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { InfoTip, Button, IconButton } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# InfoTip
+
+A tooltip component built on Radix UI Tooltip with support for multiple theme-aware color variants, responsive sizing, and configurable placement. Shows contextual information on hover or focus.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { InfoTip } from "dandy-ui";
+```
+
+### Peer Dependencies
+
+```bash
+npm install @radix-ui/react-tooltip
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InfoTip content="This action saves your changes to the server.">
+        <Button variant="outline">Hover me</Button>
+      </InfoTip>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InfoTip content="This action saves your changes to the server.">
+      <Button variant="outline">Hover me</Button>
+    </InfoTip>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+InfoTip supports theme-aware color variants that automatically adjust for dark mode.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InfoTip content="Default tooltip" variant="default">
+        <Button variant="outline" size="sm">Default</Button>
+      </InfoTip>
+      <InfoTip content="Primary information" variant="primary">
+        <Button variant="outline" size="sm">Primary</Button>
+      </InfoTip>
+      <InfoTip content="Secondary info" variant="secondary">
+        <Button variant="outline" size="sm">Secondary</Button>
+      </InfoTip>
+      <InfoTip content="Success! Operation completed." variant="success">
+        <Button variant="outline" size="sm">Success</Button>
+      </InfoTip>
+      <InfoTip content="Warning: check your input." variant="warning">
+        <Button variant="outline" size="sm">Warning</Button>
+      </InfoTip>
+      <InfoTip content="Error: invalid value." variant="error">
+        <Button variant="outline" size="sm">Error</Button>
+      </InfoTip>
+      <InfoTip content="Informational tip." variant="info">
+        <Button variant="outline" size="sm">Info</Button>
+      </InfoTip>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InfoTip content="Default tooltip" variant="default">...</InfoTip>
+    <InfoTip content="Primary information" variant="primary">...</InfoTip>
+    <InfoTip content="Secondary info" variant="secondary">...</InfoTip>
+    <InfoTip content="Success!" variant="success">...</InfoTip>
+    <InfoTip content="Warning" variant="warning">...</InfoTip>
+    <InfoTip content="Error" variant="error">...</InfoTip>
+    <InfoTip content="Info" variant="info">...</InfoTip>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+Control padding and text size with the `size` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InfoTip content="Small tooltip" size="sm">
+        <Button variant="outline" size="sm">Small</Button>
+      </InfoTip>
+      <InfoTip content="Medium tooltip" size="md">
+        <Button variant="outline" size="sm">Medium</Button>
+      </InfoTip>
+      <InfoTip content="Large tooltip with more padding" size="lg">
+        <Button variant="outline" size="sm">Large</Button>
+      </InfoTip>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InfoTip content="Small tooltip" size="sm">...</InfoTip>
+    <InfoTip content="Medium tooltip" size="md">...</InfoTip>
+    <InfoTip content="Large tooltip" size="lg">...</InfoTip>
+    ```
+  </Tab>
+</Tabs>
+
+## Placement
+
+Position the tooltip on any side of the trigger.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InfoTip content="Top" placement="top">
+        <Button variant="outline" size="sm">Top</Button>
+      </InfoTip>
+      <InfoTip content="Bottom" placement="bottom">
+        <Button variant="outline" size="sm">Bottom</Button>
+      </InfoTip>
+      <InfoTip content="Left" placement="left">
+        <Button variant="outline" size="sm">Left</Button>
+      </InfoTip>
+      <InfoTip content="Right" placement="right">
+        <Button variant="outline" size="sm">Right</Button>
+      </InfoTip>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InfoTip content="Top" placement="top">...</InfoTip>
+    <InfoTip content="Bottom" placement="bottom">...</InfoTip>
+    <InfoTip content="Left" placement="left">...</InfoTip>
+    <InfoTip content="Right" placement="right">...</InfoTip>
+    ```
+  </Tab>
+</Tabs>
+
+## Delay Duration
+
+Control how long before the tooltip appears on hover.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <InfoTip content="Instant (0ms)" delayDuration={0}>
+        <Button variant="outline" size="sm">Instant</Button>
+      </InfoTip>
+      <InfoTip content="Delayed (500ms)" delayDuration={500}>
+        <Button variant="outline" size="sm">500ms Delay</Button>
+      </InfoTip>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <InfoTip content="Instant" delayDuration={0}>...</InfoTip>
+    <InfoTip content="Delayed" delayDuration={500}>...</InfoTip>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| children | `React.ReactElement` | required | The trigger element |
+| content | `React.ReactNode` | required | Content to display in the tooltip |
+| variant | `"default" \| "primary" \| "secondary" \| "accent" \| "success" \| "warning" \| "error" \| "info"` | `"default"` | Color variant |
+| size | `"sm" \| "md" \| "lg"` | `"md"` | Tooltip size |
+| placement | `"top" \| "bottom" \| "left" \| "right"` | `"top"` | Position relative to trigger |
+| hidden | `boolean` | `false` | Prevents tooltip from showing |
+| delayDuration | `number` | `0` | Delay before showing (ms) |
+| rounded | `"sm" \| "md" \| "lg" \| "xl" \| "full" \| "none"` | - | Border radius override |
+| className | `string` | - | Additional CSS classes for tooltip content |
+
+## Accessibility
+
+- Built on Radix UI Tooltip for full WCAG compliance
+- Appears on both hover and focus for keyboard users
+- Respects `prefers-reduced-motion`
+- Responsive max-width adapts across breakpoints
+- Arrow indicator matches variant background color
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| InfoTip | `React.ForwardRefExoticComponent` | Tooltip component with variants |
+| InfoTipProps | `interface` | Props for the InfoTip component |

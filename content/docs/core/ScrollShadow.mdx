@@ -1,0 +1,211 @@
+---
+title: ScrollShadow
+description: Container with gradient shadows indicating scrollable content
+category: core
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { ScrollShadow } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# ScrollShadow
+
+A CSS-only scroll container that applies gradient shadows at the edges to visually indicate scrollable content. Supports vertical and horizontal scrolling with configurable shadow intensity. Works in both light and dark modes.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { ScrollShadow } from 'dandy-ui';
+import 'dandy-ui/theme.css';
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ScrollShadow className="h-[200px] w-full">
+        <div className="space-y-4 p-4">
+          <p className="text-sm">Item 1 - Scroll down to see more content</p>
+          <p className="text-sm">Item 2 - The gradient shadow appears at edges</p>
+          <p className="text-sm">Item 3 - Indicating there is more to scroll</p>
+          <p className="text-sm">Item 4 - Works in both light and dark modes</p>
+          <p className="text-sm">Item 5 - Pure CSS implementation</p>
+          <p className="text-sm">Item 6 - No JavaScript scroll listeners needed</p>
+          <p className="text-sm">Item 7 - Performant and accessible</p>
+          <p className="text-sm">Item 8 - Mobile-first responsive design</p>
+          <p className="text-sm">Item 9 - Lightweight and composable</p>
+          <p className="text-sm">Item 10 - End of list</p>
+        </div>
+      </ScrollShadow>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ScrollShadow className="h-[200px]">
+      <div className="space-y-4 p-4">
+        <p>Item 1</p>
+        <p>Item 2</p>
+        <p>Item 3</p>
+        {/* more items... */}
+      </div>
+    </ScrollShadow>
+    ```
+  </Tab>
+</Tabs>
+
+## Direction
+
+### Vertical (default)
+
+Shadows appear at top and bottom edges for vertically scrollable content.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ScrollShadow direction="vertical" className="h-[180px] w-full">
+        <div className="space-y-3 p-4">
+          <p className="text-sm">January - Plan quarterly goals</p>
+          <p className="text-sm">February - Team retrospective</p>
+          <p className="text-sm">March - Sprint review</p>
+          <p className="text-sm">April - Product launch</p>
+          <p className="text-sm">May - User research phase</p>
+          <p className="text-sm">June - Mid-year review</p>
+          <p className="text-sm">July - Feature iteration</p>
+          <p className="text-sm">August - Performance audit</p>
+          <p className="text-sm">September - Design system update</p>
+          <p className="text-sm">October - Accessibility audit</p>
+        </div>
+      </ScrollShadow>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ScrollShadow direction="vertical" className="h-[180px]">
+      <div className="space-y-3 p-4">
+        <p>January - Plan quarterly goals</p>
+        <p>February - Team retrospective</p>
+        {/* more items... */}
+      </div>
+    </ScrollShadow>
+    ```
+  </Tab>
+</Tabs>
+
+### Horizontal
+
+Shadows appear at left and right edges for horizontally scrollable content.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <ScrollShadow direction="horizontal" className="w-full">
+        <div className="flex gap-4 p-4 w-max">
+          <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg flex items-center justify-center text-sm">Card 1</div>
+          <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg flex items-center justify-center text-sm">Card 2</div>
+          <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg flex items-center justify-center text-sm">Card 3</div>
+          <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg flex items-center justify-center text-sm">Card 4</div>
+          <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg flex items-center justify-center text-sm">Card 5</div>
+          <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg flex items-center justify-center text-sm">Card 6</div>
+          <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg flex items-center justify-center text-sm">Card 7</div>
+        </div>
+      </ScrollShadow>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ScrollShadow direction="horizontal">
+      <div className="flex gap-4 p-4 w-max">
+        <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg">Card 1</div>
+        <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg">Card 2</div>
+        <div className="shrink-0 w-[150px] h-[100px] bg-muted rounded-lg">Card 3</div>
+        {/* more cards... */}
+      </div>
+    </ScrollShadow>
+    ```
+  </Tab>
+</Tabs>
+
+## Elevation
+
+Controls the size and intensity of the gradient shadows. Available sizes: `sm`, `md`, and `lg`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="flex flex-col gap-4 w-full">
+        <div>
+          <p className="text-xs text-muted-foreground mb-1">sm</p>
+          <ScrollShadow elevation="sm" className="h-[120px] w-full border rounded-lg">
+            <div className="space-y-3 p-4">
+              <p className="text-sm">Line 1</p><p className="text-sm">Line 2</p><p className="text-sm">Line 3</p>
+              <p className="text-sm">Line 4</p><p className="text-sm">Line 5</p><p className="text-sm">Line 6</p>
+              <p className="text-sm">Line 7</p><p className="text-sm">Line 8</p>
+            </div>
+          </ScrollShadow>
+        </div>
+        <div>
+          <p className="text-xs text-muted-foreground mb-1">md (default)</p>
+          <ScrollShadow elevation="md" className="h-[120px] w-full border rounded-lg">
+            <div className="space-y-3 p-4">
+              <p className="text-sm">Line 1</p><p className="text-sm">Line 2</p><p className="text-sm">Line 3</p>
+              <p className="text-sm">Line 4</p><p className="text-sm">Line 5</p><p className="text-sm">Line 6</p>
+              <p className="text-sm">Line 7</p><p className="text-sm">Line 8</p>
+            </div>
+          </ScrollShadow>
+        </div>
+        <div>
+          <p className="text-xs text-muted-foreground mb-1">lg</p>
+          <ScrollShadow elevation="lg" className="h-[120px] w-full border rounded-lg">
+            <div className="space-y-3 p-4">
+              <p className="text-sm">Line 1</p><p className="text-sm">Line 2</p><p className="text-sm">Line 3</p>
+              <p className="text-sm">Line 4</p><p className="text-sm">Line 5</p><p className="text-sm">Line 6</p>
+              <p className="text-sm">Line 7</p><p className="text-sm">Line 8</p>
+            </div>
+          </ScrollShadow>
+        </div>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <ScrollShadow elevation="sm" className="h-[120px]">
+      {content}
+    </ScrollShadow>
+
+    <ScrollShadow elevation="md" className="h-[120px]">
+      {content}
+    </ScrollShadow>
+
+    <ScrollShadow elevation="lg" className="h-[120px]">
+      {content}
+    </ScrollShadow>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| direction | `"horizontal" \| "vertical"` | `"vertical"` | Scroll direction and shadow placement |
+| elevation | `"sm" \| "md" \| "lg"` | `"md"` | Shadow size and intensity |
+| className | `string` | - | Additional CSS classes |
+
+Inherits all standard HTML `div` attributes (`style`, `id`, etc.).
+
+## Accessibility
+
+- Shadow overlays use `aria-hidden="true"` so they are invisible to screen readers
+- Uses `pointer-events-none` on shadows to avoid blocking scroll interaction
+- Scrollable content area maintains native scroll behavior and keyboard navigation
+- Supports all standard ARIA attributes via prop spread
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| ScrollShadow | `React.ForwardRefExoticComponent` | Scroll container with gradient shadow indicators |
+| ScrollShadowProps | `interface` | Props for the ScrollShadow component |

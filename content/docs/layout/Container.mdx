@@ -1,0 +1,126 @@
+---
+title: Container
+description: A responsive container that constrains content width with consistent padding
+category: layout
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Container } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Container
+
+A responsive wrapper that constrains content to a maximum width with consistent horizontal padding. Automatically centers content and adapts padding across breakpoints.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Container } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Container maxWidth="lg" className="bg-muted/30 py-4 rounded-lg">
+        <p className="text-sm text-foreground">This content is constrained to a large max-width container with responsive padding.</p>
+      </Container>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Container maxWidth="lg">
+      <p>This content is constrained to a large max-width container with responsive padding.</p>
+    </Container>
+    ```
+  </Tab>
+</Tabs>
+
+## Max Width Options
+
+Control the maximum width of the container using the `maxWidth` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-4 w-full">
+        <Container maxWidth="sm" className="bg-primary/10 py-3 rounded-lg">
+          <p className="text-xs text-foreground">sm — max-w-sm</p>
+        </Container>
+        <Container maxWidth="md" className="bg-primary/10 py-3 rounded-lg">
+          <p className="text-xs text-foreground">md — max-w-md</p>
+        </Container>
+        <Container maxWidth="lg" className="bg-primary/10 py-3 rounded-lg">
+          <p className="text-xs text-foreground">lg — max-w-lg (default)</p>
+        </Container>
+        <Container maxWidth="xl" className="bg-primary/10 py-3 rounded-lg">
+          <p className="text-xs text-foreground">xl — max-w-xl</p>
+        </Container>
+        <Container maxWidth="4xl" className="bg-primary/10 py-3 rounded-lg">
+          <p className="text-xs text-foreground">4xl — max-w-4xl</p>
+        </Container>
+        <Container maxWidth="full" className="bg-primary/10 py-3 rounded-lg">
+          <p className="text-xs text-foreground">full — max-w-full</p>
+        </Container>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Container maxWidth="sm">Small container</Container>
+    <Container maxWidth="md">Medium container</Container>
+    <Container maxWidth="lg">Large container (default)</Container>
+    <Container maxWidth="xl">Extra large container</Container>
+    <Container maxWidth="4xl">4XL container</Container>
+    <Container maxWidth="full">Full width container</Container>
+    ```
+  </Tab>
+</Tabs>
+
+## Non-Centered
+
+By default, the container is centered with `mx-auto`. Set `centered={false}` to disable this.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Container maxWidth="md" centered={false} className="bg-muted/30 py-4 rounded-lg">
+        <p className="text-sm text-foreground">This container is left-aligned, not centered.</p>
+      </Container>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Container maxWidth="md" centered={false}>
+      <p>This container is left-aligned, not centered.</p>
+    </Container>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| maxWidth | `"sm" \| "md" \| "lg" \| "xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl" \| "7xl" \| "full"` | `"lg"` | Maximum width of the container |
+| centered | `boolean` | `true` | Whether to center the container with auto margins |
+| hidden | `"sm" \| "md" \| "lg" \| "xl"` | - | Hide content at the specified breakpoint and above |
+| className | `string` | - | Additional CSS classes |
+
+Inherits all standard HTML `div` attributes (except `hidden`).
+
+## Accessibility
+
+- Uses semantic `div` element for generic content grouping
+- Responsive padding scales from `px-4` on mobile to `px-8` on large screens
+- Supports all standard ARIA attributes via prop spread
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| Container | `React.ForwardRefExoticComponent` | Responsive container component |
+| ContainerProps | `interface` | Props for the Container component |

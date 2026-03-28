@@ -1,11 +1,16 @@
-@import 'tailwindcss';
-@import 'dandy-ui/base.css';
-@import 'dandy-ui/theme.css';
+@import "tailwindcss";
+@import "dandy-ui/base.css";
+@import "dandy-ui/theme.css";
+@import "dandy-ui/syntax-highlighting.css";
 
 @source '../node_modules/dandy-ui';
 
-@import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
 
-
-
+#nd-docs-layout {
+  grid-template-columns:
+    var(--fd-sidebar-col, 0px)
+    1fr
+    var(--fd-toc-width, 0px) !important;
+}

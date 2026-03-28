@@ -1,0 +1,6 @@
+{
+  "title": "Layout",
+  "collapsible": true,
+  "defaultOpen": true,
+  "pages": ["Container", "Flex", "Grid", "Section", "Paper", "Table"]
+}

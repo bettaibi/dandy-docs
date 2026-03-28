@@ -1,0 +1,219 @@
+---
+title: Drawer
+description: A swipe-able panel that slides in from any edge of the screen
+category: extra
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Drawer, DrawerTrigger, DrawerContent, DrawerClose, DrawerHeader, DrawerFooter, DrawerTitle, DrawerDescription, Button } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Drawer
+
+> This component is part of the `dandy-ui/extra` package. For optimal bundle size, use dynamic imports or lazy loading.
+
+A swipe-able drawer panel built on Vaul. Slides in from any edge of the screen with gesture support, overlay backdrop, and touch-friendly interactions. Ideal for mobile navigation, forms, and contextual panels.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Drawer } from "dandy-ui/extra";
+```
+
+### Peer Dependencies
+
+```bash
+npm install vaul
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Drawer direction="bottom">
+        <DrawerTrigger asChild>
+          <Button>Open Drawer</Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Edit Profile</DrawerTitle>
+            <DrawerDescription>Update your personal information below.</DrawerDescription>
+          </DrawerHeader>
+          <div className="p-4 pt-0 space-y-3">
+            <span className="text-sm text-muted-foreground">Drawer body content goes here.</span>
+          </div>
+          <DrawerFooter>
+            <DrawerClose asChild>
+              <Button variant="outline">Cancel</Button>
+            </DrawerClose>
+            <Button>Save Changes</Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Drawer direction="bottom">
+      <Drawer.Trigger asChild>
+        <Button>Open Drawer</Button>
+      </Drawer.Trigger>
+      <Drawer.Content>
+        <Drawer.Header>
+          <Drawer.Title>Edit Profile</Drawer.Title>
+          <Drawer.Description>Update your personal information below.</Drawer.Description>
+        </Drawer.Header>
+        <div className="p-4 pt-0">
+          <p>Drawer body content goes here.</p>
+        </div>
+        <Drawer.Footer>
+          <Drawer.Close asChild>
+            <Button variant="outline">Cancel</Button>
+          </Drawer.Close>
+          <Button>Save Changes</Button>
+        </Drawer.Footer>
+      </Drawer.Content>
+    </Drawer>
+    ```
+  </Tab>
+</Tabs>
+
+## Direction
+
+The drawer can slide in from any edge. Pass the `direction` prop to the root `Drawer` component.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Drawer direction="left">
+        <DrawerTrigger asChild>
+          <Button variant="outline" size="sm">Left</Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Left Drawer</DrawerTitle>
+          </DrawerHeader>
+          <div className="p-4 pt-0">
+            <span className="text-sm">Navigation or sidebar content.</span>
+          </div>
+        </DrawerContent>
+      </Drawer>
+      <Drawer direction="right">
+        <DrawerTrigger asChild>
+          <Button variant="outline" size="sm">Right</Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Right Drawer</DrawerTitle>
+          </DrawerHeader>
+          <div className="p-4 pt-0">
+            <span className="text-sm">Detail panel or settings.</span>
+          </div>
+        </DrawerContent>
+      </Drawer>
+      <Drawer direction="top">
+        <DrawerTrigger asChild>
+          <Button variant="outline" size="sm">Top</Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Top Drawer</DrawerTitle>
+          </DrawerHeader>
+          <div className="p-4 pt-0">
+            <span className="text-sm">Notification bar or alerts.</span>
+          </div>
+        </DrawerContent>
+      </Drawer>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Drawer direction="left">...</Drawer>
+    <Drawer direction="right">...</Drawer>
+    <Drawer direction="top">...</Drawer>
+    <Drawer direction="bottom">...</Drawer>  {/* default */}
+    ```
+  </Tab>
+</Tabs>
+
+## Show Handle
+
+The drag handle indicator is shown by default on top/bottom drawers. Disable it with `showHandle={false}`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Drawer direction="bottom">
+        <DrawerTrigger asChild>
+          <Button variant="outline">No Handle</Button>
+        </DrawerTrigger>
+        <DrawerContent showHandle={false}>
+          <DrawerHeader>
+            <DrawerTitle>No Handle</DrawerTitle>
+            <DrawerDescription>This drawer has no visible drag handle.</DrawerDescription>
+          </DrawerHeader>
+          <DrawerFooter>
+            <DrawerClose asChild>
+              <Button>Close</Button>
+            </DrawerClose>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Drawer.Content showHandle={false}>
+      ...
+    </Drawer.Content>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### Drawer (Root)
+
+The root component accepts all Vaul `Drawer.Root` props including:
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| direction | `"top" \| "right" \| "bottom" \| "left"` | `"bottom"` | Edge the drawer slides from |
+| open | `boolean` | - | Controlled open state |
+| onOpenChange | `(open: boolean) => void` | - | Callback on open state change |
+
+### Drawer.Content
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| showHandle | `boolean` | `true` | Show the drag handle indicator |
+| className | `string` | - | Additional CSS classes |
+
+Inherits all Vaul `Drawer.Content` attributes.
+
+## Accessibility
+
+- Built on Vaul for full accessibility support
+- Focus trap when open, focus returns to trigger on close
+- `Escape` key closes the drawer
+- Swipe gestures for mobile dismissal
+- Background scroll prevention
+- Proper ARIA attributes (`aria-modal`, `aria-label`)
+- Respects `prefers-reduced-motion`
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| Drawer | Compound component | Root drawer controller |
+| Drawer.Trigger | `Vaul DrawerTrigger` | Element that opens the drawer |
+| Drawer.Content | `React.ForwardRefExoticComponent` | Drawer content container |
+| Drawer.Close | `Vaul DrawerClose` | Element that closes the drawer |
+| Drawer.Header | `React.ForwardRefExoticComponent` | Header layout container |
+| Drawer.Footer | `React.ForwardRefExoticComponent` | Footer layout container |
+| Drawer.Title | `React.ForwardRefExoticComponent` | Drawer title heading |
+| Drawer.Description | `React.ForwardRefExoticComponent` | Drawer description text |
+| DrawerContentProps | `interface` | Props for Drawer.Content |

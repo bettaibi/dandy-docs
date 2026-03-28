@@ -1,0 +1,159 @@
+---
+title: Date Utilities
+description: Format, compare, and manipulate dates using native Intl APIs
+---
+
+# Date Utilities
+
+Locale-aware date formatting and comparison helpers built on `Intl.DateTimeFormat` and `Intl.RelativeTimeFormat`. Zero dependencies.
+
+```tsx
+import { formatDate, formatRelativeTime, isToday } from 'dandy-ui/utils';
+```
+
+---
+
+## formatDate
+
+Formats a date using `Intl.DateTimeFormat`.
+
+```tsx
+formatDate(new Date(2024, 0, 15));
+// "1/15/2024"
+
+formatDate(new Date(2024, 0, 15), { dateStyle: "full" });
+// "Monday, January 15, 2024"
+```
+
+```ts
+function formatDate(
+  date: Date | string | number,
+  options?: Intl.DateTimeFormatOptions,
+  locale?: string
+): string
+```
+
+---
+
+## formatTime
+
+Formats the time portion of a date. Defaults to `hour: "2-digit", minute: "2-digit"`.
+
+```tsx
+formatTime(new Date(2024, 0, 15, 14, 30));
+// "02:30 PM"
+
+formatTime(new Date(2024, 0, 15, 14, 30), { timeStyle: "short" });
+// "2:30 PM"
+```
+
+```ts
+function formatTime(
+  date: Date | string | number,
+  options?: Intl.DateTimeFormatOptions,
+  locale?: string
+): string
+```
+
+---
+
+## formatDateTime
+
+Formats both date and time together.
+
+```tsx
+formatDateTime(new Date(2024, 0, 15, 14, 30));
+// "Jan 15, 2024, 02:30 PM"
+
+formatDateTime(new Date(2024, 0, 15, 14, 30), { dateStyle: "full", timeStyle: "short" });
+// "Monday, January 15, 2024 at 2:30 PM"
+```
+
+```ts
+function formatDateTime(
+  date: Date | string | number,
+  options?: Intl.DateTimeFormatOptions,
+  locale?: string
+): string
+```
+
+---
+
+## formatRelativeTime
+
+Formats relative time between two dates using `Intl.RelativeTimeFormat`.
+
+```tsx
+const now = new Date();
+const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000);
+
+formatRelativeTime(twoHoursAgo, now);
+// "2 hours ago"
+```
+
+```ts
+function formatRelativeTime(
+  date: Date | string | number,
+  baseDate: Date | string | number,
+  locale?: string
+): string
+```
+
+---
+
+## formatDuration
+
+Formats a duration in milliseconds to a human-readable string.
+
+```tsx
+formatDuration(4800000);  // "1h 20m"
+formatDuration(90000);    // "1m 30s"
+formatDuration(45000);    // "45s"
+formatDuration(172800000); // "2d"
+```
+
+```ts
+function formatDuration(ms: number): string
+```
+
+---
+
+## isToday / isYesterday / isThisWeek
+
+Date comparison helpers relative to a base date.
+
+```tsx
+const now = new Date();
+isToday(new Date(), now);      // true
+isYesterday(new Date(Date.now() - 86400000), now); // true
+isThisWeek(new Date(), now);   // true
+```
+
+```ts
+function isToday(date: Date | string | number, baseDate: Date | string | number): boolean
+function isYesterday(date: Date | string | number, baseDate: Date | string | number): boolean
+function isThisWeek(
+  date: Date | string | number,
+  baseDate: Date | string | number,
+  weekStartsOn?: 0 | 1
+): boolean
+```
+
+---
+
+## startOfDay / endOfDay
+
+Returns a new `Date` set to the start or end of the day.
+
+```tsx
+startOfDay(new Date(2024, 0, 15, 14, 30));
+// 2024-01-15 00:00:00.000
+
+endOfDay(new Date(2024, 0, 15, 14, 30));
+// 2024-01-15 23:59:59.999
+```
+
+```ts
+function startOfDay(date: Date | string | number): Date
+function endOfDay(date: Date | string | number): Date
+```

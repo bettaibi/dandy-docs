@@ -1,0 +1,258 @@
+---
+title: Divider
+description: Visual separator for content sections with horizontal and vertical orientations, variants, and optional center content
+category: typography
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Divider } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Divider
+
+A visual separator component for creating clear boundaries between content sections. Supports horizontal and vertical orientations, multiple visual variants, configurable thickness, responsive spacing, and optional center content such as text or icons.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Divider } from "dandy-ui";
+import "dandy-ui/theme.css";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p>Content above the divider</p>
+      <Divider spacing="md" />
+      <p>Content below the divider</p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <p>Content above the divider</p>
+    <Divider spacing="md" />
+    <p>Content below the divider</p>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+### Default
+
+Full-width line divider.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Divider variant="default" spacing="sm" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Divider variant="default" spacing="sm" />
+    ```
+  </Tab>
+</Tabs>
+
+### Trimmed
+
+A shorter, centered line for subtle separation.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Divider variant="trimmed" spacing="sm" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Divider variant="trimmed" spacing="sm" />
+    ```
+  </Tab>
+</Tabs>
+
+### Dot
+
+A small dot/square separator, useful between inline elements.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Divider variant="dot" spacing="sm" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Divider variant="dot" spacing="sm" />
+    ```
+  </Tab>
+</Tabs>
+
+## Orientation
+
+### Horizontal
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p>Section one</p>
+      <Divider orientation="horizontal" spacing="md" />
+      <p>Section two</p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <p>Section one</p>
+    <Divider orientation="horizontal" spacing="md" />
+    <p>Section two</p>
+    ```
+  </Tab>
+</Tabs>
+
+### Vertical
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", alignItems: "center", height: "40px" }}>
+        <span>Home</span>
+        <Divider orientation="vertical" spacing="md" />
+        <span>About</span>
+        <Divider orientation="vertical" spacing="md" />
+        <span>Contact</span>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <div style={{ display: "flex", alignItems: "center", height: "40px" }}>
+      <span>Home</span>
+      <Divider orientation="vertical" spacing="md" />
+      <span>About</span>
+      <Divider orientation="vertical" spacing="md" />
+      <span>Contact</span>
+    </div>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+Controls the thickness of the divider line.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p>Small (1px)</p>
+      <Divider size="sm" spacing="sm" />
+      <p>Medium (2px)</p>
+      <Divider size="md" spacing="sm" />
+      <p>Large (4px)</p>
+      <Divider size="lg" spacing="sm" />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Divider size="sm" />
+    <Divider size="md" />
+    <Divider size="lg" />
+    ```
+  </Tab>
+</Tabs>
+
+## Spacing
+
+Responsive spacing around the divider that adapts to screen size.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p>No spacing</p>
+      <Divider spacing="none" />
+      <p>Small spacing</p>
+      <Divider spacing="sm" />
+      <p>Medium spacing</p>
+      <Divider spacing="md" />
+      <p>Large spacing</p>
+      <Divider spacing="lg" />
+      <p>Extra large spacing</p>
+      <Divider spacing="xl" />
+      <p>End</p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Divider spacing="none" />
+    <Divider spacing="sm" />
+    <Divider spacing="md" />
+    <Divider spacing="lg" />
+    <Divider spacing="xl" />
+    ```
+  </Tab>
+</Tabs>
+
+## With Content
+
+Place text or icons in the center of the divider.
+
+### Text Content
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Divider spacing="md">OR</Divider>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Divider spacing="md">OR</Divider>
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Content
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Divider spacing="md">Continue with</Divider>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Divider spacing="md">Continue with</Divider>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop        | Type                           | Default        | Description                                     |
+| ----------- | ------------------------------ | -------------- | ----------------------------------------------- |
+| variant     | `default \| trimmed \| dot`    | `default`      | Visual style of the divider                     |
+| orientation | `horizontal \| vertical`       | `horizontal`   | Direction of the divider                        |
+| size        | `sm \| md \| lg`               | `sm`           | Thickness of the divider line                   |
+| spacing     | `sm \| md \| lg \| xl \| none` | `none`         | Responsive spacing around the divider           |
+| children    | `React.ReactNode`              | -              | Optional text or icon to display in the center  |
+| className   | `string`                       | -              | Additional CSS classes                          |
+
+Inherits all standard HTML `hr` element attributes.
+
+## Accessibility
+
+- Uses semantic `<hr>` element with implicit `role="separator"`
+- When content is present, it remains properly exposed to screen readers
+- Theme colors ensure sufficient contrast in both light and dark modes
+- Vertical dividers provide visual separation without disrupting document flow
+
+## Component API
+
+| Export       | Type                              | Description                        |
+| ------------ | --------------------------------- | ---------------------------------- |
+| Divider      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| DividerProps | `interface`                       | Component props interface          |

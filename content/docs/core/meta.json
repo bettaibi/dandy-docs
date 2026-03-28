@@ -1,0 +1,32 @@
+{
+  "title": "Core",
+  "collapsible": true,
+  "defaultOpen": true,
+  "pages": [
+    "Button",
+    "IconButton",
+    "Input",
+    "NumberInput",
+    "TextArea",
+    "FileInput",
+    "Select-component",
+    "CheckBox",
+    "Radio",
+    "Switch",
+    "Slider",
+    "Label",
+    "InputOTP",
+    "Chips",
+    "Rating",
+    "accordion",
+    "Avatar",
+    "AvatarGroup",
+    "Badge",
+    "Icon",
+    "AspectRatio",
+    "ScrollShadow",
+    "Dialog",
+    "Popover",
+    "InfoTip"
+  ]
+}

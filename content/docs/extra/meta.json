@@ -1,0 +1,13 @@
+{
+  "title": "Extra",
+  "collapsible": true,
+  "defaultOpen": true,
+  "pages": [
+    "Drawer",
+    "DatePicker",
+    "DateRangePicker",
+    "MultiSelect",
+    "SidebarLayout",
+    "MarkdownViewer"
+  ]
+}

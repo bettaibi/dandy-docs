@@ -1,0 +1,242 @@
+---
+title: Grid
+description: A responsive CSS grid layout with configurable columns, rows, and gap
+category: layout
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Grid, GridItem } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Grid
+
+A CSS grid container with responsive column and row configuration. Supports breakpoint-aware layouts with a companion `GridItem` for controlling span behavior.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Grid, GridItem } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Grid cols={3} gap="md">
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">1</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">2</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">3</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">4</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">5</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">6</div>
+      </Grid>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Grid cols={3} gap="md">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </Grid>
+    ```
+  </Tab>
+</Tabs>
+
+## Responsive Columns
+
+Pass an object to `cols` to define column counts at different breakpoints.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Grid cols={{ base: 1, sm: 2, lg: 3 }} gap="md">
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Card 1</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Card 2</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Card 3</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Card 4</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Card 5</div>
+        <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Card 6</div>
+      </Grid>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Grid cols={{ base: 1, sm: 2, lg: 3 }} gap="md">
+      <div>Card 1</div>
+      <div>Card 2</div>
+      <div>Card 3</div>
+      <div>Card 4</div>
+      <div>Card 5</div>
+      <div>Card 6</div>
+    </Grid>
+    ```
+  </Tab>
+</Tabs>
+
+## GridItem Span
+
+Use `GridItem` with `span` to make items span multiple columns.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Grid cols={4} gap="md">
+        <GridItem span={2}>
+          <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Span 2</div>
+        </GridItem>
+        <GridItem span={1}>
+          <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Span 1</div>
+        </GridItem>
+        <GridItem span={1}>
+          <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Span 1</div>
+        </GridItem>
+        <GridItem span="full">
+          <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Full Width</div>
+        </GridItem>
+      </Grid>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Grid cols={4} gap="md">
+      <GridItem span={2}>
+        <div>Span 2</div>
+      </GridItem>
+      <GridItem span={1}>
+        <div>Span 1</div>
+      </GridItem>
+      <GridItem span={1}>
+        <div>Span 1</div>
+      </GridItem>
+      <GridItem span="full">
+        <div>Full Width</div>
+      </GridItem>
+    </Grid>
+    ```
+  </Tab>
+</Tabs>
+
+## Responsive Span
+
+The `span` prop also accepts responsive objects for breakpoint-aware spanning.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Grid cols={{ base: 1, md: 3 }} gap="md">
+        <GridItem span={{ base: "full", md: 2 }}>
+          <div className="bg-primary/20 text-foreground rounded-lg p-4 text-sm text-center">Main Content — full on mobile, 2 cols on desktop</div>
+        </GridItem>
+        <GridItem span={{ base: "full", md: 1 }}>
+          <div className="bg-muted text-foreground rounded-lg p-4 text-sm text-center">Sidebar</div>
+        </GridItem>
+      </Grid>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Grid cols={{ base: 1, md: 3 }} gap="md">
+      <GridItem span={{ base: "full", md: 2 }}>
+        <div>Main Content</div>
+      </GridItem>
+      <GridItem span={{ base: "full", md: 1 }}>
+        <div>Sidebar</div>
+      </GridItem>
+    </Grid>
+    ```
+  </Tab>
+</Tabs>
+
+## Gap Sizes
+
+Control spacing between grid items.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-6 w-full">
+        <div>
+          <p className="text-xs text-muted-foreground mb-2">gap="xs"</p>
+          <Grid cols={4} gap="xs">
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">1</div>
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">2</div>
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">3</div>
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">4</div>
+          </Grid>
+        </div>
+        <div>
+          <p className="text-xs text-muted-foreground mb-2">gap="md" (default)</p>
+          <Grid cols={4} gap="md">
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">1</div>
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">2</div>
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">3</div>
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">4</div>
+          </Grid>
+        </div>
+        <div>
+          <p className="text-xs text-muted-foreground mb-2">gap="xl"</p>
+          <Grid cols={4} gap="xl">
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">1</div>
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">2</div>
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">3</div>
+            <div className="bg-primary/20 text-foreground rounded p-3 text-xs text-center">4</div>
+          </Grid>
+        </div>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Grid cols={4} gap="xs">...</Grid>
+    <Grid cols={4} gap="md">...</Grid>
+    <Grid cols={4} gap="xl">...</Grid>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### Grid
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| cols | `ColCount \| { base?: ColCount; sm?: ColCount; md?: ColCount; lg?: ColCount; xl?: ColCount }` | `1` | Number of columns (1-12), supports responsive object |
+| rows | `RowCount \| { base?: RowCount; sm?: RowCount; md?: RowCount; lg?: RowCount; xl?: RowCount }` | - | Number of rows (1-6), supports responsive object |
+| gap | `"none" \| "xs" \| "sm" \| "md" \| "lg" \| "xl"` | `"md"` | Gap between grid items |
+| as | `React.ElementType` | `"div"` | Render as a different HTML element |
+| className | `string` | - | Additional CSS classes |
+
+Inherits all standard HTML `div` attributes.
+
+### GridItem
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| span | `SpanValue \| { base?: SpanValue; sm?: SpanValue; md?: SpanValue; lg?: SpanValue; xl?: SpanValue }` | - | Columns to span (1-12 or "full"), supports responsive object |
+| rowSpan | `RowCount \| { base?: RowCount; sm?: RowCount; md?: RowCount; lg?: RowCount; xl?: RowCount }` | - | Rows to span (1-6), supports responsive object |
+| as | `React.ElementType` | `"div"` | Render as a different HTML element |
+| className | `string` | - | Additional CSS classes |
+
+Inherits all standard HTML `div` attributes.
+
+## Accessibility
+
+- Renders as a semantic `div` by default, configurable via `as` prop
+- Grid layout is transparent to screen readers; content order matches DOM order
+- Supports all standard ARIA attributes via prop spread
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| Grid | `React.ForwardRefExoticComponent` | CSS grid container component |
+| GridItem | `React.ForwardRefExoticComponent` | Grid item with span control |
+| GridProps | `interface` | Props for the Grid component |
+| GridItemProps | `interface` | Props for the GridItem component |

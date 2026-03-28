@@ -1,0 +1,213 @@
+---
+title: Kbd
+description: Keyboard shortcut display component for documenting key combinations and hotkeys
+category: typography
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Kbd } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Kbd
+
+A keyboard key display component for visually representing keyboard shortcuts, hotkeys, and key combinations. Renders with a key-cap style appearance including borders, shadows, and subtle depth to mimic physical keyboard keys.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Kbd } from "dandy-ui";
+import "dandy-ui/theme.css";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <p>
+        Press <Kbd>Enter</Kbd> to submit the form.
+      </p>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <p>
+      Press <Kbd>Enter</Kbd> to submit the form.
+    </p>
+    ```
+  </Tab>
+</Tabs>
+
+## Key Combinations
+
+Combine multiple `Kbd` components to represent keyboard shortcuts.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+        <p>
+          Copy: <Kbd>Ctrl</Kbd> + <Kbd>C</Kbd>
+        </p>
+        <p>
+          Paste: <Kbd>Ctrl</Kbd> + <Kbd>V</Kbd>
+        </p>
+        <p>
+          Save: <Kbd>Ctrl</Kbd> + <Kbd>S</Kbd>
+        </p>
+        <p>
+          Undo: <Kbd>Ctrl</Kbd> + <Kbd>Z</Kbd>
+        </p>
+        <p>
+          Find: <Kbd>Ctrl</Kbd> + <Kbd>F</Kbd>
+        </p>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <p>Copy: <Kbd>Ctrl</Kbd> + <Kbd>C</Kbd></p>
+    <p>Paste: <Kbd>Ctrl</Kbd> + <Kbd>V</Kbd></p>
+    <p>Save: <Kbd>Ctrl</Kbd> + <Kbd>S</Kbd></p>
+    <p>Undo: <Kbd>Ctrl</Kbd> + <Kbd>Z</Kbd></p>
+    <p>Find: <Kbd>Ctrl</Kbd> + <Kbd>F</Kbd></p>
+    ```
+  </Tab>
+</Tabs>
+
+## Multi-Key Shortcuts
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+        <p>
+          Select all: <Kbd>Ctrl</Kbd> + <Kbd>A</Kbd>
+        </p>
+        <p>
+          Task manager: <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>Esc</Kbd>
+        </p>
+        <p>
+          Developer tools: <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>I</Kbd>
+        </p>
+        <p>
+          Screenshot: <Kbd>Cmd</Kbd> + <Kbd>Shift</Kbd> + <Kbd>4</Kbd>
+        </p>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <p>Select all: <Kbd>Ctrl</Kbd> + <Kbd>A</Kbd></p>
+    <p>Task manager: <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>Esc</Kbd></p>
+    <p>Developer tools: <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>I</Kbd></p>
+    <p>Screenshot: <Kbd>Cmd</Kbd> + <Kbd>Shift</Kbd> + <Kbd>4</Kbd></p>
+    ```
+  </Tab>
+</Tabs>
+
+## Sizes
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+        <Kbd size="xs">xs</Kbd>
+        <Kbd size="sm">sm</Kbd>
+        <Kbd size="base">base</Kbd>
+        <Kbd size="lg">lg</Kbd>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Kbd size="xs">xs</Kbd>
+    <Kbd size="sm">sm</Kbd>
+    <Kbd size="base">base</Kbd>
+    <Kbd size="lg">lg</Kbd>
+    ```
+  </Tab>
+</Tabs>
+
+## Variants
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+        <Kbd variant="default">Default</Kbd>
+        <Kbd variant="primary">Primary</Kbd>
+        <Kbd variant="secondary">Secondary</Kbd>
+        <Kbd variant="success">Success</Kbd>
+        <Kbd variant="warning">Warning</Kbd>
+        <Kbd variant="error">Error</Kbd>
+        <Kbd variant="info">Info</Kbd>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Kbd variant="default">Default</Kbd>
+    <Kbd variant="primary">Primary</Kbd>
+    <Kbd variant="secondary">Secondary</Kbd>
+    <Kbd variant="success">Success</Kbd>
+    <Kbd variant="warning">Warning</Kbd>
+    <Kbd variant="error">Error</Kbd>
+    <Kbd variant="info">Info</Kbd>
+    ```
+  </Tab>
+</Tabs>
+
+## Navigation Keys
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+        <Kbd>Tab</Kbd>
+        <Kbd>Esc</Kbd>
+        <Kbd>Space</Kbd>
+        <Kbd>Enter</Kbd>
+        <Kbd>Backspace</Kbd>
+        <Kbd>Delete</Kbd>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Kbd>Tab</Kbd>
+    <Kbd>Esc</Kbd>
+    <Kbd>Space</Kbd>
+    <Kbd>Enter</Kbd>
+    <Kbd>Backspace</Kbd>
+    <Kbd>Delete</Kbd>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop      | Type                                                                     | Default     | Description               |
+| --------- | ------------------------------------------------------------------------ | ----------- | ------------------------- |
+| size      | `xs \| sm \| base \| lg`                                                | `sm`        | Key text size variant     |
+| variant   | `default \| primary \| secondary \| success \| warning \| error \| info` | `default`   | Key color variant         |
+| className | `string`                                                                 | -           | Additional CSS classes    |
+
+Inherits all standard HTML `kbd` element attributes.
+
+## Accessibility
+
+- Uses semantic `<kbd>` element for proper keyboard key identification
+- Screen readers announce the key text content naturally
+- Minimum width ensures touch-friendly sizing on mobile devices
+- Color variants maintain readable contrast for WCAG 2.1 Level AA
+- Key-cap visual styling provides clear distinction from surrounding text
+
+## Component API
+
+| Export   | Type                              | Description                        |
+| -------- | --------------------------------- | ---------------------------------- |
+| Kbd      | `React.ForwardRefExoticComponent` | Main component with ref forwarding |
+| KbdProps | `interface`                       | Component props interface          |

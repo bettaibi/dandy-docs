@@ -1,0 +1,200 @@
+---
+title: DateRangePicker
+description: A date range picker with dual-month calendar, locale formatting, and responsive layout
+category: extra
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { DateRangePicker } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# DateRangePicker
+
+> This component is part of the `dandy-ui/extra` package. For optimal bundle size, use dynamic imports or lazy loading.
+
+A date range picker that combines an input field with a dual-month calendar popup. Uses a Popover on desktop and a Drawer on mobile. Supports locale-aware formatting, validation, and calendar color variants.
+
+The library also exports a `MultiDatePicker` for selecting multiple individual dates.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { DateRangePicker } from "dandy-ui/extra";
+```
+
+### Peer Dependencies
+
+```bash
+npm install react-day-picker
+```
+
+When using the `errorMessage` prop, also install:
+
+```bash
+npm install @radix-ui/react-tooltip
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <DateRangePicker placeholder="Select date range" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    import type { DateRange } from "react-day-picker";
+
+    const [range, setRange] = React.useState<DateRange | undefined>();
+
+    <DateRangePicker
+      value={range}
+      onChange={setRange}
+      placeholder="Select date range"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Input Size
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <DateRangePicker inputSize="sm" placeholder="Small" />
+        <DateRangePicker inputSize="md" placeholder="Medium (default)" />
+        <DateRangePicker inputSize="lg" placeholder="Large" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DateRangePicker inputSize="sm" />
+    <DateRangePicker inputSize="md" />
+    <DateRangePicker inputSize="lg" />
+    ```
+  </Tab>
+</Tabs>
+
+## Error Message
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <DateRangePicker
+          placeholder="Pick a range"
+          errorMessage="Date range is required"
+        />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DateRangePicker
+      placeholder="Pick a range"
+      errorMessage="Date range is required"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Date Locale
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <DateRangePicker dateLocale="en-US" placeholder="English (US)" />
+        <DateRangePicker dateLocale="fr-FR" placeholder="French" />
+        <DateRangePicker dateLocale="de-DE" placeholder="German" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DateRangePicker dateLocale="en-US" />
+    <DateRangePicker dateLocale="fr-FR" />
+    <DateRangePicker dateLocale="de-DE" />
+    ```
+  </Tab>
+</Tabs>
+
+## Calendar Variant
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <DateRangePicker variant="primary" placeholder="Primary" />
+        <DateRangePicker variant="info" placeholder="Info" />
+        <DateRangePicker variant="error" placeholder="Error" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DateRangePicker variant="primary" />
+    <DateRangePicker variant="info" />
+    <DateRangePicker variant="error" />
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <DateRangePicker placeholder="Disabled" disabled />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <DateRangePicker placeholder="Disabled" disabled />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| value | `DateRange` | - | Selected date range (controlled) |
+| onChange | `(range: DateRange \| undefined) => void` | - | Callback when range changes |
+| placeholder | `string` | `"Pick a date range"` | Input placeholder text |
+| dateLocale | `"en-US" \| "fr-FR" \| "es-ES" \| "de-DE" \| "it-IT" \| "ar-EG" \| "ar-TN"` | `"en-US"` | Locale for date formatting |
+| dateFormat | `Intl.DateTimeFormatOptions` | `{ year: "numeric", month: "short", day: "numeric" }` | Date display format |
+| inputSize | `InputProps["size"]` | `"md"` | Input height and padding |
+| inputVariant | `InputProps["variant"]` | `"default"` | Input border and focus color |
+| errorMessage | `string` | - | Validation error message |
+| disabled | `boolean` | `false` | Disables the picker |
+| inputClassName | `string` | - | Additional classes for the input |
+| contentClassName | `string` | - | Additional classes for the popup |
+| align | `"start" \| "center" \| "end"` | `"start"` | Popover alignment (desktop) |
+| variant | `"primary" \| "secondary" \| "success" \| "info" \| "warning" \| "error"` | `"primary"` | Calendar color variant |
+
+Also inherits `BaseCalendarProps` (excluding `mode`, `selected`, `onSelect`). Displays 2 months by default.
+
+## Accessibility
+
+- Keyboard navigable: `Enter`/`Space` toggle, `ArrowDown` opens, `Escape` closes
+- Calendar keyboard navigation via react-day-picker
+- Responsive: uses Popover on desktop, Drawer on mobile
+- Read-only input prevents manual text entry errors
+- Screen reader accessible with proper ARIA labels
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| DateRangePicker | `React.ForwardRefExoticComponent` | Date range picker component |
+| DateRangePickerProps | `interface` | Props for the DateRangePicker |

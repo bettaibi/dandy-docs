@@ -1,0 +1,94 @@
+---
+title: Input / Display Utilities
+description: Format phone numbers, credit cards, file sizes, and sanitize user input
+---
+
+# Input / Display Utilities
+
+Formatting helpers for user-facing input masking, display formatting, and HTML sanitization.
+
+```tsx
+import { formatPhoneNumber, formatCreditCard, sanitize } from 'dandy-ui/utils';
+```
+
+---
+
+## formatPhoneNumber
+
+Formats a phone number string into standard US display format.
+
+```tsx
+formatPhoneNumber("1234567890");  // "(123) 456-7890"
+formatPhoneNumber("12345678901"); // "+1 (234) 567-8901"
+```
+
+```ts
+function formatPhoneNumber(value: string): string
+```
+
+---
+
+## formatCreditCard
+
+Formats a credit card number into groups of 4 digits.
+
+```tsx
+formatCreditCard("1234567890123456");       // "1234 5678 9012 3456"
+formatCreditCard("1234567890123456", "-");  // "1234-5678-9012-3456"
+```
+
+```ts
+function formatCreditCard(value: string, separator?: string): string
+```
+
+---
+
+## maskInput
+
+Masks an input value according to a pattern, revealing only the trailing characters.
+
+```tsx
+maskInput("123456789", "***-**-****");
+// "***-**-6789"
+
+maskInput("1234567890123456", "****-****-****-****");
+// "****-****-****-3456"
+```
+
+```ts
+function maskInput(value: string, pattern: string): string
+```
+
+---
+
+## formatFileSize
+
+Formats bytes into a human-readable file size string.
+
+```tsx
+formatFileSize(1024);       // "1.00 KB"
+formatFileSize(1048576);    // "1.00 MB"
+formatFileSize(1536, 1);    // "1.5 KB"
+```
+
+```ts
+function formatFileSize(bytes: number, decimals?: number): string
+```
+
+---
+
+## sanitize
+
+Escapes HTML special characters to prevent XSS.
+
+```tsx
+sanitize("<script>alert('XSS')</script>");
+// "&lt;script&gt;alert('XSS')&lt;/script&gt;"
+
+sanitize('5 > 3 & 2 < 4');
+// "5 &gt; 3 &amp; 2 &lt; 4"
+```
+
+```ts
+function sanitize(value: string): string
+```

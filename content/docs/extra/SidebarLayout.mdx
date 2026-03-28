@@ -1,0 +1,170 @@
+---
+title: SidebarLayout
+description: A responsive sidebar and content layout with push and overlay modes
+category: extra
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+import { SidebarOverlayDemo, SidebarPushDemo, SidebarRightDemo, StandaloneSideBarDemo } from "../../../components/demos/SidebarLayoutDemos";
+
+# SidebarLayout
+
+> This component is part of the `dandy-ui/extra` package. For optimal bundle size, use dynamic imports or lazy loading.
+
+A compound layout component that pairs a sliding sidebar panel with a main content area. Supports push mode (content shifts aside) and overlay mode (sidebar floats over content). Includes a standalone `SideBar` component for simpler use cases.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { SidebarLayout, SideBar } from "dandy-ui/extra";
+```
+
+## Usage
+
+### Overlay Mode (default)
+
+The sidebar slides over the content with a backdrop overlay.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <SidebarOverlayDemo />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [open, setOpen] = React.useState(false);
+
+    <SidebarLayout open={open} onOpenChange={setOpen} mode="overlay">
+      <SidebarLayout.Sidebar>
+        <nav className="p-4">
+          <p>Dashboard</p>
+          <p>Settings</p>
+          <p>Profile</p>
+        </nav>
+      </SidebarLayout.Sidebar>
+      <SidebarLayout.Content>
+        <Button onClick={() => setOpen(true)}>Toggle Sidebar</Button>
+        <p>Main content area.</p>
+      </SidebarLayout.Content>
+    </SidebarLayout>
+    ```
+  </Tab>
+</Tabs>
+
+### Push Mode
+
+Content shifts aside when the sidebar opens.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <SidebarPushDemo />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <SidebarLayout open={open} onOpenChange={setOpen} mode="push">
+      <SidebarLayout.Sidebar>...</SidebarLayout.Sidebar>
+      <SidebarLayout.Content>...</SidebarLayout.Content>
+    </SidebarLayout>
+    ```
+  </Tab>
+</Tabs>
+
+### Right Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <SidebarRightDemo />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <SidebarLayout placement="right" open={open} onOpenChange={setOpen}>
+      <SidebarLayout.Sidebar>...</SidebarLayout.Sidebar>
+      <SidebarLayout.Content>...</SidebarLayout.Content>
+    </SidebarLayout>
+    ```
+  </Tab>
+</Tabs>
+
+## Standalone SideBar
+
+For simpler cases where you don't need a layout wrapper, use the `SideBar` component directly. It renders a backdrop + sliding panel without managing content layout.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <StandaloneSideBarDemo />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [open, setOpen] = React.useState(false);
+
+    <SideBar open={open} onOpenChange={setOpen}>
+      <nav className="p-4">
+        <p>Standalone Sidebar</p>
+      </nav>
+    </SideBar>
+    <Button onClick={() => setOpen(true)}>Open SideBar</Button>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### SidebarLayout (Root)
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| mode | `"push" \| "overlay"` | `"overlay"` | Display mode |
+| placement | `"left" \| "right"` | `"left"` | Sidebar placement |
+| layout | `"inner" \| "outer"` | `"outer"` | Fixed to viewport or absolute within parent |
+| open | `boolean` | `false` | Controlled open state |
+| onOpenChange | `(open: boolean) => void` | - | Callback on open state change |
+| width | `"64" \| "72" \| "80" \| "96" \| "full"` | `"80"` | Sidebar width |
+| overlay | `"blur" \| "transparent" \| "none"` | `"transparent"` | Backdrop overlay style |
+| hidden | `"sm" \| "md" \| "lg" \| "xl"` | - | Hide sidebar above this breakpoint |
+| ariaLabel | `string` | `"Sidebar"` | Accessible label |
+
+### SideBar (Standalone)
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| open | `boolean` | `false` | Controlled open state |
+| onOpenChange | `(open: boolean) => void` | - | Callback on backdrop click |
+| placement | `"left" \| "right"` | `"left"` | Sidebar placement |
+| width | `"64" \| "72" \| "80" \| "96" \| "full"` | `"80"` | Sidebar width |
+| overlay | `"blur" \| "transparent" \| "none"` | `"transparent"` | Backdrop overlay style |
+| layout | `"inner" \| "outer"` | `"outer"` | Positioning behavior |
+| hidden | `"sm" \| "md" \| "lg" \| "xl"` | - | Hide above this breakpoint |
+| ariaLabel | `string` | `"Sidebar"` | Accessible label |
+
+## Accessibility
+
+- Sidebar uses `role="complementary"` with `aria-label`
+- `aria-hidden` toggles based on open state
+- `aria-modal` set for overlay mode
+- Backdrop click to close
+- Content marked `aria-hidden` when overlay sidebar is open
+- Smooth transition animations respecting `prefers-reduced-motion`
+- Responsive hide at configurable breakpoints
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| SidebarLayout | Compound component | Layout with sidebar + content |
+| SidebarLayout.Sidebar | `React.FC` | Sidebar content slot |
+| SidebarLayout.Content | `React.FC` | Main content slot |
+| SideBar | `React.ForwardRefExoticComponent` | Standalone overlay sidebar |
+| SidebarLayoutProps | `interface` | Props for SidebarLayout |
+| SidebarLayoutSidebarProps | `interface` | Props for SidebarLayout.Sidebar |
+| SidebarLayoutContentProps | `interface` | Props for SidebarLayout.Content |
+| SideBarProps | `interface` | Props for standalone SideBar |

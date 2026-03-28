@@ -1,0 +1,232 @@
+---
+title: Popover
+description: A floating content panel anchored to a trigger element with smart positioning
+category: core
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Popover, PopoverTrigger, PopoverContent, Button } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Popover
+
+A floating popover panel built on Radix UI Popover. Anchors to a trigger element with automatic collision detection, configurable side and alignment, and smooth animations.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Popover } from "dandy-ui";
+```
+
+### Peer Dependencies
+
+```bash
+npm install @radix-ui/react-popover
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline">Show Info</Button>
+        </PopoverTrigger>
+        <PopoverContent>
+          <div className="space-y-2">
+            <span className="text-sm font-medium text-foreground block">
+              Notification Settings
+            </span>
+            <span className="text-xs text-muted-foreground block">
+              Choose which notifications you want to receive.
+            </span>
+          </div>
+        </PopoverContent>
+      </Popover>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Popover>
+      <Popover.Trigger asChild>
+        <Button variant="outline">Show Info</Button>
+      </Popover.Trigger>
+      <Popover.Content>
+        <div className="space-y-2">
+          <p className="text-sm font-medium">Notification Settings</p>
+          <p className="text-xs text-muted-foreground">
+            Choose which notifications you want to receive.
+          </p>
+        </div>
+      </Popover.Content>
+    </Popover>
+    ```
+  </Tab>
+</Tabs>
+
+## Side
+
+Control which side of the trigger the popover appears on.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline" size="sm">
+            Top
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent side="top">
+          <span className="text-sm">Popover on top</span>
+        </PopoverContent>
+      </Popover>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline" size="sm">
+            Right
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent side="right">
+          <span className="text-sm">Popover on right</span>
+        </PopoverContent>
+      </Popover>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline" size="sm">
+            Bottom
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent side="bottom">
+          <span className="text-sm">Popover on bottom</span>
+        </PopoverContent>
+      </Popover>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline" size="sm">
+            Left
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent side="left">
+          <span className="text-sm">Popover on left</span>
+        </PopoverContent>
+      </Popover>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Popover.Content side="top">...</Popover.Content>
+    <Popover.Content side="right">...</Popover.Content>
+    <Popover.Content side="bottom">...</Popover.Content> {/* default */}
+    <Popover.Content side="left">...</Popover.Content>
+    ```
+  </Tab>
+</Tabs>
+
+## Alignment
+
+Align the popover relative to its trigger.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline" size="sm">
+            Start
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent align="start">
+          <span className="text-sm">Aligned to start</span>
+        </PopoverContent>
+      </Popover>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline" size="sm">
+            Center
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent align="center">
+          <span className="text-sm">Aligned to center</span>
+        </PopoverContent>
+      </Popover>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline" size="sm">
+            End
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent align="end">
+          <span className="text-sm">Aligned to end</span>
+        </PopoverContent>
+      </Popover>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Popover.Content align="start">...</Popover.Content>
+    <Popover.Content align="center">...</Popover.Content> {/* default */}
+    <Popover.Content align="end">...</Popover.Content>
+    ```
+  </Tab>
+</Tabs>
+
+## Side Offset
+
+Adjust the distance between the trigger and the popover.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline">Offset 16px</Button>
+        </PopoverTrigger>
+        <PopoverContent sideOffset={16}>
+          <span className="text-sm">This popover is 16px away from the trigger.</span>
+        </PopoverContent>
+      </Popover>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Popover.Content sideOffset={16}>...</Popover.Content>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+### Popover.Content
+
+| Prop             | Type                                               | Default    | Description                      |
+| ---------------- | -------------------------------------------------- | ---------- | -------------------------------- |
+| side             | `"top" \| "right" \| "bottom" \| "left"`           | `"bottom"` | Preferred side of the trigger    |
+| align            | `"start" \| "center" \| "end"`                     | `"center"` | Alignment against the trigger    |
+| sideOffset       | `number`                                           | `8`        | Distance in px from the trigger  |
+| collisionPadding | `number`                                           | `12`       | Padding in px from viewport edge |
+| rounded          | `"sm" \| "md" \| "lg" \| "xl" \| "full" \| "none"` | -          | Border radius override           |
+| className        | `string`                                           | -          | Additional CSS classes           |
+
+Inherits all Radix `Popover.Content` attributes.
+
+## Accessibility
+
+- Built on Radix UI Popover for full WCAG compliance
+- `Escape` key closes the popover
+- Focus returns to trigger on close
+- Smart collision detection prevents off-screen rendering
+- Respects `prefers-reduced-motion`
+- Screen reader friendly with proper ARIA attributes
+
+## Component API
+
+| Export              | Type                              | Description                    |
+| ------------------- | --------------------------------- | ------------------------------ |
+| Popover             | Compound component                | Root popover controller        |
+| Popover.Trigger     | `Radix PopoverTrigger`            | Element that opens the popover |
+| Popover.Content     | `React.ForwardRefExoticComponent` | Popover content container      |
+| PopoverContentProps | `interface`                       | Props for Popover.Content      |

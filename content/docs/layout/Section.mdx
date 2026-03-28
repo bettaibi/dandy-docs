@@ -1,0 +1,157 @@
+---
+title: Section
+description: A semantic section wrapper with configurable vertical spacing and centering
+category: layout
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Section } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# Section
+
+A semantic section wrapper that provides consistent vertical spacing. Supports polymorphic rendering via the `as` prop and optional horizontal centering for page-level layout composition.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { Section } from "dandy-ui";
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Section spacing="md" className="bg-muted/20 rounded-lg">
+        <h2 className="text-lg font-semibold text-foreground mb-2">Features</h2>
+        <p className="text-sm text-muted-foreground">Build modern interfaces with a mobile-first component library powered by Tailwind CSS.</p>
+      </Section>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Section spacing="md">
+      <h2>Features</h2>
+      <p>Build modern interfaces with a mobile-first component library powered by Tailwind CSS.</p>
+    </Section>
+    ```
+  </Tab>
+</Tabs>
+
+## Spacing
+
+Control the vertical padding with the `spacing` prop. Values scale responsively across breakpoints.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-2 w-full">
+        <Section spacing="xs" className="bg-primary/10 rounded-lg">
+          <p className="text-xs text-foreground text-center">xs</p>
+        </Section>
+        <Section spacing="sm" className="bg-primary/10 rounded-lg">
+          <p className="text-xs text-foreground text-center">sm</p>
+        </Section>
+        <Section spacing="md" className="bg-primary/10 rounded-lg">
+          <p className="text-xs text-foreground text-center">md (default)</p>
+        </Section>
+        <Section spacing="lg" className="bg-primary/10 rounded-lg">
+          <p className="text-xs text-foreground text-center">lg</p>
+        </Section>
+        <Section spacing="xl" className="bg-primary/10 rounded-lg">
+          <p className="text-xs text-foreground text-center">xl</p>
+        </Section>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Section spacing="xs">...</Section>
+    <Section spacing="sm">...</Section>
+    <Section spacing="md">...</Section>
+    <Section spacing="lg">...</Section>
+    <Section spacing="xl">...</Section>
+    ```
+  </Tab>
+</Tabs>
+
+## Centered
+
+Enable horizontal centering with `centered` to create a column layout with items aligned to the center.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <Section spacing="sm" centered className="bg-muted/20 rounded-lg">
+        <h2 className="text-lg font-semibold text-foreground">Centered Section</h2>
+        <p className="text-sm text-muted-foreground max-w-md text-center">Content is horizontally centered using flexbox. Ideal for hero sections and call-to-action blocks.</p>
+      </Section>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Section spacing="sm" centered>
+      <h2>Centered Section</h2>
+      <p>Content is horizontally centered using flexbox.</p>
+    </Section>
+    ```
+  </Tab>
+</Tabs>
+
+## Polymorphic Rendering
+
+Use the `as` prop to render the section as a different semantic HTML element.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-2 w-full">
+        <Section as="article" spacing="sm" className="bg-muted/20 rounded-lg">
+          <p className="text-sm text-foreground">Rendered as <code className="text-xs bg-muted px-1 py-0.5 rounded">article</code></p>
+        </Section>
+        <Section as="aside" spacing="sm" className="bg-muted/20 rounded-lg">
+          <p className="text-sm text-foreground">Rendered as <code className="text-xs bg-muted px-1 py-0.5 rounded">aside</code></p>
+        </Section>
+        <Section as="main" spacing="sm" className="bg-muted/20 rounded-lg">
+          <p className="text-sm text-foreground">Rendered as <code className="text-xs bg-muted px-1 py-0.5 rounded">main</code></p>
+        </Section>
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <Section as="article" spacing="sm">Rendered as article</Section>
+    <Section as="aside" spacing="sm">Rendered as aside</Section>
+    <Section as="main" spacing="sm">Rendered as main</Section>
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| spacing | `"none" \| "xs" \| "sm" \| "md" \| "lg" \| "xl" \| "2xl" \| "3xl"` | `"md"` | Vertical spacing size (scales responsively) |
+| as | `"section" \| "div" \| "article" \| "aside" \| "main" \| "header" \| "footer"` | `"section"` | Render as a different semantic element |
+| centered | `boolean` | `false` | Whether to center content horizontally |
+| hidden | `"sm" \| "md" \| "lg" \| "xl"` | - | Hide content at the specified breakpoint and above |
+| className | `string` | - | Additional CSS classes |
+
+Inherits all standard HTML element attributes (except `hidden`).
+
+## Accessibility
+
+- Renders as a semantic `<section>` element by default for proper document structure
+- Supports polymorphic rendering to use correct landmark elements (`main`, `aside`, `header`, `footer`, `article`)
+- Screen readers recognize landmark roles automatically from semantic elements
+- Use an `aria-label` or heading child to provide a meaningful section label
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| Section | `React.ForwardRefExoticComponent` | Semantic section wrapper component |
+| SectionProps | `interface` | Props for the Section component |
