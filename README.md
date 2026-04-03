@@ -1,45 +1,116 @@
-# .
+# Dandy UI
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+A lightweight, edge-first React UI library built on **TailwindCSS v4**.  
+Optimized for Cloudflare Pages, serverless, and SSR environments.
 
-Run development server:
+[![npm](https://img.shields.io/npm/v/dandy-ui)](https://www.npmjs.com/package/dandy-ui)
+[![license](https://img.shields.io/npm/l/dandy-ui)](LICENSE)
+
+---
+
+## Features
+
+- 🎨 TailwindCSS v4 - Latest Tailwind with CSS-first configuration
+- 🌙 Dark Mode - Built-in dark mode support with semantic tokens
+- 📱 Mobile-First - Responsive, touch-friendly design
+- 🔧 TypeScript - Full TypeScript support with strict type checking
+- 🚀 Next.js Ready - Compatible with Next.js 13+ App Router
+- 🌳 Tree Shakable - Only import what you need
+- ♿ Accessible - WCAG 2.1 AA compliant components
+- 🎯 Semantic Tokens - CSS custom properties for consistent theming
+
+---
+
+## Quick Start
 
 ```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
+npm install dandy-ui
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+```css
+@import "tailwindcss";
+@import "dandy-ui/theme.css";
+@import "dandy-ui/base.css";
+```
 
-## Explore
+```tsx
+import { ThemeProvider } from "dandy-ui";
 
-In the project, you can see:
+<ThemeProvider>
+  <App />
+</ThemeProvider>;
+```
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+For SSR, add `<ThemeScript />` in `<head>` to prevent flash of unstyled content.
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+---
 
-### Fumadocs MDX
+## Entry Points
 
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
+| Entry               | Purpose                          | Example                                                 |
+| ------------------- | -------------------------------- | ------------------------------------------------------- |
+| `dandy-ui`          | Core components                  | `import { Button, Dialog } from "dandy-ui"`             |
+| `dandy-ui/extra`    | Heavy components (optional deps) | `import { Drawer, DatePicker } from "dandy-ui/extra"`   |
+| `dandy-ui/markdown` | Markdown renderer                | `import { MarkdownViewer } from "dandy-ui/markdown"`    |
+| `dandy-ui/utils`    | Pure utility functions           | `import { formatDate, debounce } from "dandy-ui/utils"` |
 
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+---
 
-## Learn More
+## Components
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+**Layout** — `Container` · `Flex` · `Grid` · `Paper` · `Section` · `Table` · `ScrollShadow`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+**Typography** — `Text` · `Heading` · `Hint` · `Label` · `Divider` · `Code` · `Kbd`
+
+**Forms** — `Button` · `IconButton` · `Input` · `TextArea` · `NumberInput` · `Select` · `CheckBox` · `Radio` · `Switch` · `Slider` · `FileInput` · `Rating` · `Icon`
+
+**Feedback** — `Alert` · `Badge` · `Chips` · `Spinner` · `Skeleton` · `ProgressBar` · `CircularProgress`
+
+**Overlays** — `Dialog` · `Popover` · `InfoTip` · `SnackbarProvider`
+
+**Compound** — `Accordion`
+
+**Extra** — `Drawer` · `DatePicker` · `DateRangePicker` · `MultiDatePicker` · `MultiSelect` · `InputOTP` · `SidebarLayout` · `SideBar`
+
+**Markdown** — `MarkdownViewer`
+
+---
+
+## Peer Dependencies
+
+**Required:**
+
+```bash
+npm install react react-dom tailwindcss @radix-ui/react-tooltip
+```
+
+**Optional** (install only what you use):
+
+| Package                                                                         | Component                                    |
+| ------------------------------------------------------------------------------- | -------------------------------------------- |
+| `@radix-ui/react-dialog`                                                        | Dialog                                       |
+| `@radix-ui/react-popover`                                                       | Popover                                      |
+| `@radix-ui/react-select`                                                        | Select                                       |
+| `vaul`                                                                          | Drawer                                       |
+| `react-day-picker`                                                              | DatePicker, DateRangePicker, MultiDatePicker  |
+| `input-otp`                                                                     | InputOTP                                     |
+| `react-markdown` `rehype-highlight` `rehype-raw` `rehype-sanitize` `remark-gfm` | MarkdownViewer                               |
+
+---
+
+## Theme System
+
+CSS custom properties defined in `theme.css`. Never hardcode colors.
+
+**Tokens:** `primary` · `secondary` · `accent` · `background` · `foreground` · `muted` · `border` · `card` · `popover` · `success` · `warning` · `error` · `info`  
+Each has a `-foreground` variant. Dark mode activates via the `dark` class.
+
+```tsx
+<div className="bg-primary text-primary-foreground" />
+```
+
+---
+
+## License
+
+MIT © [Nidhal Bettaibi](https://github.com/bettaibi)
