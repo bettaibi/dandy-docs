@@ -7,17 +7,13 @@ function SnackbarDemoButton({
   variant,
 }: {
   label?: string;
-  variant?: "default" | "success" | "warning" | "error" | "info";
+  variant?:  any
 }) {
   const { showSnackbarMsg } = useSnackbar();
   return (
     <Button
       variant={
-        variant === "default"
-          ? "filled"
-          : variant === "info"
-            ? "filled"
-            : variant
+        variant 
       }
       onClick={() =>
         showSnackbarMsg(label || "Notification message", { variant })
