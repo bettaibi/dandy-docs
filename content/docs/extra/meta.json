@@ -6,6 +6,7 @@
     "Drawer",
     "DatePicker",
     "DateRangePicker",
+    "MultiDatePicker",
     "MultiSelect",
     "SidebarLayout",
     "MarkdownViewer"
