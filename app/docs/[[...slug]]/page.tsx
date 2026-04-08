@@ -46,16 +46,34 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
+const siteUrl = "https://dandy-ui-indol.vercel.app";
+
 export async function generateMetadata(props: PageProps<'/docs/[[...slug]]'>): Promise<Metadata> {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
+  const pageUrl = `${siteUrl}${page.url}`;
+  const ogImage = getPageImage(page).url;
+
   return {
     title: page.data.title,
     description: page.data.description,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
-      images: getPageImage(page).url,
+      title: page.data.title,
+      description: page.data.description,
+      type: "article",
+      url: pageUrl,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: page.data.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.data.title,
+      description: page.data.description,
+      images: [ogImage],
     },
   };
 }

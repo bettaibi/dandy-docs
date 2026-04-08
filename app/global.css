@@ -8,9 +8,27 @@
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 
-#nd-docs-layout {
-  grid-template-columns:
-    var(--fd-sidebar-col, 0px)
-    1fr
-    var(--fd-toc-width, 0px) !important;
+@media (min-width: 768px) {
+  #nd-docs-layout {
+    grid-template-columns:
+      var(--fd-sidebar-col, 0px)
+      1fr
+      var(--fd-toc-width, 0px) !important;
+  }
+}
+
+/* Scrollable tables on mobile */
+.prose table,
+[class*="fd-"] table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent code blocks from breaking layout on mobile */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
 }
