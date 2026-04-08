@@ -1,5 +1,8 @@
 {
   "name": "dandy-docs",
+  "description": "Documentation for Dandy UI library",
+  "author": "Nidhal Bettaibi",
+  "license": "MIT",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -41,5 +44,16 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
-  }
+  },
+  "keywords": [
+    "dandy-ui",
+    "react",
+    "tailwindcss",
+    "ui-library",
+    "ui-components",
+    "dandy-ui documentation",
+    "ui-library",
+    "ui-components",
+    "ui-documentation"
+  ]
 }
