@@ -6,7 +6,7 @@ import { SidebarLayout, SideBar, Button } from "../dandy";
 export function SidebarOverlayDemo() {
   const [open, setOpen] = React.useState(false);
   return (
-    <div className="relative w-full h-64 overflow-hidden rounded-lg border">
+    <div className="relative w-full min-h-64 overflow-hidden rounded-lg border">
       <SidebarLayout
         open={open}
         onOpenChange={setOpen}
@@ -22,8 +22,8 @@ export function SidebarOverlayDemo() {
             <span className="text-xs text-muted-foreground block">Profile</span>
           </div>
         </SidebarLayout.Sidebar>
-        <SidebarLayout.Content>
-          <div className="p-4">
+        <SidebarLayout.Content >
+          <div className="p-4 min-h-64" >
             <Button size="sm" onClick={() => setOpen(true)}>Toggle Sidebar</Button>
             <span className="text-sm text-muted-foreground mt-4 block">Main content area. The sidebar overlays this content.</span>
           </div>
@@ -36,7 +36,7 @@ export function SidebarOverlayDemo() {
 export function SidebarPushDemo() {
   const [open, setOpen] = React.useState(false);
   return (
-    <div className="relative w-full h-64 overflow-hidden rounded-lg border">
+    <div className="relative w-full min-h-64 overflow-hidden rounded-lg border">
       <SidebarLayout
         open={open}
         onOpenChange={setOpen}
@@ -52,7 +52,7 @@ export function SidebarPushDemo() {
           </div>
         </SidebarLayout.Sidebar>
         <SidebarLayout.Content>
-          <div className="p-4">
+          <div className="p-4 min-h-64">
             <Button size="sm" onClick={() => setOpen(!open)}>Toggle Push</Button>
             <span className="text-sm text-muted-foreground mt-4 block">Content shifts when the sidebar opens.</span>
           </div>
@@ -65,7 +65,7 @@ export function SidebarPushDemo() {
 export function SidebarRightDemo() {
   const [open, setOpen] = React.useState(false);
   return (
-    <div className="relative w-full h-64 overflow-hidden rounded-lg border">
+    <div className="relative w-full min-h-64 overflow-hidden rounded-lg border">
       <SidebarLayout
         open={open}
         onOpenChange={setOpen}
@@ -80,7 +80,7 @@ export function SidebarRightDemo() {
           </div>
         </SidebarLayout.Sidebar>
         <SidebarLayout.Content>
-          <div className="p-4">
+          <div className="p-4 min-h-64">
             <Button size="sm" onClick={() => setOpen(!open)}>Right Sidebar</Button>
           </div>
         </SidebarLayout.Content>

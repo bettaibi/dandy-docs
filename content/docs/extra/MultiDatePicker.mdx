@@ -1,0 +1,278 @@
+---
+title: MultiDatePicker
+description: A date picker for selecting multiple individual dates with calendar popup
+category: extra
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { MultiDatePicker } from "../../../components/dandy";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+# MultiDatePicker
+
+> This component is part of the `dandy-ui/extra` package. For optimal bundle size, use dynamic imports or lazy loading.
+
+A date picker that allows selecting multiple individual dates. Uses a Popover on desktop and a Drawer on mobile for an optimal experience on all screen sizes. Supports locale-aware date formatting, validation, and calendar variants.
+
+## Installation & Integration
+
+### Import
+
+```tsx
+import { MultiDatePicker } from "dandy-ui/extra";
+```
+
+### Peer Dependencies
+
+```bash
+npm install react-day-picker
+```
+
+When using the `errorMessage` prop, also install:
+
+```bash
+npm install @radix-ui/react-tooltip
+```
+
+## Usage
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <MultiDatePicker placeholder="Select dates" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    const [dates, setDates] = React.useState<Date[] | undefined>();
+
+    <MultiDatePicker
+      value={dates}
+      onChange={setDates}
+      placeholder="Select dates"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Input Size
+
+Control the input height and padding.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <MultiDatePicker inputSize="sm" placeholder="Small" />
+        <MultiDatePicker inputSize="md" placeholder="Medium (default)" />
+        <MultiDatePicker inputSize="lg" placeholder="Large" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiDatePicker inputSize="sm" placeholder="Small" />
+    <MultiDatePicker inputSize="md" placeholder="Medium" />
+    <MultiDatePicker inputSize="lg" placeholder="Large" />
+    ```
+  </Tab>
+</Tabs>
+
+## Input Variant
+
+Control the input border and focus color.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <MultiDatePicker inputVariant="default" placeholder="Default variant" />
+        <MultiDatePicker inputVariant="success" placeholder="Success variant" />
+        <MultiDatePicker inputVariant="error" placeholder="Error variant" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiDatePicker inputVariant="default" placeholder="Default" />
+    <MultiDatePicker inputVariant="success" placeholder="Success" />
+    <MultiDatePicker inputVariant="error" placeholder="Error" />
+    ```
+  </Tab>
+</Tabs>
+
+## Error Message
+
+Display validation errors with the `errorMessage` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <MultiDatePicker
+          placeholder="Pick dates"
+          errorMessage="At least one date is required"
+        />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiDatePicker
+      placeholder="Pick dates"
+      errorMessage="At least one date is required"
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <MultiDatePicker placeholder="Disabled" disabled />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiDatePicker placeholder="Disabled" disabled />
+    ```
+  </Tab>
+</Tabs>
+
+## Date Locale
+
+Format dates using different locales via `Intl.DateTimeFormat`.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <MultiDatePicker dateLocale="en-US" placeholder="English (US)" />
+        <MultiDatePicker dateLocale="fr-FR" placeholder="French" />
+        <MultiDatePicker dateLocale="ar-TN" placeholder="Arabic (Tunisia)" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiDatePicker dateLocale="en-US" placeholder="English (US)" />
+    <MultiDatePicker dateLocale="fr-FR" placeholder="French" />
+    <MultiDatePicker dateLocale="ar-TN" placeholder="Arabic (Tunisia)" />
+    ```
+  </Tab>
+</Tabs>
+
+## Date Format
+
+Customize how the selected dates are displayed in the input.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <MultiDatePicker
+          placeholder="Short format"
+          dateFormat={{ year: "2-digit", month: "2-digit", day: "2-digit" }}
+        />
+        <MultiDatePicker
+          placeholder="Long format"
+          dateFormat={{ year: "numeric", month: "long", day: "numeric" }}
+        />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiDatePicker
+      dateFormat={{ year: "2-digit", month: "2-digit", day: "2-digit" }}
+    />
+    <MultiDatePicker
+      dateFormat={{ year: "numeric", month: "long", day: "numeric" }}
+    />
+    ```
+  </Tab>
+</Tabs>
+
+## Calendar Variant
+
+The calendar popup inherits the `variant` prop for color theming.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="space-y-3 w-full max-w-sm">
+        <MultiDatePicker variant="primary" placeholder="Primary" />
+        <MultiDatePicker variant="success" placeholder="Success" />
+        <MultiDatePicker variant="warning" placeholder="Warning" />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiDatePicker variant="primary" placeholder="Primary" />
+    <MultiDatePicker variant="success" placeholder="Success" />
+    <MultiDatePicker variant="warning" placeholder="Warning" />
+    ```
+  </Tab>
+</Tabs>
+
+## Max Dates
+
+Limit the number of dates that can be selected using the `max` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+      <div className="w-full max-w-sm">
+        <MultiDatePicker placeholder="Max 3 dates" max={3} />
+      </div>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+    ```tsx
+    <MultiDatePicker placeholder="Max 3 dates" max={3} />
+    ```
+  </Tab>
+</Tabs>
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| value | `Date[]` | - | Selected dates (controlled) |
+| onChange | `(dates: Date[] \| undefined) => void` | - | Callback when dates are selected |
+| placeholder | `string` | `"Pick dates"` | Input placeholder text |
+| dateLocale | `"en-US" \| "fr-FR" \| "es-ES" \| "de-DE" \| "it-IT" \| "ar-EG" \| "ar-TN"` | `"en-US"` | Locale for date formatting |
+| dateFormat | `Intl.DateTimeFormatOptions` | `{ year: "numeric", month: "short", day: "numeric" }` | Date display format |
+| inputSize | `InputProps["size"]` | `"md"` | Input height and padding |
+| inputVariant | `InputProps["variant"]` | `"default"` | Input border and focus color |
+| errorMessage | `string` | - | Validation error message |
+| disabled | `boolean` | `false` | Disables the picker |
+| inputClassName | `string` | - | Additional classes for the input |
+| contentClassName | `string` | - | Additional classes for the popup |
+| align | `"start" \| "center" \| "end"` | `"start"` | Popover alignment (desktop) |
+| max | `number` | - | Maximum number of selectable dates |
+| variant | `"primary" \| "secondary" \| "success" \| "info" \| "warning" \| "error"` | `"primary"` | Calendar color variant |
+
+Also inherits `BaseCalendarProps` (excluding `mode`, `selected`, `onSelect`), including `showOutsideDays`, `captionLayout`, `numberOfMonths`, `disabled` dates, etc.
+
+## Accessibility
+
+- Keyboard navigable: `Enter`/`Space` toggle, `ArrowDown` opens, `Escape` closes
+- Calendar keyboard navigation via react-day-picker
+- Responsive: uses Popover on desktop, Drawer on mobile
+- Read-only input prevents manual text entry errors
+- Screen reader accessible with proper ARIA labels
+
+## Component API
+
+| Export | Type | Description |
+| --- | --- | --- |
+| MultiDatePicker | `React.ForwardRefExoticComponent` | Multi-date picker component |
+| MultiDatePickerProps | `interface` | Props for the MultiDatePicker |
