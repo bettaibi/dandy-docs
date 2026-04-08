@@ -1,0 +1,114 @@
+# dandy-ui
+
+Lightweight, edge-first React UI library built on TailwindCSS v4. Optimized for Cloudflare Pages, serverless, and SSR environments.
+
+## Install
+
+npm install dandy-ui
+
+## Setup
+
+import "dandy-ui/theme.css"
+import "dandy-ui/base.css"
+// Optional: import "dandy-ui/syntax-highlighting.css" for MarkdownViewer
+
+Wrap app with <ThemeProvider> or use <ThemeScript /> in SSR (Next.js / Remix / Astro)
+
+## Entry Points (Code-Split)
+
+Components: import { Button, Dialog } from "dandy-ui" — core components, zero heavy deps
+Extra: import { Drawer, DatePicker, MultiSelect } from "dandy-ui/extra" — heavier components with optional peer deps
+Markdown: import { MarkdownViewer } from "dandy-ui/markdown" — isolated markdown renderer
+Utilities: import { formatDate, debounce } from "dandy-ui/utils" — pure functions, no React
+Hooks: import { useTheme, useMediaQuery } from "dandy-ui"
+
+## Edge & Serverless Optimizations
+
+- "sideEffects": false — aggressive tree-shaking, only ships what you import
+- 4 code-split entry points — core / extra / markdown / utils, no monolithic bundle
+- ES module only (type: "module") — native ESM for modern bundlers
+- es2020 target — no unnecessary transpilation for modern runtimes
+- Only 2 runtime deps: clsx + tailwind-merge
+- ThemeProvider uses useSyncExternalStore — SSR-safe, no hydration mismatch
+- ThemeScript injects inline <script> — prevents FOUC without client JS
+- Radix overlay/form deps (@radix-ui/react-dialog, react-popover, react-select) are optional via peerDependenciesMeta — install only what you use
+- Heavy component deps (vaul, react-day-picker, input-otp, react-markdown) are optional and isolated in dandy-ui/extra or dandy-ui/markdown
+- Pure CSS animations via data-attributes — no JS animation runtime
+
+## Core Patterns
+
+Props: variant, size, appearance, leftSlot/rightSlot, rounded, className
+Variants: primary, secondary, ghost, success, warning, error, info
+Sizes: sm, md, lg
+Appearance: filled, outlined
+
+## Components (dandy-ui)
+
+Layout: Flex, Grid, GridItem, Paper, Container, Section, Table, ScrollShadow
+Typography: Text, Heading, Hint, Label, Divider, Code, Kbd
+Forms: Button, IconButton, Input, TextArea, NumberInput, Select, CheckBox, Radio, Switch, Slider, FileInput, Rating, Icon
+Feedback: Alert, Badge, Chips, Spinner, Skeleton, ProgressBar, CircularProgress
+Overlays: Dialog, Popover, InfoTip, SnackbarProvider/useSnackbar
+Compound: Accordion, AccordionItem, AccordionTrigger, AccordionContent
+
+## Components (dandy-ui/extra)
+
+Drawer, DatePicker, DateRangePicker, MultiDatePicker, MultiSelect, InputOTP, SidebarLayout, SideBar
+
+## Components (dandy-ui/markdown)
+
+MarkdownViewer — requires react-markdown, rehype-highlight, rehype-raw, rehype-sanitize, remark-gfm
+
+## Compound Components
+
+Dialog: Dialog.Trigger, Dialog.Content, Dialog.Header, Dialog.Title, Dialog.Description, Dialog.Footer, Dialog.Close
+Drawer: Drawer.Trigger, Drawer.Content, Drawer.Header, Drawer.Title, Drawer.Description, Drawer.Footer, Drawer.Close
+Select: SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup, SelectLabel, SelectSeparator
+MultiSelect: MultiSelect.Trigger, MultiSelect.Content, MultiSelect.Item, MultiSelect.Label, MultiSelect.Separator, MultiSelect.Group
+InputOTP: InputOTPGroup, InputOTPSlot, InputOTPSeparator
+Table: Table, TableHead, TableBody, TableRow, TableColumn, TableCell
+SidebarLayout: SidebarLayout.Sidebar, SidebarLayout.Content
+Accordion: AccordionItem, AccordionTrigger, AccordionContent
+Popover: Popover.Trigger, Popover.Content
+
+## Utilities (dandy-ui/utils)
+
+cn: Tailwind class merging (clsx + tailwind-merge)
+Dates: formatDate, formatTime, formatDateTime, formatRelativeTime, formatDuration, isToday, isYesterday, isThisWeek, startOfDay, endOfDay
+Numbers: formatNumber, formatCurrency, formatPercentage, formatCompactNumber, formatDigits, formatList, clampNumber, pluralize
+Inputs: formatPhoneNumber, formatCreditCard, maskInput, formatFileSize, sanitize
+Validation: isEmail, isPhoneNumber, isURL
+Async: debounce, throttle, copyToClipboard
+
+## Hooks
+
+useTheme(): { theme, onThemeChange } — SSR-safe via useSyncExternalStore
+useMediaQuery(query): boolean
+
+## Snackbar (Toast System)
+
+Wrap app with <SnackbarProvider position="bottom-right" />
+const { showSnackbar } = useSnackbar()
+showSnackbar({ message: "Saved", variant: "success" })
+
+## Theme Tokens
+
+Colors: primary, secondary, accent, background, foreground, muted, border, card, popover, success, warning, error, info
+Each has -foreground variant (e.g., bg-primary text-primary-foreground)
+Radius: --radius-control (inputs), --radius-overlay (dialogs), --radius-surface (cards), --radius-button
+
+## Peer Dependencies
+
+Required: react, react-dom, tailwindcss, @radix-ui/react-tooltip
+Optional (dandy-ui core): @radix-ui/react-dialog (Dialog), @radix-ui/react-popover (Popover), @radix-ui/react-select (Select)
+Optional (dandy-ui/extra): vaul (Drawer), react-day-picker (DatePicker*), input-otp (InputOTP)
+Optional (dandy-ui/markdown): react-markdown, rehype-highlight, rehype-raw, rehype-sanitize, remark-gfm
+
+## Rules
+
+- Use theme tokens (bg-primary, text-foreground, border-border)
+- Never hardcode colors or use arbitrary Tailwind colors
+- Use Flex/Grid for layouts
+- Use asChild on trigger components for composition
+- Import heavy components from "dandy-ui/extra" not "dandy-ui"
+- Import utilities from "dandy-ui/utils"
