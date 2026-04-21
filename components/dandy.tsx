@@ -39,13 +39,6 @@ import {
   Icon,
   AspectRatio,
   Select,
-  SelectTrigger,
-  SelectContent,
-  SelectValue,
-  SelectItem,
-  SelectGroup,
-  SelectLabel,
-  SelectSeparator,
   Accordion,
   AccordionItem,
   AccordionTrigger,
@@ -116,6 +109,16 @@ const MultiSelectItem = MultiSelect.Item;
 const MultiSelectLabel = MultiSelect.Label;
 const MultiSelectSeparator = MultiSelect.Separator;
 const MultiSelectGroup = MultiSelect.Group;
+
+const SelectTrigger = Select.Trigger;
+const SelectContent = Select.Content;
+const SelectItem = Select.Item;
+const SelectLabel = Select.Label;
+const SelectSeparator = Select.Separator;
+const SelectGroup = Select.Group;
+const SelectValue = Select.Value;
+
+
 
 const DatePicker = React.forwardRef<HTMLInputElement, DatePickerProps>(
   ({ value, onChange, ...props }, ref) => {
@@ -222,13 +225,6 @@ export {
   Icon,
   AspectRatio,
   Select,
-  SelectTrigger,
-  SelectContent,
-  SelectValue,
-  SelectItem,
-  SelectGroup,
-  SelectLabel,
-  SelectSeparator,
   Accordion,
   AccordionItem,
   AccordionTrigger,
@@ -277,6 +273,13 @@ export {
   MultiSelectLabel,
   MultiSelectSeparator,
   MultiSelectGroup,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectGroup,
+  SelectValue,
   SidebarLayout,
   SideBar,
   MarkdownViewer,

@@ -242,13 +242,13 @@ import { SideBar } from "dandy-ui/extra";
 
 ```tsx
 <Select value={value} onValueChange={setValue}>
-  <SelectTrigger>
-    <SelectValue placeholder="Choose..." />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="a">Option A</SelectItem>
-    <SelectItem value="b">Option B</SelectItem>
-  </SelectContent>
+  <Select.Trigger>
+    <Select.Value placeholder="Choose..." />
+  </Select.Trigger>
+  <Select.Content>
+    <Select.Item value="a">Option A</Select.Item>
+    <Select.Item value="b">Option B</Select.Item>
+  </Select.Content>
 </Select>
 ```
 
@@ -643,13 +643,6 @@ import {
   NumberInput,
   FileInput,
   Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-  SelectGroup,
-  SelectLabel,
-  SelectSeparator,
   CheckBox,
   Radio,
   Switch,

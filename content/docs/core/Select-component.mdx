@@ -5,16 +5,7 @@ category: forms
 ---
 
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectValue,
-  SelectItem,
-  SelectGroup,
-  SelectLabel,
-  SelectSeparator,
-} from "../../../components/dandy";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectGroup, SelectLabel, SelectSeparator } from "../../../components/dandy";
 import { ComponentPreview } from "../../../components/ComponentPreview";
 import { SelectValueChange } from "../../../components/select-value-change";
 
@@ -27,16 +18,7 @@ A customizable dropdown select component built on Radix UI primitives. Features 
 ### Import
 
 ```tsx
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectValue,
-  SelectItem,
-  SelectGroup,
-  SelectLabel,
-  SelectSeparator,
-} from "dandy-ui";
+import { Select } from "dandy-ui";
 ```
 
 ### Peer Dependencies
@@ -67,14 +49,14 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select>
-      <SelectTrigger className="w-64">
-        <SelectValue placeholder="Select a fruit" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="apple">Apple</SelectItem>
-        <SelectItem value="banana">Banana</SelectItem>
-        <SelectItem value="orange">Orange</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64">
+        <Select.Value placeholder="Select a fruit" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="apple">Apple</Select.Item>
+        <Select.Item value="banana">Banana</Select.Item>
+        <Select.Item value="orange">Orange</Select.Item>
+      </Select.Content>
     </Select>
     ```
   </Tab>
@@ -102,14 +84,14 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select variant="default">
-      <SelectTrigger className="w-64">
-        <SelectValue placeholder="Default variant" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="1">Option 1</SelectItem>
-        <SelectItem value="2">Option 2</SelectItem>
-        <SelectItem value="3">Option 3</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64">
+        <Select.Value placeholder="Default variant" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="1">Option 1</Select.Item>
+        <Select.Item value="2">Option 2</Select.Item>
+        <Select.Item value="3">Option 3</Select.Item>
+      </Select.Content>
     </Select>
     ```
   </Tab>
@@ -135,14 +117,14 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select variant="success">
-      <SelectTrigger className="w-64">
-        <SelectValue placeholder="Success variant" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="1">Valid Option 1</SelectItem>
-        <SelectItem value="2">Valid Option 2</SelectItem>
-        <SelectItem value="3">Valid Option 3</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64">
+        <Select.Value placeholder="Success variant" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="1">Valid Option 1</Select.Item>
+        <Select.Item value="2">Valid Option 2</Select.Item>
+        <Select.Item value="3">Valid Option 3</Select.Item>
+      </Select.Content>
     </Select>
     ```
   </Tab>
@@ -168,14 +150,14 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select variant="error">
-      <SelectTrigger className="w-64">
-        <SelectValue placeholder="Error variant" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="1">Fix Option 1</SelectItem>
-        <SelectItem value="2">Fix Option 2</SelectItem>
-        <SelectItem value="3">Fix Option 3</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64">
+        <Select.Value placeholder="Error variant" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="1">Fix Option 1</Select.Item>
+        <Select.Item value="2">Fix Option 2</Select.Item>
+        <Select.Item value="3">Fix Option 3</Select.Item>
+      </Select.Content>
     </Select>
     ```
   </Tab>
@@ -201,14 +183,14 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select variant="warning">
-      <SelectTrigger className="w-64">
-        <SelectValue placeholder="Warning variant" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="1">Caution Option 1</SelectItem>
-        <SelectItem value="2">Caution Option 2</SelectItem>
-        <SelectItem value="3">Caution Option 3</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64">
+        <Select.Value placeholder="Warning variant" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="1">Caution Option 1</Select.Item>
+        <Select.Item value="2">Caution Option 2</Select.Item>
+        <Select.Item value="3">Caution Option 3</Select.Item>
+      </Select.Content>
     </Select>
     ```
   </Tab>
@@ -234,14 +216,14 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select variant="info">
-      <SelectTrigger className="w-64">
-        <SelectValue placeholder="Info variant" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="1">Info Option 1</SelectItem>
-        <SelectItem value="2">Info Option 2</SelectItem>
-        <SelectItem value="3">Info Option 3</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64">
+        <Select.Value placeholder="Info variant" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="1">Info Option 1</Select.Item>
+        <Select.Item value="2">Info Option 2</Select.Item>
+        <Select.Item value="3">Info Option 3</Select.Item>
+      </Select.Content>
     </Select>
     ```
   </Tab>
@@ -284,36 +266,35 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select>
-      <SelectTrigger className="w-64" size="sm">
-        <SelectValue placeholder="Small size" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="1">Small Option 1</SelectItem>
-        <SelectItem value="2">Small Option 2</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64" size="sm">
+        <Select.Value placeholder="Small size" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="1">Small Option 1</Select.Item>
+        <Select.Item value="2">Small Option 2</Select.Item>
+      </Select.Content>
     </Select>
 
     <Select>
-      <SelectTrigger className="w-64" size="md">
-        <SelectValue placeholder="Medium size (default)" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="1">Medium Option 1</SelectItem>
-        <SelectItem value="2">Medium Option 2</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64" size="md">
+        <Select.Value placeholder="Medium size (default)" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="1">Medium Option 1</Select.Item>
+        <Select.Item value="2">Medium Option 2</Select.Item>
+      </Select.Content>
     </Select>
 
     <Select>
-      <SelectTrigger className="w-64" size="lg">
-        <SelectValue placeholder="Large size" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="1">Large Option 1</SelectItem>
-        <SelectItem value="2">Large Option 2</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64" size="lg">
+        <Select.Value placeholder="Large size" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="1">Large Option 1</Select.Item>
+        <Select.Item value="2">Large Option 2</Select.Item>
+      </Select.Content>
     </Select>
     ```
-
   </Tab>
 </Tabs>
 
@@ -354,36 +335,35 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select>
-      <SelectTrigger className="w-64" rounded="sm">
-        <SelectValue placeholder="Small rounded" />
-      </SelectTrigger>
-      <SelectContent rounded="sm">
-        <SelectItem value="1">Option 1</SelectItem>
-        <SelectItem value="2">Option 2</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64" rounded="sm">
+        <Select.Value placeholder="Small rounded" />
+      </Select.Trigger>
+      <Select.Content rounded="sm">
+        <Select.Item value="1">Option 1</Select.Item>
+        <Select.Item value="2">Option 2</Select.Item>
+      </Select.Content>
     </Select>
 
     <Select>
-      <SelectTrigger className="w-64" rounded="lg">
-        <SelectValue placeholder="Large rounded" />
-      </SelectTrigger>
-      <SelectContent rounded="lg">
-        <SelectItem value="1">Option 1</SelectItem>
-        <SelectItem value="2">Option 2</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64" rounded="lg">
+        <Select.Value placeholder="Large rounded" />
+      </Select.Trigger>
+      <Select.Content rounded="lg">
+        <Select.Item value="1">Option 1</Select.Item>
+        <Select.Item value="2">Option 2</Select.Item>
+      </Select.Content>
     </Select>
 
     <Select>
-      <SelectTrigger className="w-64" rounded="xl">
-        <SelectValue placeholder="Extra large rounded" />
-      </SelectTrigger>
-      <SelectContent rounded="xl">
-        <SelectItem value="1">Option 1</SelectItem>
-        <SelectItem value="2">Option 2</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64" rounded="xl">
+        <Select.Value placeholder="Extra large rounded" />
+      </Select.Trigger>
+      <Select.Content rounded="xl">
+        <Select.Item value="1">Option 1</Select.Item>
+        <Select.Item value="2">Option 2</Select.Item>
+      </Select.Content>
     </Select>
     ```
-
   </Tab>
 </Tabs>
 
@@ -407,14 +387,14 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select>
-      <SelectTrigger className="w-64" leftSlot={<span>🌍</span>}>
-        <SelectValue placeholder="Select a country" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="us">United States</SelectItem>
-        <SelectItem value="uk">United Kingdom</SelectItem>
-        <SelectItem value="ca">Canada</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64" leftSlot={<span>🌍</span>}>
+        <Select.Value placeholder="Select a country" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="us">United States</Select.Item>
+        <Select.Item value="uk">United Kingdom</Select.Item>
+        <Select.Item value="ca">Canada</Select.Item>
+      </Select.Content>
     </Select>
     ```
   </Tab>
@@ -439,13 +419,13 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select disabled>
-      <SelectTrigger className="w-64">
-        <SelectValue placeholder="Disabled select" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="1">Option 1</SelectItem>
-        <SelectItem value="2">Option 2</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64">
+        <Select.Value placeholder="Disabled select" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="1">Option 1</Select.Item>
+        <Select.Item value="2">Option 2</Select.Item>
+      </Select.Content>
     </Select>
     ```
   </Tab>
@@ -481,24 +461,24 @@ npm install @radix-ui/react-select
   <Tab value="Code">
     ```tsx
     <Select>
-      <SelectTrigger className="w-64">
-        <SelectValue placeholder="Select a food" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="orange">Orange</SelectItem>
-        </SelectGroup>
-        <SelectSeparator />
-        <SelectGroup>
-          <SelectLabel>Vegetables</SelectLabel>
-          <SelectItem value="carrot">Carrot</SelectItem>
-          <SelectItem value="broccoli">Broccoli</SelectItem>
-          <SelectItem value="spinach">Spinach</SelectItem>
-        </SelectGroup>
-      </SelectContent>
+      <Select.Trigger className="w-64">
+        <Select.Value placeholder="Select a food" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group>
+          <Select.Label>Fruits</Select.Label>
+          <Select.Item value="apple">Apple</Select.Item>
+          <Select.Item value="banana">Banana</Select.Item>
+          <Select.Item value="orange">Orange</Select.Item>
+        </Select.Group>
+        <Select.Separator />
+        <Select.Group>
+          <Select.Label>Vegetables</Select.Label>
+          <Select.Item value="carrot">Carrot</Select.Item>
+          <Select.Item value="broccoli">Broccoli</Select.Item>
+          <Select.Item value="spinach">Spinach</Select.Item>
+        </Select.Group>
+      </Select.Content>
     </Select>
     ```
   </Tab>
@@ -517,17 +497,16 @@ npm install @radix-ui/react-select
     const [value, setValue] = React.useState("apple");
 
     <Select value={value} onValueChange={setValue}>
-      <SelectTrigger className="w-64">
-        <SelectValue placeholder="Select a fruit" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="apple">Apple</SelectItem>
-        <SelectItem value="banana">Banana</SelectItem>
-        <SelectItem value="orange">Orange</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-64">
+        <Select.Value placeholder="Select a fruit" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="apple">Apple</Select.Item>
+        <Select.Item value="banana">Banana</Select.Item>
+        <Select.Item value="orange">Orange</Select.Item>
+      </Select.Content>
     </Select>
     ```
-
   </Tab>
 </Tabs>
 
@@ -548,7 +527,7 @@ npm install @radix-ui/react-select
 | defaultOpen   | `boolean`                                        | -         | Default open state                       |
 | onOpenChange  | `(open: boolean) => void`                        | -         | Callback when open state changes         |
 
-### SelectTrigger
+### Select.Trigger
 
 | Prop      | Type                                             | Default   | Description                   |
 | --------- | ------------------------------------------------ | --------- | ----------------------------- |
@@ -560,7 +539,7 @@ npm install @radix-ui/react-select
 
 Inherits all standard HTML button attributes.
 
-### SelectContent
+### Select.Content
 
 | Prop       | Type                     | Default  | Description                      |
 | ---------- | ------------------------ | -------- | -------------------------------- |
@@ -569,7 +548,7 @@ Inherits all standard HTML button attributes.
 | sideOffset | `number`                 | `4`      | Distance from trigger            |
 | className  | `string`                 | -        | Additional CSS classes           |
 
-### SelectItem
+### Select.Item
 
 | Prop      | Type                                                       | Default   | Description                   |
 | --------- | ---------------------------------------------------------- | --------- | ----------------------------- |
@@ -578,23 +557,23 @@ Inherits all standard HTML button attributes.
 | disabled  | `boolean`                                                  | `false`   | Disables the item             |
 | className | `string`                                                   | -         | Additional CSS classes        |
 
-### SelectLabel
+### Select.Label
 
 | Prop      | Type     | Default | Description            |
 | --------- | -------- | ------- | ---------------------- |
 | className | `string` | -       | Additional CSS classes |
 
-### SelectGroup
+### Select.Group
 
 Standard Radix Select Group component with no custom props.
 
-### SelectSeparator
+### Select.Separator
 
 | Prop      | Type     | Default | Description            |
 | --------- | -------- | ------- | ---------------------- |
 | className | `string` | -       | Additional CSS classes |
 
-### SelectValue
+### Select.Value
 
 | Prop        | Type     | Default | Description                 |
 | ----------- | -------- | ------- | --------------------------- |
@@ -614,19 +593,19 @@ Standard Radix Select Group component with no custom props.
 
 ## Component API
 
-| Export                 | Type                              | Description                            |
+| Export                  | Type                              | Description                            |
 | ---------------------- | --------------------------------- | -------------------------------------- |
 | Select                 | `React.FC`                        | Root component with variant context    |
-| SelectTrigger          | `React.ForwardRefExoticComponent` | Trigger button with ref forwarding     |
-| SelectContent          | `React.ForwardRefExoticComponent` | Dropdown content container             |
-| SelectValue            | `React.ForwardRefExoticComponent` | Displays selected value or placeholder |
-| SelectItem             | `React.ForwardRefExoticComponent` | Individual selectable option           |
-| SelectGroup            | `React.ForwardRefExoticComponent` | Groups related items                   |
-| SelectLabel            | `React.ForwardRefExoticComponent` | Labels a group of items                |
-| SelectSeparator        | `React.ForwardRefExoticComponent` | Visual separator between groups        |
-| SelectScrollUpButton   | `React.ForwardRefExoticComponent` | Scroll indicator at top                |
-| SelectScrollDownButton | `React.ForwardRefExoticComponent` | Scroll indicator at bottom             |
+| Select.Trigger         | `React.ForwardRefExoticComponent` | Trigger button with ref forwarding     |
+| Select.Content         | `React.ForwardRefExoticComponent` | Dropdown content container             |
+| Select.Value           | `React.ForwardRefExoticComponent` | Displays selected value or placeholder |
+| Select.Item            | `React.ForwardRefExoticComponent` | Individual selectable option           |
+| Select.Group           | `React.ForwardRefExoticComponent` | Groups related items                   |
+| Select.Label           | `React.ForwardRefExoticComponent` | Labels a group of items                |
+| Select.Separator       | `React.ForwardRefExoticComponent` | Visual separator between groups        |
+| Select.ScrollUp        | `React.ForwardRefExoticComponent` | Scroll indicator at top                |
+| Select.ScrollDown      | `React.ForwardRefExoticComponent` | Scroll indicator at bottom             |
 | SelectProps            | `interface`                       | Select component props                 |
-| SelectTriggerProps     | `interface`                       | SelectTrigger component props          |
-| SelectContentProps     | `interface`                       | SelectContent component props          |
-| SelectItemProps        | `interface`                       | SelectItem component props             |
+| SelectTriggerProps     | `interface`                       | Select.Trigger component props          |
+| SelectContentProps     | `interface`                       | Select.Content component props         |
+| SelectItemProps        | `interface`                       | Select.Item component props            |

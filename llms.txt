@@ -63,7 +63,7 @@ MarkdownViewer — requires react-markdown, rehype-highlight, rehype-raw, rehype
 
 Dialog: Dialog.Trigger, Dialog.Content, Dialog.Header, Dialog.Title, Dialog.Description, Dialog.Footer, Dialog.Close
 Drawer: Drawer.Trigger, Drawer.Content, Drawer.Header, Drawer.Title, Drawer.Description, Drawer.Footer, Drawer.Close
-Select: SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup, SelectLabel, SelectSeparator
+Select: Select.Trigger, Select.Value, Select.Content, Select.Item, Select.Group, Select.Label, Select.Separator
 MultiSelect: MultiSelect.Trigger, MultiSelect.Content, MultiSelect.Item, MultiSelect.Label, MultiSelect.Separator, MultiSelect.Group
 InputOTP: InputOTPGroup, InputOTPSlot, InputOTPSeparator
 Table: Table, TableHead, TableBody, TableRow, TableColumn, TableCell
